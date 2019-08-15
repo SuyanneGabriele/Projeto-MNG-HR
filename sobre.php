@@ -46,7 +46,7 @@
 				<div class="card-body">
 					<h5 class="card-title" style="text-align: center; font-size: 35px;">
 						<!--Sobre a nossa pagina -->
-						<strong algin="justify">SOBRE O NOSSO SISTEMA</strong></h5>
+						<strong algin="justify">Sobre</strong></h5>
 						<p class="card-text" algin="justify">O nosso sistema é feito para empresas que porcuram praticidade e uma melhor perfomance na área de Recursos Humanos, tem como principais funções organizar e fazer o gerenciamento dos curriculos selecionados mais fácil</p>
 						<!-- 		Parceiros -->
 						<div class="parceiros p-2">
@@ -80,6 +80,7 @@
 				</div>
 				<!-- End of Content Wrapper -->
 			</div>
+			
 			<!-- End of Page Wrapper -->
 
 			<!-- Scroll to Top Button-->

@@ -38,7 +38,7 @@
 
 <!-- Nav Item - registrar -->
 <li class="nav-item">
-	<a class="nav-link" href="registrar.php">
+	<a class="nav-link" href="registro.php">
 		<i class="fas fa fa-lock fa-2x text-gray-300"></i>
 		<span>Registrar</span>
 	</a>
