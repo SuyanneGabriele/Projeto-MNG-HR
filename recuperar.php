@@ -48,7 +48,7 @@
                                                 <div class="form-group">
                                                     <input type="email" class="form-control form-control-user" id="loginEmail" aria-describedby="emailHelp" placeholder="Insira seu email">
                                                 </div>
-                                                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                                                <a href="login.php" class="btn btn-primary btn-user btn-block">
                                                     Redefinir senha
                                                 </a>
                                             </form>
