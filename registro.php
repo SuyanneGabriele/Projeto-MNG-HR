@@ -61,23 +61,13 @@
                           <input type="password" class="form-control form-control-user" id="repitaSenha" placeholder="Repita a senha">
                         </div>
                       </div>
-                      <a href="login.html" class="btn btn-primary btn-user btn-block">
+                      <a href="index.php" class="btn btn-primary btn-user btn-block">
                         Registre-se
-                      </a>
-                      <hr>
-                      <a href="index.html" class="btn btn-google btn-user btn-block">
-                        <i class="fab fa-google fa-fw"></i> Registre-se com o Google
-                      </a>
-                      <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                        <i class="fab fa-facebook-f fa-fw"></i> Registre-se com o Facebook
                       </a>
                     </form>
                     <hr>
                     <div class="text-center">
-                      <a class="small" href="recuperacaosenha.html">Esqueci minha senha</a>
-                    </div>
-                    <div class="text-center">
-                      <a class="small" href="login.html">Já possui uma conta? Faça o login!</a>
+                      <a class="small" href="login.php">Já possui uma conta? Faça o login!</a>
                     </div>
                   </div>
                 </div>

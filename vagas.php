@@ -46,7 +46,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-primary text-uppercase mb-1">Recursos Humanos</div>
+											<a href="curriculos.php" class="font-weight-bold text-primary text-uppercase mb-1">Recursos Humanos</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-male fa-2x text-gray-300"></i>
@@ -62,7 +62,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-success text-uppercase mb-1">Financeiro</div>
+											<a href="curriculos.php" class="font-weight-bold text-success text-uppercase mb-1">Financeiro</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-dollar fa-2x text-gray-300"></i>
@@ -78,7 +78,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-secondary text-uppercase mb-1">Adminstração</div>
+											<a href="curriculos.php" class="font-weight-bold text-secondary text-uppercase mb-1">Adminstração</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-paste fa-2x text-gray-300"></i>
@@ -94,7 +94,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-warning text-uppercase mb-1">Comercial</div>
+											<a href="curriculos.php" class="font-weight-bold text-warning text-uppercase mb-1">Comercial</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-truck fa-2x text-gray-300"></i>
@@ -110,7 +110,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-danger text-uppercase mb-1">Operacional</div>
+											<a href="curriculos.php" class="font-weight-bold text-danger text-uppercase mb-1">Operacional</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-laptop fa-2x text-gray-300"></i>
@@ -125,7 +125,7 @@
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
-											<div class="font-weight-bold text-dark text-uppercase mb-1">Produção</div>
+											<a href="curriculos.php" class="font-weight-bold text-dark text-uppercase mb-1">Produção</a>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa fa-barcode fa-2x text-gray-300"></i>

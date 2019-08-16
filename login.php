@@ -9,6 +9,7 @@
 
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.8);">
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -53,28 +54,21 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="custom-control custom-checkbox small">
-                                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                            <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
-                                                        </div>
-                                                    </div>
-                                                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                                        Entrar
-                                                    </a>
-                                                    <hr>
-                                                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                                                        <i class="fab fa-google fa-fw"></i> Entrar com o Google
-                                                    </a>
-                                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                                        <i class="fab fa-facebook-f fa-fw"></i> Entrar com o Facebook
-                                                    </a>
-                                                </form>
-                                                <hr>
-                                                <div class="text-center">
-                                                    <a class="small" href="recuperacaosenha.html">Esqueci minha senha</a>
-                                                </div>
-                                                <div class="text-center">
-                                                    <a class="small" href="register.html">Criar uma conta</a>
-                                                </div>
+                                                          <input type="checkbox" class="custom-control-input" id="customCheck">
+
+                                                          <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
+                                                      </div>
+                                                  </div>
+                                                  <a href="index.php" class="btn btn-primary btn-user btn-block">
+                                                    Entrar
+                                                </a>
+                                            </form>
+                                            <hr>
+                                            <div class="text-center">
+                                                <a class="small" href="recuperar.php">Esqueci minha senha</a>
+                                            </div>
+                                            <div class="text-center">
+                                                <a class="small" href="registro.php">Criar uma conta</a>
                                             </div>
                                         </div>
                                     </div>
@@ -84,17 +78,18 @@
                     </div>
                 </div>
             </div>
-            <?php
-            require_once('include/footer.php')
-            ?>
         </div>
+        <?php
+        require_once('include/footer.php')
+        ?>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 </body>
 </html>
