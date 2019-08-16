@@ -82,9 +82,9 @@
                   </div>
                   <form>
                     <div class="form-group">
-                      <label for="exampleFormControlFile1" >Anexe o seu currículo aqui:</label>
-                      <input type="file" class="form-control-file " id="anexoCurriculo">
-                    </div>
+                      <label for="anexoCurriculo" >Anexe o seu currículo aqui:</label>
+                      <input type="file" class="form-control-file" id="anexoCurriculo">
+                    </div>           
                   </form>
                   <a href="login.html" class="btn btn-primary btn-user btn-block">
                     Entrar

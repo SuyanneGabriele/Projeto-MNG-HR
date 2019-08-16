@@ -3,10 +3,11 @@
 
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-		<div class="sidebar-brand-icon rotate-n-15">
-			<i class="fas fa-laugh-wink"></i>
+		<div class="sidebar-brand-icon">
+			<i class="fas fa-laugh-wink">
+				<img src="media/images/logo.png" width="100">
+			</i>
 		</div>
-		<div class="sidebar-brand-text mx-3">MNGHR</div>
 	</a>
 
 	<!-- Divider -->
@@ -65,6 +66,21 @@
 	<a class="nav-link" href="vagas.php">
 		<i class="fas fa fa-suitcase fa-2x text-gray-300"></i>
 		<span>Vagas</span>
+	</a>
+</li>
+
+<!-- Nav Item -  Vagas -->
+<li class="nav-item">
+	<a class="nav-link" href="curriculos_admin.php">
+		<i class="fas fa fa-sticky-note fa-2x text-gray-300"></i>
+		<span>Currículos</span>
+	</a>
+</li>
+
+<li class="nav-item">
+	<a class="nav-link" href="curriculos.php">
+		<i class="fas fa fa-sticky-note fa-2x text-gray-300"></i>
+		<span>Currículos</span>
 	</a>
 </li>
 

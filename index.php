@@ -35,23 +35,36 @@
       ?>
 
       <!-- End of Topbar -->
+      <!-- Inicio -->
+
+      <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <a href="curriculos.php" class="font-weight-bold text-primary text-uppercase mb-1">Recursos Humanos</a>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa fa-male fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <!-- Inicio -->
-
-
-
     <!-- Fim -->
+</div>
 
-    <!-- Footer -->
-    <?php
-    require_once('include/footer.php')
-    ?>
-    <!-- End of Footer -->
 
-  </div>
-  <!-- End of Content Wrapper -->
+
+
+<!-- Footer -->
+<?php
+require_once('include/footer.php')
+?>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
