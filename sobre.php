@@ -18,9 +18,19 @@
 		.card-text-ico {
 			font-size: 20px;
 		}
+
+		h3 {
+			font-weight: 800;
+			color: re00px;
+		}
+
+		#colCard {
+			width: 300px;
+			height: 200px;
+		}
 	</style>
 </head>
-<body style="background-color: rgb(241, 241, 208);">
+<body style="background-color: rgba(0, 0, 0, 1);">
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<?php
@@ -39,88 +49,79 @@
 
 			<!-- Inicio -->
 			<header>
-				<img src="media/images/sobre4.jpg" style="opacity: 0.9;">
+				<img src="media/images/sobre4.jpg" style="opacity: 0.9;" class="d-none d-md-block d-sm-block d-sm-none d-md-none">
 			</header>
-			<div style=" margin-top:1rem; font-size: 25px; text-align: center;">
-				<div class="card-body">
-					<!--Sobre a nossa pagina -->
-					<h5 class="card-title" style="text-align: center; font-size: 35px;"><strong algin="justify">Sobre</strong></h5>
-					<p class="card-text" algin="justify">O nosso sistema é feito para empresas que porcuram praticidade e uma melhor perfomance na área de Recursos Humanos, tem como principais funções organizar e fazer o gerenciamento dos curriculos selecionados mais fácil</p>
-					<!-- 		Parceiros -->
-					<div class="parceiros p-2">
-						<p>
-							<strong>Parceiros:</strong>
-							<p algin="justify">Havan | Senior | HBSIS</p>
-							<br>
-						</p>
-					</div>
-					<!-- Missão -->
-					<p><strong>Missão:</strong></p>
-					<p algin="justify">Ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos</p>
-
-					<!-- Visão -->
-					<p><strong>Visão:</strong></p>
-					<p algin="justify">Nós acreditamos que a organização é essecial, então desenvolvemos um sistema que auxilia os funcionários a ordenar os curriculos aumentando a eficiência e agilidade do trabalho.</p>
-
-					<p algin="justify">Ficou interessado? clique no botão trabalhe conosco<br>
-						<button type="button" class="btn btn-primary mt-5" href="">Trabalhe conosco</button></p>
-					</div>
-
-
-					<div class="container">
-						<div class="row">
-							<div class="card-group mb-5" style="margin-left: auto; margin-right: auto;">
-								<div class="card col-5 mx-4">
-									<div class="card-body">
-										<h5 class="card-title-ico">ICO Missão</h5>
-										<p class="card-text-ico">Ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos.</p>
-									</div>
-								</div>
-								<div class="card col-5 mx-4">
-									<div class="card-body">
-										<h5 class="card-title-ico">ICO Visão</h5>
-										<p class="card-text-ico">Nós acreditamos que a organização é essecial, então, desenvolvemos um sistema que auxilia os funcionários a ordenar os curriculos aumentando a eficiência e agilidade do trabalho.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
+			
+			<div>
+				<div class="col-md-6 col-sm-8 mt-5 mr-4 p-3 " style="float: right; text-align: justify; background-color: #f23022; border-radius: 10px;">
+					<p>Nosso sistema foi pensado e desenvolvido durante as aulas de PHP do curso Entra21 da Blusuft, com o objetivo de ajudar e otimizar o serviço dos profissionais da área de Recursos Humanos.</p>
+					<p>Esse projeto foi feito para empresas que procuram praticidade e uma melhor performance, tem como principais funções organizar e gerenciar os currículos selecionados mais facilmente.</p>
+				</div>
+				<div class="col-6">
+					<img src="media/images/entra21.jpg" style="width: 90%;" class="py-4 mt-2 d-none d-md-block d-sm-block d-sm-none d-md-none">
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
+					<h3>icone</h3>
+					<h3>Missão</h3>
+					<p>Nossa missão é ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos com o uso da tecnologia visando a praticidade e facil entendimento de nossos produtos.</p>
+				</div>
+				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
+					<h3>icone</h3>
+					<h3>Visão</h3>
+					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sisema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
+				</div>
+			</div>
+			<div class="container">
+				<h3 class="my-4" style="text-align: center;">Patrocinadores</h3>
+				<div class="row">
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/benner.png" id="colImg"></div></div>
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/hbsis.jpg" id="colImg"></div></div>
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/havan.png" id="colImg"></div></div>
+				</div>
+				<div class="row">
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/indyxa.png" id="colImg"></div></div>
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/philips.png" id="colImg"></div></div>
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/senior.png" id="colImg"></div></div>
+				</div>
+				<div class="row">
+					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/pagueveloz.jpg" id="colImg"></div></div>
+				</div>
+			</div>
+
+
+			<!-- Fim -->
+
+			<!-- Footer -->
+			<?php
+			require_once('include/footer.php')
+			?>
+			<!-- End of Footer -->
 		</div>
-		<!-- Fim -->
+		<!-- End of Content Wrapper -->
 
-		<!-- Footer -->
-		<?php
-		require_once('include/footer.php')
-		?>
-		<!-- End of Footer -->
-	</div>
-	<!-- End of Content Wrapper -->
-</div>
 
-<!-- End of Page Wrapper -->
-</div>
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-	<i class="fas fa-angle-up"></i>
-</a>
+		<!-- End of Page Wrapper -->
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+		<!-- Bootstrap core JavaScript-->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Core plugin JavaScript-->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="js/sb-admin-2.min.js"></script>
+		<!-- Page level plugins -->
+		<script src="vendor/chart.js/Chart.min.js"></script>
+		<!-- Page level custom scripts -->
+		<script src="js/demo/chart-area-demo.js"></script>
+		<script src="js/demo/chart-pie-demo.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+	</html>
