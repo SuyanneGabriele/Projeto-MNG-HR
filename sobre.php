@@ -7,6 +7,7 @@
 	require_once('include/links.php')
 	?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 	<style type="text/css">
 		.card-title-ico {
@@ -21,12 +22,16 @@
 
 		h3 {
 			font-weight: 800;
-			color: re00px;
+			color: #eb4034;
 		}
 
 		#colCard {
 			width: 300px;
 			height: 200px;
+		}
+
+		.fa {
+			color: red;
 		}
 	</style>
 </head>
@@ -63,18 +68,18 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
-					<h3>icone</h3>
+					<h3><i class="fa fa-list-alt" aria-hidden="true"></i></h3>
 					<h3>Missão</h3>
 					<p>Nossa missão é ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos com o uso da tecnologia visando a praticidade e facil entendimento de nossos produtos.</p>
 				</div>
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
-					<h3>icone</h3>
+					<h3><i class="fa fa-eye" aria-hidden="true"></i></h3>
 					<h3>Visão</h3>
 					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sisema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
 				</div>
 			</div>
 			<div class="container">
-				<h3 class="my-4" style="text-align: center;">Patrocinadores</h3>
+				<h2 class="my-4" style="text-align: center;">Patrocinadores</h2>
 				<div class="row">
 					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/benner.png" id="colImg"></div></div>
 					<div class="col-4 my-2"><div class="card" id="colCard"><img src="media/images/hbsis.jpg" id="colImg"></div></div>
