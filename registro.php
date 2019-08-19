@@ -48,7 +48,7 @@ if (!isset($_SESSION)){
                     <div class="text-center">
                       <h1 class="h4 text-gray-900 mb-4"><strong>Criar uma conta</strong></h1>
                     </div>
-                    <form class="user was-validated" action="include/cadastrar.php" method="POST">
+                    <form class="user was-validated" action="include/registrobackend.php" method="POST">
                       <?php
                       if ($_SESSION['status_cadastro']) {
                         ?>
@@ -70,8 +70,11 @@ if (!isset($_SESSION)){
                       unset($_SESSION['email_existe']);
                       ?>
                       <div class="form-group row">
-                        <div class="col-sm-12 mb-3 mb-sm-0">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
                           <input type="text" name="nome" class="form-control form-control-user is-invalid" placeholder="Nome">
+                        </div> 
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <input type="text" name="sobrenonome" class="form-control form-control-user is-invalid" placeholder="Sobrenome">
                         </div>
                       </div>
                       <div class="form-group">

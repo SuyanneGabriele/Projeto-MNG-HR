@@ -4,7 +4,7 @@
 	CONST HOST = "127.0.0.1";
 	CONST USER = "root";
 	CONST PASS = "";
-	CONST DB = "";
+	CONST DB = "tcc";
 
 	$con = mysqli_connect(HOST, USER, PASS, DB);
 	if (!$con) 

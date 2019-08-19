@@ -10,7 +10,7 @@ exit();
 $nome = mysqli_real_escape_string($con, $_POST['email']);
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
-$query = "SELECT id, email, senha FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}'";
+$query = "SELECT id, email, senha FROM usuario WHERE email = '{$email}' AND senha = '{$senha}'";
 
 $result = mysqli_query($con, $query);
 

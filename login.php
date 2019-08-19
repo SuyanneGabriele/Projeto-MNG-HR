@@ -52,7 +52,7 @@ include_once('include/conexao.php');
                                                     <h1 class="h4 text-gray-900 mb-4"><strong>Bem vindo!</strong></h1>
                                                 </div>
 
-                                                <form class="user" action="include/verificacao.php" method="POST">
+                                                <form class="user" action="include/verifica.php" method="POST">
                                                     <div class="form-group">
                                                         <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
                                                     </div>
