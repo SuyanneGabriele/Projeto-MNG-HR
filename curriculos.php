@@ -64,7 +64,7 @@
                     <input type="text" class="form-control form-control-user" id="insiraEstado" placeholder="Estado">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="insiraEndereço" placeholder="Rua Dois de Setembro, 733">
+                    <input type="text" class="form-control form-control-user" id="insiraEndereço" placeholder="Endereço">
                   </div>
                   <div class="form-group">
                     <input type="number" class="form-control form-control-user" id="insiraCelular" placeholder="(DDD) 99999-9999">
