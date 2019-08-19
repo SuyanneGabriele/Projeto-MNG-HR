@@ -43,13 +43,13 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
-					<h3><i class="fa fa-list-alt" aria-hidden="true"></i></h3>
-					<h3>Missão</h3>
+					<h3><i class="fa fa-list-alt" aria-hidden="true" style="color: red; font-size: 40px;"></i></h3>
+					<h3 style="color: red;"><strong>Missão</strong></h3>
 					<p>Nossa missão é ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos com o uso da tecnologia visando a praticidade e facil entendimento do nosso sistema.</p>
 				</div>
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
-					<h3><i class="fa fa-eye" aria-hidden="true"></i></h3>
-					<h3>Visão</h3>
+					<h3><i class="fa fa-eye" aria-hidden="true" style="color: red; font-size: 40px;"></i></h3>
+					<h3 style="color: red"><strong>Visão</strong></h3>
 					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sistema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
 				</div>
 			</div>

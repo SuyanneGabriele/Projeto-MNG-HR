@@ -9,7 +9,7 @@ $sobrenome = mysqli_real_escape_string($con, trim($_POST['sobrenome']));
 $email = mysqli_real_escape_string($con, trim($_POST['email']));
 $senha = mysqli_real_escape_string($con, trim(md5($_POST['senha'])));
 
-$sql = "SELECT COUNT(*) AS total FROM usuario WHERE nome = '$nome'";
+$sql = "SELECT COUNT(*) AS total FROM usuario WHERE nome = '$nome' AND sobrenome = '$sobrenome'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -19,7 +19,7 @@ header('Location: ../registro.php');
 exit;
 }
 
-$sql = "INSERT INTO `usuario` (`ID`, `nome`, `sobrenome`,`email`, `senha`, `nivel`) VALUES (NULL, '$nome', '$sobrenome', '$email', '$senha', '0');";
+$sql = "INSERT INTO `usuario` (`ID`, `nome`, `sobrenome`, `email`, `senha`, `nivel`) VALUES (NULL, '$nome', '$sobrenome', '$email', '$senha', '0');";
 
 if ($con->query($sql) === true) {
 $_SESSION['status_cadastro'] = true;
