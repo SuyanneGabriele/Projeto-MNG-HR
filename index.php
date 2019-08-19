@@ -34,37 +34,106 @@
       require_once('include/topbar.php')
       ?>
 
-      <!-- End of Topbar -->
-      <!-- Inicio -->
+      <div id="content">
 
-      <div class="col-xl-6 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Content Row -->
+          <div style="font-size:30px;">Ultimas vagas cadastradas</div><br>
+          <div class="row">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <a href="curriculos.php" class="font-weight-bold text-primary text-uppercase mb-1">Recursos Humanos</a>
+                      <div class="font-weight-bold text-primary mb-1">Programador JR - PHP</div>
+                      <hr>
+                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
+                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa fa-male fa-2x text-gray-300"></i>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="font-weight-bold text-primary mb-1">Programador PL - Java</div>
+                      <hr>
+                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
+                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="font-weight-bold text-primary mb-1">Gerente de Projetos</div>
+                      <hr>
+                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
+                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="font-weight-bold text-primary mb-1">Estoquista</div>
+                      <hr>
+                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
+                      <i class="fa fa-clock-o" aria-hidden="true"> Há mais de 24 Horas</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Content Row -->
+
         </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- Fim -->
     </div>
-    <!-- Fim -->
-</div>
 
+    <!-- Footer -->
+    <?php
+    require_once('include/footer.php')
+    ?>
+    <!-- End of Footer -->
 
-
-
-<!-- Footer -->
-<?php
-require_once('include/footer.php')
-?>
-<!-- End of Footer -->
-
-</div>
-<!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
