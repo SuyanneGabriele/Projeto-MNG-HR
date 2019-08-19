@@ -10,7 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #4e73df;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -12057,4 +12057,28 @@ footer.sticky-footer .copyright {
 
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+.card-title-ico {
+  color: blue;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.card-text-ico {
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: 800;
+  color: #eb4034;
+}
+
+#colCard {
+  width: 300px;
+  height: 200px;
+}
+
+.fa {
+  color: red;
 }

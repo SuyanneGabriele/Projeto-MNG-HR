@@ -9,31 +9,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
-	<style type="text/css">
-		.card-title-ico {
-			color: blue;
-			font-size: 25px;
-			font-weight: 800;
-		}
-
-		.card-text-ico {
-			font-size: 20px;
-		}
-
-		h3 {
-			font-weight: 800;
-			color: #eb4034;
-		}
-
-		#colCard {
-			width: 300px;
-			height: 200px;
-		}
-
-		.fa {
-			color: red;
-		}
-	</style>
 </head>
 <body style="background-color: rgba(0, 0, 0, 1);">
 	<!-- Page Wrapper -->
@@ -59,23 +34,23 @@
 			
 			<div>
 				<div class="col-md-6 col-sm-8 mt-5 mr-4 p-3 " style="float: right; text-align: justify; background-color: #f23022; border-radius: 10px;">
-					<p>Nosso sistema foi pensado e desenvolvido durante as aulas de PHP do curso Entra21 da Blusuft, com o objetivo de ajudar e otimizar o serviço dos profissionais da área de Recursos Humanos.</p>
+					<p>Nosso sistema foi pensado e desenvolvido durante as aulas de PHP do curso Entra21 da Blusoft, com o objetivo de ajudar e otimizar o serviço dos profissionais da área de Recursos Humanos.</p>
 					<p>Esse projeto foi feito para empresas que procuram praticidade e uma melhor performance, tem como principais funções organizar e gerenciar os currículos selecionados mais facilmente.</p>
 				</div>
 				<div class="col-6">
 					<img src="media/images/entra21.jpg" style="width: 90%;" class="py-4 mt-2 d-none d-md-block d-sm-block d-sm-none d-md-none">
-				</div>
+				</div>	
 			</div>
 			<div class="row">
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
 					<h3><i class="fa fa-list-alt" aria-hidden="true"></i></h3>
 					<h3>Missão</h3>
-					<p>Nossa missão é ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos com o uso da tecnologia visando a praticidade e facil entendimento de nossos produtos.</p>
+					<p>Nossa missão é ajudar empresas que procuram um melhor desempenho na área de Recursos Humanos com o uso da tecnologia visando a praticidade e facil entendimento do nosso sistema.</p>
 				</div>
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
 					<h3><i class="fa fa-eye" aria-hidden="true"></i></h3>
 					<h3>Visão</h3>
-					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sisema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
+					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sistema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
 				</div>
 			</div>
 			<div class="container">
