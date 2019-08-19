@@ -8,11 +8,9 @@ include_once('include/conexao.php');
 <head>
     <meta charset="utf-8">
     <title>Login - Sistema Gestão RH</title>
-
     <?php
     require_once('include/links.php');       
     ?>
-
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.8);">
 

@@ -51,9 +51,10 @@ if (!isset($_SESSION)){
                     <form class="user was-validated" action="include/registrobackend.php" method="POST">
                       <?php
                       if ($_SESSION['status_cadastro']) {
+                        header('Location: login.php');
                         ?>
                         <div class="alert alert-success" role="alert">
-                          Cadastro efetuado com sucesso!
+                          Cadastro efetuado com sucesso! Faça o login
                         </div>
                         <?php
                       };
@@ -74,7 +75,7 @@ if (!isset($_SESSION)){
                           <input type="text" name="nome" class="form-control form-control-user is-invalid" placeholder="Nome">
                         </div> 
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="text" name="sobrenonome" class="form-control form-control-user is-invalid" placeholder="Sobrenome">
+                          <input type="text" name="sobrenome" class="form-control form-control-user is-invalid" placeholder="Sobrenome">
                         </div>
                       </div>
                       <div class="form-group">
