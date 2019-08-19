@@ -1,11 +1,17 @@
+<?php
+
+include_once('include/conexao.php');
+
+?> 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Login - Sistema Gestão RH</title>
-  
-  <?php
-  require_once('include/links.php');       
-  ?>
+    <meta charset="utf-8">
+    <title>Login - Sistema Gestão RH</title>
+
+    <?php
+    require_once('include/links.php');       
+    ?>
 
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.8);">
@@ -45,12 +51,13 @@
                                                 <div class="text-center">
                                                     <h1 class="h4 text-gray-900 mb-4"><strong>Bem vindo!</strong></h1>
                                                 </div>
-                                                <form class="user">
+
+                                                <form class="user" action="include/verificacao.php" method="POST">
                                                     <div class="form-group">
-                                                        <input type="email" class="form-control form-control-user" id="loginEmail" aria-describedby="emailHelp" placeholder="email@provedor@gmail.com">
+                                                        <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" class="form-control form-control-user" id="loginSenha" placeholder="*********">
+                                                        <input type="password" class="form-control form-control-user" name="senha" placeholder="*********">
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="custom-control custom-checkbox small">
@@ -59,12 +66,10 @@
                                                           <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
                                                       </div>
                                                   </div>
-                                                  <a href="index.php" class="btn btn-primary btn-user btn-block">
-                                                    Entrar
-                                                </a>
-                                            </form>
-                                            <hr>
-                                            <div class="text-center">
+                                                  <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
+                                              </form>
+                                              <hr>
+                                              <div class="text-center">
                                                 <a class="small" href="recuperar.php">Esqueci minha senha</a>
                                             </div>
                                             <div class="text-center">

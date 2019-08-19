@@ -17,7 +17,7 @@ $result = mysqli_query($con, $query);
 $row = mysqli_num_rows($result);
 
 if ($row == 1) {
-$_SESSION['email'] = $email;
+$_SESSION['email_existe'] = $email;
 header('Location: ../index.php');
 exit();
 } else {
