@@ -1,9 +1,10 @@
 <?php
-
 include_once('include/conexao.php');
 
-
-
+error_reporting(0);
+if (!isset($_SESSION)){
+    session_start();
+}
 ?> 
 <!DOCTYPE html>
 <html>
@@ -53,28 +54,37 @@ include_once('include/conexao.php');
                                                 </div>
 
                                                 <form class="user" action="include/verifica.php" method="POST">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="password" class="form-control form-control-user" name="senha" placeholder="*********">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="custom-control custom-checkbox small">
-                                                          <input type="checkbox" class="custom-control-input" id="customCheck">
-
-                                                          <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
+                                                    <?php
+                                                    if ($_SESSION['nao_autenticado']) {
+                                                        ?>
+                                                        <div class="alert alert-danger" role="alert">
+                                                          Insira seus dados e tente novamente!
                                                       </div>
+                                                      <?php
+                                                  };
+                                                  unset($_SESSION['nao_autenticado']);
+                                                  ?>
+                                                  <div class="form-group">
+                                                    <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control form-control-user" name="senha" placeholder="*********">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-checkbox small">
+                                                      <input type="checkbox" class="custom-control-input" id="customCheck">
+
+                                                      <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
                                                   </div>
-                                                  <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
-                                              </form>
-                                              <hr>
-                                              <div class="text-center">
-                                                <a class="small" href="recuperar.php">Esqueci minha senha</a>
-                                            </div>
-                                            <div class="text-center">
-                                                <a class="small" href="registro.php">Criar uma conta</a>
-                                            </div>
+                                              </div>
+                                              <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
+                                          </form>
+                                          <hr>
+                                          <div class="text-center">
+                                            <a class="small" href="recuperar.php">Esqueci minha senha</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" href="registro.php">Criar uma conta</a>
                                         </div>
                                     </div>
                                 </div>
@@ -84,10 +94,11 @@ include_once('include/conexao.php');
                 </div>
             </div>
         </div>
-        <?php
-        require_once('include/footer.php')
-        ?>
     </div>
+    <?php
+    require_once('include/footer.php')
+    ?>
+</div>
 </div>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
