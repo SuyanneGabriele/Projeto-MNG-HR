@@ -50,7 +50,7 @@
 				<div class="col-md-6 text-center col-sm-12" style="text-align: justify;">
 					<h3><i class="fa fa-eye" aria-hidden="true"></i></h3>
 					<h3>Visão</h3>
-					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sistema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabal	ho.</p>
+					<p>Nós creditamos que a organização é essencial, então desenvolvemos um sistema que auxilia os funcionários a organizar os currículos aumentando a eficiência e agilidade do trabalho.</p>
 				</div>
 			</div>
 
