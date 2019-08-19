@@ -1,34 +1,29 @@
 <?php
+include_once('conexao.php');
 
-	require_once('conexao.php');
+if(empty($_POST['email']) || empty($_POST['senha'])) {
+header('Location: ../login.php');
+exit();
+}
 
-	//	Verifica se há algum campo vazio
-	if (!empty($_POST) AND (!empty($_POST['loginEmail'])) OR (!empty($_POST['loginSenha']))) {
-		Location('index.html');
-	} else {
-		die('Verifique seus dados e tente novamente.');
-	}
+//  Verificar se as informações necessárias foram preenchidas
+$nome = mysqli_real_escape_string($con, $_POST['email']);
+$senha = mysqli_real_escape_string($con, $_POST['senha']);
 
-	//	Tenta conectar com o banco de dados
-	$usuario = mysql_real_escape_string($_POST['loginEmail']);
-	$senha = mysql_real_escape_string($_POST['loginSenha']);
+$query = "SELECT id, email, senha FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}'";
 
-	//	Validação dos dados digitados
-	$sql = "SELECT 'nome', 'senha', 'nivel' FROM 'usuarios' WHERE ('usuario' = ''. $usuario.'') AND ('senha' = ''. $senha .'') AND ('ativo' = 1) LIMIT 1";
-	$query = mysqli_query($sql);
+$result = mysqli_query($con, $query);
 
-	if (mysql_num_rows($query) !=1) {
-		die('Login inválido!');
-	} else {
-		//	Salva os dados na variável resultado
-		$resultado = mysql_fetch_assoc($query);
+$row = mysqli_num_rows($result);
 
-		//	Salva os dados da sessão
-		$_SESSION['UsuarioID'] = $resultado['id']; 
-		$_SESSION['UsuarioEmail'] = $resultado['email']; 
-		$_SESSION['UsuarioNivel'] = $resultado['nivel']; 
-		header("Location: restrito.php");
-		
-	}
+if ($row == 1) {
+$_SESSION['email'] = $email;
+header('Location: ../index.php');
+exit();
+} else {
+$_SESSION['nao_autenticado'] = true;
+header('Location: ../login.php');
+exit();
+}
 
 ?>
