@@ -13,7 +13,11 @@ $sql = "SELECT COUNT(*) AS total FROM usuario WHERE nome = '$nome' AND sobrenome
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
-if ($row['total'] == 1) {
+$sql2 = "SELECT COUNT(*) AS total2 FROM usuario WHERE email = '$email'";
+$result2 = mysqli_query($con, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+
+if ($row2['total2'] == 1) {
 $_SESSION['email_existe'] = true;
 header('Location: ../registro.php');
 exit;
