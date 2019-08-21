@@ -104,7 +104,7 @@
             </div>
 
             <div class="col-xl-4 col-md-6 mb-4">
-              <a href="#" style="text-decoration: none;"> 
+              <a href="vagas.php" style="text-decoration: none;"> 
                 <div class="card border-left-primary shadow h-100 py-2 bg-primary">
                   <div class="card-body">
                     <i class="fas fa fa-paste fa-4x" aria-hidden="true" style="color: white !important; margin-bottom: 20px;"></i>
