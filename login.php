@@ -65,14 +65,14 @@ if (!isset($_SESSION)){
                                                   unset($_SESSION['nao_autenticado']);
                                                   ?>
                                                   <div class="form-group">
-                                                    <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
+                                                    <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com" value="<?=(isset($_COOKIE['lembrar2'])) ? $_COOKIE['lembrar2'] : ''?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control form-control-user" name="senha" placeholder="*********" value="<?=(isset($_COOKIE['lembrar'])) ? $_COOKIE['lembrar'] : '' ?>">
+                                                    <input type="password" class="form-control form-control-user" name="senha" placeholder="*********" value="<?=(isset($_COOKIE['lembrar'])) ? $_COOKIE['lembrar'] : ''?>">
                                                 </div>
                                                 <div class="form-group">
 
-                                                   <input type="checkbox" class="form-check-input" name="lembrarSenha" id="lembrarSenha">
+                                                   <input type="checkbox" class="form-check-input" name="lembrarSenha" id="lembrarSenha" <?=(isset($_COOKIE['lembrar3'])) ? 'checked' : ''?>>
                                                    <label class="form-check-label" for="lembrarSenha">Lembre-se de mim</label>
                                               </div>
                                               <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">

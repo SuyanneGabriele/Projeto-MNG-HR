@@ -7,8 +7,12 @@ header('Location: ../login.php');
 
 if(isset($_POST['lembrarSenha'])) {
     $senha = $_POST['senha'];
+    $email = $_POST['email'];
+    $lembrarSenha = $_POST['lembrarSenha'];
     $tempo_expiracao = time() + 3600 * 168;
-    setcookie("lembrar", $senha, $tempo_expiracao);
+    setcookie("lembrar", $senha, $tempo_expiracao, '/');
+    setcookie("lembrar2", $email, $tempo_expiracao, '/');
+    setcookie("lembrar3", $lembrarSenha, $tempo_expiracao, '/');
 }
 
 //  Verificar se as informações necessárias foram preenchidas
