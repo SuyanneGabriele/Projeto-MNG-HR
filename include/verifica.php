@@ -5,6 +5,12 @@ if(empty($_POST['email']) || empty($_POST['senha'])) {
 header('Location: ../login.php');
 }
 
+if(isset($_POST['lembrarSenha'])) {
+    $senha = $_POST['senha'];
+    $tempo_expiracao = time() + 3600 * 168;
+    setcookie("lembrar", $senha, $tempo_expiracao);
+}
+
 //  Verificar se as informações necessárias foram preenchidas
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $senha = md5(mysqli_real_escape_string($con, $_POST['senha']));
@@ -22,5 +28,6 @@ header('Location: ../index.php');
 $_SESSION['nao_autenticado'] = true;
 header('Location: ../login.php');
 }
+
 
 ?>

@@ -68,14 +68,12 @@ if (!isset($_SESSION)){
                                                     <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="email@provedor.com">
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control form-control-user" name="senha" placeholder="*********">
+                                                    <input type="password" class="form-control form-control-user" name="senha" placeholder="*********" value="<?=(isset($_COOKIE['lembrar'])) ? $_COOKIE['lembrar'] : '' ?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <div class="custom-control custom-checkbox small">
-                                                      <input type="checkbox" class="custom-control-input" id="customCheck">
 
-                                                      <label class="custom-control-label" for="customCheck">Lembre-se de mim</label>
-                                                  </div>
+                                                   <input type="checkbox" class="form-check-input" name="lembrarSenha" id="lembrarSenha">
+                                                   <label class="form-check-label" for="lembrarSenha">Lembre-se de mim</label>
                                               </div>
                                               <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
                                           </form>
