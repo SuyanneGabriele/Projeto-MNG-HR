@@ -51,10 +51,10 @@
                       <div class="font-weight-bold text-primary mb-1">Programador JR - PHP</div>
                       <hr>
                       <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
-                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
                     </div>
                   </div>
                 </div>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 3 Horas</i>
               </div>
             </div>
 
@@ -65,11 +65,11 @@
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Programador PL - Java</div>
                       <hr>
-                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
-                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
+                      <div style="font-size:16px;">Irá atuar em implementação de módulos de sistema Senior, ex: Controladoria, Gestão de Estoque, etc... </div><br>
                     </div>
                   </div>
                 </div>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 12 Horas</i>
               </div>
             </div>
 
@@ -80,11 +80,11 @@
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Gerente de Projetos</div>
                       <hr>
-                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
-                      <i class="fa fa-clock-o" aria-hidden="true"> Há 3 Horas</i>
+                      <div style="font-size:16px;">Vaga sem descrição</div><br>
                     </div>
                   </div>
                 </div>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 3 Horas</i>
               </div>
             </div>
 
@@ -95,24 +95,28 @@
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1">Estoquista</div>
                       <hr>
-                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
-                      <i class="fa fa-clock-o" aria-hidden="true"> Há mais de 24 Horas</i>
+                      <div style="font-size:16px;">No mínimo 4 anos de exp. comprovada na função</div><br>
                     </div>
                   </div>
                 </div>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há mais de 24 Horas</i>
               </div>
             </div>
 
             <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <a href="#" style="text-decoration: none;"> 
+                <div class="card border-left-primary shadow h-100 py-2 bg-primary">
+                  <div class="card-body">
+                    <i class="fas fa fa-paste fa-4x" aria-hidden="true" style="color: white !important; margin-bottom: 20px;"></i>
+                    <div class="row no-gutters align-items-center">
+                      <span style="color: white; font-size:20px;">Ver mais</span><i class="ml-2 fas fa fa-long-arrow-right" aria-hidden="true" style="color: white !important; font-size: 30px;"></i><br>
+                      <div class="col mr-2">
+                      </div>
                     </div>
                   </div>
+                  <p class="ml-3 mb-3 mr-3" style="color: white; ">veja todas as vagas cadastradas em nossa base de oportunidades</p>   
                 </div>
-              </div>
+              </a>  
             </div>
 
           </div>
