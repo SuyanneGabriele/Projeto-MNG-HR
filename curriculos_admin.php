@@ -1,32 +1,3 @@
-<?php
-
-// 	// Eliminar a exibição de avisos
-error_reporting(0);
-
-// 	// Conexão com o banco de dados 
-
-// CONST HOST = "127.0.0.1";
-// CONST USER = "root";
-// CONST PASS = "";
-// CONST DB   = "jogos";
-
-// $con = mysqli_connect(HOST, USER, PASS, DB);
-
-// if (!$con) {
-// 	die("ERRO: Não foi possível conectar no banco de dados -> " . mysqli_connect_error());
-// }
-
-// 	// Buscar informações dos jogos no banco
-// $sql = "SELECT * FROM tabela_jogos";
-// $queryJogos = mysqli_query($con, $sql);
-// session_start();
-
-// 	// Verificar se existe alerta via COOKIE
-// if (isset($_COOKIE['alerta']) && !is_null($_COOKIE['alerta'])) {
-// 	$alerta = unserialize($_COOKIE['alerta']);
-// 	setcookie('alerta');
-// }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,19 +78,21 @@ error_reporting(0);
 				</div>
 			</div>
 
-		<!-- Footer -->
-		<?php
-		require_once('include/footer.php')
-		?>
-		<!-- End of Footer -->
+			<!-- Footer -->
+			<?php
+			require_once('include/footer.php')
+			?>
+			<!-- End of Footer -->
+		</div>
+		<!-- End of Content Wrapper -->
 	</div>
-	<!-- End of Content Wrapper -->
-</div>
 
-<!-- End of Page Wrapper -->
-<!-- Boostrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- End of Page Wrapper -->
+	<!-- Boostrap JS -->
+
+	<?php
+	require_once('links_footer.php');
+	?>
+
 </body>
 </html>
