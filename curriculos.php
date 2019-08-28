@@ -10,6 +10,10 @@ require_once('include/cadastro_backend.php');
   <meta charset="utf-8">
 
   <title>Cadastre seu Currículo</title>
+  
+  <?php
+  require_once('include/area_restrita.php');
+  ?>
 
   <?php
   require_once('include/links.php')
@@ -91,42 +95,36 @@ require_once('include/cadastro_backend.php');
                       <input type="email" class="form-control form-control-user"  placeholder="Email@provedor.com" name="email">
                     </div>
 
-                    <!-- <form> -->
-                      <div class="form-group">
-                        <label for="anexoCurriculo" >Anexe o seu currículo aqui:</label>
-                        <input type="file" class="form-control-file" id="anexoCurriculo">
-                      </div>           
-                      <!-- </form> -->
-                      <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
-                    </form>
-                  </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Footer -->
-      <?php
-      require_once('include/footer.php')
-      ?>
-      <!-- End of Footer -->
-
-      <!-- End of Topbar -->
     </div>
 
+    <!-- Footer -->
+    <?php
+    require_once('include/footer.php')
+    ?>
+    <!-- End of Footer -->
 
-    <!-- Inicio -->
-
-
-
-    <!-- Fim -->
-
-
-
+    <!-- End of Topbar -->
   </div>
-  <!-- End of Content Wrapper -->
+
+
+  <!-- Inicio -->
+
+
+
+  <!-- Fim -->
+
+
+
+</div>
+<!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
@@ -141,7 +139,7 @@ require_once('include/cadastro_backend.php');
 
 <!-- Bootstrap core JavaScript-->
 <?php
-    require_once('include/links_footer.php'); 
+require_once('include/links_footer.php'); 
 ?>
 
 </body>

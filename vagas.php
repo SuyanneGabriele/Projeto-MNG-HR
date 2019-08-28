@@ -8,6 +8,10 @@
 	<title>Vagas</title>
 
 	<?php
+	require_once('include/area_restrita.php');
+	?>
+
+	<?php
 	require_once('include/links.php')
 	?>
 
@@ -66,7 +70,7 @@
 												</a>
 
 												<hr>
-												<a href="informacoes_vaga.php" style="text-decoration: none;">	
+												<a href="arquiteto_de_software.php" style="text-decoration: none;">	
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Arquiteto de Software (Tecnologia)</span><br>
@@ -119,9 +123,9 @@
 															<span class="page-link" id="pagina-previous" disabled="disabled" tabindex="-1">‹</span>
 														</li>
 														<li class="page-item active"><span class="page-link">
-																1
-																<span class="sr-only">(current)</span>
-															</span>
+															1
+															<span class="sr-only">(current)</span>
+														</span>
 														<li class="page-item"><a class="page-link" href="#">2</a></li>
 														<li class="page-item"><a class="page-link" href="#">3</a></li>
 														<li class="page-item">
@@ -164,9 +168,9 @@
 
 
 	<!-- Bootstrap core JavaScript-->
-<?php
-  require_once('include/links_footer.php');
-?>
+	<?php
+	require_once('include/links_footer.php');
+	?>
 
 
 </body>
