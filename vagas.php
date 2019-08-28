@@ -8,7 +8,7 @@
 	<title>Vagas</title>
 
 	<?php
-	require_once('include/links.php')
+	require_once('include/links.php');
 	?>
 
 </head>
@@ -110,6 +110,8 @@
 													</div>
 												</a>
 												<hr>
+
+												<!-- Pagination -->
 												<nav aria-label="...">
 													<ul class="pagination pagination-sm">
 														<li class="page-item disabled">
