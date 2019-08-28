@@ -1,5 +1,5 @@
 <?php
-    require_once('include/cadastro_backend.php');
+require_once('include/cadastro_backend.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,89 +46,87 @@
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block">
                 <img src="media/images/curriculum5.jpg" style="width: 110%; height: 100%;">
-            </div>
-            <div class="col-lg-6">
+              </div>
+              <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4"><strong>Cadastre seu currículo e venha fazer parte de nossa equipe!</strong></h1>
-                </div>
-                <form class="user was-validated">
+                  </div>
+                  <form class="user was-validated" action="" method="POST">
 
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input class="invisible" type="number" name="cod_curriculo" id="cod_curriculo" placeholder="1" disabled value="<?=$resultadoCurriculo['id']?>">
+                      <input class="invisible" type="number" name="id_curriculo" id="cod_curriculo" placeholder="1" disabled value="<?=$resultadoCurriculo['id']?>">
                     </div>
 
                     <div class="form-group row">
 
 
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="text" class="form-control form-control-user is-invalid" id="primeiroNome" placeholder="Nome">
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user is-invalid" id="primeiroNome" placeholder="Nome">
                       </div>
 
                       <div class="col-sm-6">
-                          <input type="text" class="form-control form-control-user" id="ultimoNome" placeholder="Sobrenome">
+                        <input type="text" class="form-control form-control-user" id="ultimoNome" placeholder="Sobrenome">
                       </div>
 
-                  </div>
+                    </div>
 
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="cidade" placeholder="Cidade" name="cidade">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="estado" placeholder="Estado" name="estado">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="endereco" placeholder="Endereço" name="endereco">
-                </div>
-
-                <div class="form-group">
-                    <input type="number" class="form-control form-control-user" id="telefone" placeholder="(DDD) 99999-9999" name="telefone">
-                </div>
-
-                <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="email" placeholder="Email@provedor.com" name="email">
-                </div>
-
-                <form>
                     <div class="form-group">
-                      <label for="anexoCurriculo" >Anexe o seu currículo aqui:</label>
-                      <input type="file" class="form-control-file" id="anexoCurriculo">
-                  </div>           
-              </form>
-              <a href="curriculos.php" class="btn btn-primary btn-user btn-block" name="btnSalvar" value="salvar">
-                Cadastrar
-            </a>
-        </form>
+                      <input type="text" class="form-control form-control-user" placeholder="Cidade" name="cidade">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Estado" name="estado">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user"  placeholder="Email@provedor.com" name="email">
+                    </div>
+
+                    <!-- <form> -->
+                      <div class="form-group">
+                        <label for="anexoCurriculo" >Anexe o seu currículo aqui:</label>
+                        <input type="file" class="form-control-file" id="anexoCurriculo">
+                      </div>           
+                      <!-- </form> -->
+                      <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <?php
+      require_once('include/footer.php')
+      ?>
+      <!-- End of Footer -->
+
+      <!-- End of Topbar -->
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Footer -->
-<?php
-require_once('include/footer.php')
-?>
-<!-- End of Footer -->
-
-<!-- End of Topbar -->
-</div>
 
 
-<!-- Inicio -->
+    <!-- Inicio -->
 
 
 
-<!-- Fim -->
+    <!-- Fim -->
 
 
 
-</div>
-<!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
@@ -142,21 +140,9 @@ require_once('include/footer.php')
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<?php
+  require_once('links_footer.php');
+?>
 
 </body>
 

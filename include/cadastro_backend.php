@@ -1,34 +1,58 @@
 <?php
 
-session_start();
+	// Eliminar a exibição de avisos
 
-include_once('conexao.php');
+//error_reporting(0);
 
-$nome = mysqli_real_escape_string($con, trim($_POST['nome']));
-$sobrenome = mysqli_real_escape_string($con, trim($_POST['sobrenome']));
-$email = mysqli_real_escape_string($con, trim($_POST['email']));
+	// Conexão com o banco de dados
 
-$sql = "SELECT COUNT(*) AS total FROM usuario WHERE nome = '$nome' AND sobrenome = '$sobrenome'";
-$result = mysqli_query($con, $sql);
-$row = mysqli_fetch_assoc($result);
+require_once('conexao.php');
 
-$sql2 = "SELECT COUNT(*) AS total2 FROM usuario WHERE email = '$email'";
-$result2 = mysqli_query($con, $sql2);
-$row2 = mysqli_fetch_assoc($result2);
-
-if ($row2['total2'] == 1) {
-$_SESSION['email_existe'] = true;
-header('Location: ../registro.php');
-exit;
+if (!$con) {
+	die("ERRO: Não foi possível conectar no banco de dados -> " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO `usuario` (`ID`, `nome`, `sobrenome`, `email`, `senha`, `nivel`) VALUES (NULL, '$nome', '$sobrenome', '$email', '$senha', '0');";
+// Recuperar ID do Curriculo
 
-if ($con->query($sql) === true) {
-$_SESSION['status_cadastro'] = true;
+if (isset($_GET['id'])) {
+	$id_curriculo = $_GET['id'];
 }
 
-$con->close();
-header('Location: ../registro.php');
-exit();
+// Buscar informações dos Curriculos
+
+if (isset($id_curriculo)) {
+	$sql = "SELECT * FROM curriculos WHERE id = $id_curriculo";
+	$queryCurriculo = mysqli_query($con, $sql);
+	$resultadoCurriculo = mysqli_fetch_array($queryCurriculo);
+
+	
+	// Verificar se o Curriculo existe
+
+	if (is_null($resultadoCurriculo)) {
+		die("Curriculo não encontrado.");
+	}
+}
+
+// Verificando botão de SALVAR
+
+if (isset($_POST['btnSalvar'])) {
+
+	// Recebimento dos campos
+
+	$cidade = $_POST['cidade'];
+	$estado = $_POST['estado'];
+	$endereco = $_POST['endereco'];
+	$telefone = $_POST['telefone'];
+	$email = $_POST['email'];
+
+	// Identificando se é UPDATE ou INSERT
+
+	if (!isset($id_curriculo)){
+		$sql = "INSERT INTO curriculos VALUES (DEFAULT, '1', '$cidade', '$estado', '$endereco', '$telefone', '$email' )";
+	}
+
+	if(mysqli_query($con, $sql)) {
+		header('Location: curriculos.php');
+	}
+}
 ?>
