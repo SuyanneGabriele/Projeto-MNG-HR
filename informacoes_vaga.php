@@ -23,6 +23,7 @@
    ?>
 
    <!-- Content Wrapper -->
+   <span id='topo'></span>
    <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Content -->
@@ -43,8 +44,9 @@
             <div class="card-body">
               <h4>Informações da vaga</h4>
               <hr>
+              
               <h1><span style="color: black;"><strong>Arquiteto de Software (DevOps)</span></strong></h1>
-              <span style="font-size: 20px; color: rgba(0,0,0,.5);">Blumenau(SC)</span><br>
+              <span style="font-size: 20px; color: rgba(0,0,0,.5);">Blumenau (SC)</span><br>
               <a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br>
               <strong style="font-size: 18px;">Sobre a oportunidade</strong>
               <p style="font-size: 16px;">Aqui nós seguimos metodologias ágeis, trabalhando em times que entregam soluções inovadoras e de valor aos clientes. Atuamos em implementações, melhorias de performance e integrações, desenvolvendo códigos bem estruturados utilizando as melhores práticas de programação.</p>
@@ -60,6 +62,7 @@
               <p style="text-decoration: underline; font-size: 16px;">O que pode diferenciar?</p>
               <p style="font-size: 16px">- Vivência com AWS, Google Cloud, Azure;<br>
               - Experiência com IaC (Ansible, Terraform, Puppet, Chef).</p>
+              <a href='#topo' style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-up mr-2"></i>Voltar ao topo</a>
             </div>
           </div>
         </div>
@@ -70,6 +73,7 @@
               <div class="card-body">
                 <h4>Informações da vaga</h4>
                 <hr>
+                <span id='topo'></span>
                 <h1><span style="color: black;"><strong>Arquiteto de Software (Tecnologia)</span></strong></h1>
                 <span style="font-size: 20px; color: rgba(0,0,0,.5);">Itu (SP) ou Curitiba (PR)</span><br>
                 <a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br>
@@ -106,6 +110,8 @@
                   - Atuação em projetos de migração de sistemas Client/Server para Cloud Multitenant;<br>
                   - Domínio de técnicas de integração contínua e entrega contínua;<br>
                   - Inglês fluente.<br>
+                  <br>
+                  <a href='#topo' style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-up mr-2"></i>Voltar ao topo</a>
                 </div>
               </div>
             </div>

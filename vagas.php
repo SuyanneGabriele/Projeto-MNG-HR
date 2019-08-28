@@ -61,7 +61,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Arquiteto de Software (DevOps)</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau(SC)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau (SC)</span>
 													</div>
 												</a>
 
@@ -70,7 +70,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Arquiteto de Software (Tecnologia)</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Itu(SP) ou Curitiba(PR)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Itu (SP) ou Curitiba (PR)</span>
 													</div>
 												</a>
 												<hr>
@@ -79,7 +79,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Dev Java (Manutenção Performance Corporativa e Tecnologia)</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau(SC)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau (SC)</span>
 													</div>
 												</a>
 												<hr>
@@ -88,7 +88,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Dev Java (DevOps)</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau(SC)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau (SC)</span>
 													</div>
 												</a>
 												<hr>
@@ -97,7 +97,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Analista de Sistemas Java (DevOps)</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau(SC)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau (SC)</span>
 													</div>
 												</a>
 												<hr>
@@ -106,7 +106,7 @@
 													<div class="topnav">
 														<button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button>
 														<span style="color: black;">Analista de Inteligência de Mercado</span><br>
-														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau(SC)</span>
+														<span style="font-size: 15px; color: rgba(0,0,0,.5);">Blumenau (SC)</span>
 													</div>
 												</a>
 												<hr>
