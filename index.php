@@ -150,7 +150,7 @@
 
 <!-- Bootstrap core JavaScript-->
 <?php
-  require_once('links_footer.php');
+    require_once('include/links_footer.php');
 ?>
 
 

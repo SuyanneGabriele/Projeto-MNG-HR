@@ -48,7 +48,7 @@ if (isset($_POST['btnSalvar'])) {
 	// Identificando se é UPDATE ou INSERT
 
 	if (!isset($id_curriculo)){
-		$sql = "INSERT INTO curriculos VALUES (DEFAULT, '1', '$cidade', '$estado', '$endereco', '$telefone', '$email' )";
+		$sql = "INSERT INTO curriculos VALUES (DEFAULT, '$id_usuario', '$cidade', '$estado', '$endereco', '$telefone', '$email' )";
 	}
 
 	if(mysqli_query($con, $sql)) {

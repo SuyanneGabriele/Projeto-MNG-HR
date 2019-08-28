@@ -5,6 +5,7 @@
 	<title>Listagem</title>
 	<!-- Bootstrap CSS -->
 	<?php
+	error_reporting(0);
 	require_once('include/links.php')
 	?>
 </head>
@@ -91,7 +92,7 @@
 	<!-- Boostrap JS -->
 
 	<?php
-	require_once('links_footer.php');
+	  require_once('include/links_footer.php');
 	?>
 
 </body>
