@@ -5,8 +5,11 @@
 	<title>Listagem</title>
 	<!-- Bootstrap CSS -->
 	<?php
+		require_once('include/area_restrita.php');
+	?>
+	<?php
 	error_reporting(0);
-	require_once('include/links.php')
+	require_once('include/links.php');
 	?>
 </head>
 <body class="bg-dark">
@@ -25,7 +28,7 @@
 			<div id="content">
 				<!-- Topbar -->
 				<?php
-				require_once('include/topbar.php')
+				require_once('include/topbar.php');
 				?>
 				<!-- End of Topbar -->
 				<div class="container">

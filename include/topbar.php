@@ -14,8 +14,8 @@
         <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong>[Nome]</strong></span>
       </a>
       <!-- Dropdown - User Information -->
-      <div href="logoff.php" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-        <a href="logoff.php" class="dropdown-item" style=" color: rgb(0,0,0,.6);"><strong>Sair</strong></a>
+      <div href="include/logoff.php" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a href="include/logoff.php" class="dropdown-item" style=" color: rgb(0,0,0,.6);"><strong>Sair</strong></a>
       </div>
     </li>
   </ul>

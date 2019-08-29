@@ -10,6 +10,10 @@ require_once('include/cadastro_backend.php');
   <meta charset="utf-8">
 
   <title>Cadastre seu Currículo</title>
+  
+  <?php
+  require_once('include/area_restrita.php');
+  ?>
 
   <?php
   require_once('include/links.php')

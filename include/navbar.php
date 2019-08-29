@@ -53,13 +53,6 @@
 	</a>
 </li>
 
-<!-- Nav Item - Sobre -->
-<li class="nav-item">
-	<a class="nav-link" href="sobre.php">
-		<i class="fas fa fa-question fa-2x text-gray-300"></i>
-		<span>Sobre</span>
-	</a>
-</li>
 
 <!-- Nav Item -  Vagas -->
 <li class="nav-item">
