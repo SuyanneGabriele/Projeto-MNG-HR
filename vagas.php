@@ -9,18 +9,20 @@
 
 	<?php
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 	// require_once('include/area_restrita.php');
 =======
 <<<<<<< HEAD
+>>>>>>> d4282ba50b6933ca1ca991c295a62145a6f8bb42
 	require_once('include/links.php');
-=======
 	require_once('include/area_restrita.php');
 >>>>>>> 756cc575b28cc5ab270126d83b8a1e701274beb0
 	?>
 
 	<?php
 	require_once('include/links.php')
->>>>>>> dce57d70b402ad2641dacb3821683bdbaa990584
 	?>
 
 </head>
