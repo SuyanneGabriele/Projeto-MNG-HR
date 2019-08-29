@@ -4,7 +4,6 @@ require_once('include/cadastro_backend.php');
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
   <meta charset="utf-8">
@@ -62,6 +61,7 @@ require_once('include/cadastro_backend.php');
                       <input class="invisible" type="number" name="id_curriculo" id="cod_curriculo" placeholder="1" disabled value="<?=$resultadoCurriculo['id']?>">
                     </div>
 
+<<<<<<< HEAD
                     <div class="form-group row">
 
 
@@ -73,16 +73,43 @@ require_once('include/cadastro_backend.php');
                         <input type="text" class="form-control form-control-user" id="ultimoNome" placeholder="Sobrenome">
                       </div>
 
+=======
+                    <!-- Sobre -->
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Sobre" name="sobre">
+                    </div>
+                    <!-- Idade -->
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Idade" name="idade">
                     </div>
 
+                    <!-- Email -->
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user"  placeholder="noreply@provedor.com" name="email">
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="form-group">
+                      <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                    </div>
+
+                    <!-- Endereço -->
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+>>>>>>> 2602171741a07baa3dee99f9134b425ef5223049
+                    </div>
+
+                    <!-- Cidade -->
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" placeholder="Cidade" name="cidade">
                     </div>
 
+                    <!-- Estado -->
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" placeholder="Estado" name="estado">
                     </div>
 
+                    <!-- País -->
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
                     </div>
@@ -91,8 +118,13 @@ require_once('include/cadastro_backend.php');
                       <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
                     </div>
 
+                    <!-- Idiomas -->
                     <div class="form-group">
+<<<<<<< HEAD
                       <input type="email" class="form-control form-control-user"  placeholder="Email@provedor.com" name="email">
+=======
+                      <input type="text" class="form-control form-control-user" placeholder="Idiomas (Ex: Espanhol, Inglês...)" name="idiomas">
+>>>>>>> 2602171741a07baa3dee99f9134b425ef5223049
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
@@ -113,29 +145,20 @@ require_once('include/cadastro_backend.php');
 
     <!-- End of Topbar -->
   </div>
-
-
   <!-- Inicio -->
 
 
 
   <!-- Fim -->
-
-
-
 </div>
 <!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
-
-
-
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
   <i class="fas fa-angle-up"></i>
 </a>
-
 
 <!-- Bootstrap core JavaScript-->
 <?php
@@ -144,4 +167,8 @@ require_once('include/links_footer.php');
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2602171741a07baa3dee99f9134b425ef5223049
