@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@media print {
+ @media print {
     *,
     ::after,
     ::before {
@@ -8460,6 +8460,10 @@ a.text-dark:hover {
 
 .invisible {
     visibility: hidden!important
+}
+
+input:visited {
+  border-bottom: 2px solid black;
 }
 
 

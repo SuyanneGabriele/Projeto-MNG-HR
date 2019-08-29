@@ -8,7 +8,10 @@
 	<title>Vagas</title>
 
 	<?php
+	// require_once('include/area_restrita.php');
 
+	require_once('include/links.php');
+	require_once('include/area_restrita.php');
 	require_once('include/area_restrita.php');
 	require_once('include/links.php');
 	require_once('include/area_restrita.php');

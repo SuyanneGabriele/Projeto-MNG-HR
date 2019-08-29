@@ -41,7 +41,6 @@
 	<!-- Divider -->
 	<hr class="sidebar-divider">
 
-	<!-- Divider -->
 	<!-- Nav Item - Login -->
 
 	<li class="nav-item">
