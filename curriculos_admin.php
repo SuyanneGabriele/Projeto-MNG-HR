@@ -5,7 +5,7 @@
 	<title>Listagem</title>
 	<!-- Bootstrap CSS -->
 	<?php
-		require_once('include/area_restrita.php');
+		/*require_once('include/area_restrita.php');*/
 	?>
 	<?php
 	error_reporting(0);
