@@ -1,4 +1,21 @@
 	
+<link rel="stylesheet" type="text/css" href="../media/css/estilos.css">
+<style type="text/css">
+	
+
+	li:hover {
+		background-color: #8DD99D;
+		margin-left: 10px;
+		border-radius: 10px;
+		font-weight: 750;
+	}
+
+	ul {
+		padding: 10px;
+	}
+
+</style>
+
 <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
@@ -34,7 +51,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<!-- Nav Item - registrar -->
 	<li class="nav-item">
@@ -44,7 +60,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<!-- Nav Item - Recuperar -->
 	<li class="nav-item">
@@ -54,7 +69,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<!-- Nav Item -  Vagas -->
 	<li class="nav-item">
@@ -64,7 +78,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<!-- Nav Item -  Vagas -->
 	<li class="nav-item">
@@ -74,7 +87,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<li class="nav-item">
 		<a class="nav-link" href="curriculos.php">
@@ -83,7 +95,6 @@
 		</a>
 	</li>
 
-	<hr class="sidebar-divider my-0">
 
 	<li class="nav-item">
 		<a class="nav-link" href="perfil.php">
@@ -97,3 +108,12 @@
 
 </ul>
 <!-- End of Sidebar -->
+
+<!-- SCRIPTS -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("li a[href='"+location.href.substring(location.href.lastIndexOf("/")+1,255)+"']").css("color","#64b063");
+	});
+</script>

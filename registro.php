@@ -72,14 +72,14 @@ if (!isset($_SESSION)){
                       ?>
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                          <input type="text" name="nome" class="form-control form-control-user" placeholder="Nome" required>
+                          <input type="text" name="nome" id="nome" class="form-control form-control-user" placeholder="Nome" required>
                         </div> 
                         <div class="col-sm-6 mb-3 mb-sm-0">
                           <input type="text" name="sobrenome" class="form-control form-control-user" placeholder="Sobrenome" required>
                         </div>
                       </div>
                       <div class="form-group">
-                        <input type="email" name="email" class="form-control form-control-user" placeholder="email@provedor.com" required>
+                        <input type="email" name="email" id="emailConf" class="form-control form-control-user" placeholder="email@provedor.com" required>
                       </div>
                       <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
@@ -112,5 +112,6 @@ if (!isset($_SESSION)){
 <?php
     require_once('include/links_footer.php');
 ?>
+<script src="conferirinfos.js"></script>
 </body>
 </html>
