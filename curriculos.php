@@ -91,7 +91,7 @@ require_once('include/cadastro_backend.php');
                     </div>
 
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="Idiomas" name="idiomas">
+                      <input type="text" class="form-control form-control-user" placeholder="Idiomas (Ex: Espanhol, Inglês...)" name="idiomas">
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>

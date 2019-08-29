@@ -8,15 +8,13 @@
 	<title>Vagas</title>
 
 	<?php
-<<<<<<< HEAD
+
 	require_once('include/links.php');
-=======
 	require_once('include/area_restrita.php');
 	?>
 
 	<?php
 	require_once('include/links.php')
->>>>>>> dce57d70b402ad2641dacb3821683bdbaa990584
 	?>
 
 </head>
