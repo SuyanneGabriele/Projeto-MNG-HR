@@ -40,7 +40,7 @@
             <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
             <div class="container">
               <div class="content-center">
-                <div class="cc-profile-image"><a href="#"><img src="images/anthony.jpg" alt="Image"/></a></div>
+                <div class="  "><a href="#"><img src="images/anthony.jpg" alt="Image"/></a></div>
                 <div class="h2 title">Anthony Barnett</div>
               </div>
             </div>
@@ -202,7 +202,7 @@
                 <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                   <div class="card-body">
                     <div class="h5">Intern</div>
-                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
                   </div>
                 </div>
               </div>
@@ -224,7 +224,7 @@
                   <div class="card-body">
                     <div class="h5">Master of Information Technology</div>
                     <p class="category">University of Computer Science</p>
-                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
                   </div>
                 </div>
               </div>
@@ -241,7 +241,7 @@
                   <div class="card-body">
                     <div class="h5">Bachelor of Computer Science</div>
                     <p class="category">University of Computer Science</p>
-                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
                   </div>
                 </div>
               </div>
@@ -266,16 +266,12 @@
           </div>
         </div>
       </div>
-      
-      <?php
-      require_once('include/links_footer.php');
-      ?>
     </div>
-    <script src="js/core/jquery.3.2.1.min.js"></script>
-    <script src="js/core/popper.min.js"></script>
-    <script src="js/core/bootstrap.min.js"></script>
-    <script src="js/now-ui-kit.js?v=1.1.0"></script>
-    <script src="js/aos.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+    <script src="perfil/js/core/popper.min.js"></script>
+    <script src="perfil/js/core/bootstrap.min.js"></script>
+    <script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+    <script src="perfil/js/aos.js"></script>
+    <script src="perfil/scripts/main.js"></script>
   </body>
   </html>
