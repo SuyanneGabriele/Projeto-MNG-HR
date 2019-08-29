@@ -62,20 +62,17 @@ require_once('include/cadastro_backend.php');
                       <input class="invisible" type="number" name="id_curriculo" id="cod_curriculo" placeholder="1" disabled value="<?=$resultadoCurriculo['id']?>">
                     </div>
 
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="Idade" name="idade">
-                    </div>
+                    <div class="form-group row">
 
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-user"  placeholder="noreply@provedor.com" name="email">
-                    </div>
 
-                    <div class="form-group">
-                      <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
-                    </div>
+                      <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user is-invalid" id="primeiroNome" placeholder="Nome">
+                      </div>
 
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="ultimoNome" placeholder="Sobrenome">
+                      </div>
+
                     </div>
 
                     <div class="form-group">
@@ -87,11 +84,15 @@ require_once('include/cadastro_backend.php');
                     </div>
 
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="País" name="pais">
+                      <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
                     </div>
 
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" placeholder="Idiomas" name="idiomas">
+                      <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user"  placeholder="Email@provedor.com" name="email">
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
@@ -144,4 +145,3 @@ require_once('include/links_footer.php');
 </body>
 
 </html>
->
