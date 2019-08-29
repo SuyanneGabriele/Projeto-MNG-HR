@@ -25,6 +25,7 @@
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Habilidades</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#scholarity">Escolaridade</a></li>
             </ul>
           </div>
         </div>
@@ -208,7 +209,7 @@
             </div>
           </div>
         </div>
-        <div class="section">
+        <div class="section" id="scholarity">
           <div class="container cc-education">
             <div class="h4 text-center mb-4 title">Escolaridade</div>
             <div class="card">
