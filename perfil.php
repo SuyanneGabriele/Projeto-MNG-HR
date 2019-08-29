@@ -271,11 +271,11 @@
       require_once('include/links_footer.php');
       ?>
     </div>
-    <script src="js/core/jquery.3.2.1.min.js"></script>
-    <script src="js/core/popper.min.js"></script>
-    <script src="js/core/bootstrap.min.js"></script>
-    <script src="js/now-ui-kit.js?v=1.1.0"></script>
-    <script src="js/aos.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+    <script src="perfil/js/core/popper.min.js"></script>
+    <script src="perfil/js/core/bootstrap.min.js"></script>
+    <script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+    <script src="perfil/js/aos.js"></script>
+    <script src="perfil/scripts/main.js"></script>
   </body>
   </html>
