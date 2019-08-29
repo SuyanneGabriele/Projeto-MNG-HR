@@ -121,6 +121,7 @@ $errors = [];
 
 
     <!-- Bootstrap core JavaScript-->
+<<<<<<< HEAD
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
@@ -129,3 +130,11 @@ $errors = [];
     <script src="js/sb-admin-2.min.js"></script>
   </body>
   </html>
+=======
+<?php
+    require_once('include/links_footer.php');
+?>
+
+</body>
+</html>
+>>>>>>> d4282ba50b6933ca1ca991c295a62145a6f8bb42

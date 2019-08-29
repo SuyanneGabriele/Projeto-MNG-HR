@@ -104,7 +104,7 @@
             </div>
 
             <div class="col-xl-4 col-md-6 mb-4">
-              <a href="#" style="text-decoration: none;"> 
+              <a href="vagas.php" style="text-decoration: none;"> 
                 <div class="card border-left-primary shadow h-100 py-2 bg-primary">
                   <div class="card-body">
                     <i class="fas fa fa-paste fa-4x" aria-hidden="true" style="color: white !important; margin-bottom: 20px;"></i>
@@ -149,21 +149,10 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<?php
+    require_once('include/links_footer.php');
+?>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

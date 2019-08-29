@@ -1,3 +1,7 @@
+<?php
+require_once('include/cadastro_backend.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +10,10 @@
   <meta charset="utf-8">
 
   <title>Cadastre seu Currículo</title>
+  
+  <?php
+  // require_once('include/area_restrita.php');
+  ?>
 
   <?php
   require_once('include/links.php')
@@ -48,61 +56,46 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4"><strong>Cadastre seu currículo e venha fazer parte de nossa equipe!</strong></h1>
                   </div>
-                  <form class="user was-validated">
-                    <div class="form-group row">
-                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user is-invalid" id="primeiroNome" placeholder="Primeiro Nome">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="ultimoNome" placeholder="Sobrenome">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="insiraCidade" placeholder="Cidade">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="insiraEstado" placeholder="Estado">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="insiraEndereço" placeholder="Endereço">
-                  </div>
-                  <div class="form-group">
-                    <input type="number" class="form-control form-control-user" id="insiraCelular" placeholder="(DDD) 99999-9999">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="insiraEmail" placeholder="email@provedor.com">
-                  </div>
-                  <div class="form-group row">
+                  <form class="user was-validated" action="" method="POST">
+
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="password" class="form-control form-control-user" id="insiraSenha" placeholder="Digite sua senha">
+                      <input class="invisible" type="number" name="id_curriculo" id="cod_curriculo" placeholder="1" disabled value="<?=$resultadoCurriculo['id']?>">
                     </div>
-                    <div class="col-sm-6">
-                      <input type="password" class="form-control form-control-user" id="repitaSenha" placeholder="Repita a senha">
-                    </div>
-                  </div>
-                  <form>
+
                     <div class="form-group">
-                      <label for="anexoCurriculo" >Anexe o seu currículo aqui:</label>
-                      <input type="file" class="form-control-file" id="anexoCurriculo">
-                    </div>           
+                      <input type="text" class="form-control form-control-user" placeholder="Idade" name="idade">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user"  placeholder="noreply@provedor.com" name="email">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Cidade" name="cidade">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Estado" name="estado">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="País" name="pais">
+                    </div>
+
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-user" placeholder="Idiomas" name="idiomas">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
                   </form>
-                  <a href="login.html" class="btn btn-primary btn-user btn-block">
-                    Entrar
-                  </a>
-                  <hr>
-                  <a href="index.html" class="btn btn-linkedin btn-user btn-block">
-                    <i class="fab fa-linkedin fa-fw"></i> Entrar com o LinkedIn 
-                  </a>
-                  <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                    <i class="fab fa-facebook-f fa-fw"></i> Entrar com o Facebook
-                  </a>
-                </form>
-                <hr>
-                <div class="text-center">
-                  <a class="small" href="recuperacaosenha.html">Esqueci minha senha</a>
-                </div>
-                <div class="text-center">
-                  <a class="small" href="login.html">Já possui uma conta? Faça o login!</a>
                 </div>
               </div>
             </div>
@@ -110,23 +103,22 @@
         </div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <?php
+    require_once('include/footer.php')
+    ?>
+    <!-- End of Footer -->
+
+    <!-- End of Topbar -->
   </div>
 
-  <!-- Footer -->
-  <?php
-  require_once('include/footer.php')
-  ?>
-  <!-- End of Footer -->
 
-  <!-- End of Topbar -->
-</div>
-
-
-<!-- Inicio -->
+  <!-- Inicio -->
 
 
 
-<!-- Fim -->
+  <!-- Fim -->
 
 
 
@@ -145,22 +137,11 @@
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<?php
+require_once('include/links_footer.php'); 
+?>
 
 </body>
 
 </html>
+>

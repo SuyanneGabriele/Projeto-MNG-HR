@@ -1,7 +1,7 @@
 <?php
 
 	//	Conexão BD
-	CONST HOST = "127.0.0.1";
+	CONST HOST = "127.0.0.1:3307";
 	CONST USER = "root";
 	CONST PASS = "";
 	CONST DB = "tcc";
