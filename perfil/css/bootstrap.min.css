@@ -8455,16 +8455,75 @@ a.text-dark:hover {
 }
 
 .visible {
-    visibility: visible!important
+    visibility: visible!important;
 }
 
 .invisible {
-    visibility: hidden!important
-}
-
-input:visited {
-  border-bottom: 2px solid black;
+    visibility: hidden!important;
 }
 
 
-/*# sourceMappingURL=bootstrap.min.css.map */
+input {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    outline:none !important;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+input:focus {
+    border: 2px solid black;
+    outline: none;
+}
+
+select {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    outline:none !important;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+select:focus {
+    border: 2px solid black;
+    outline: none;
+}
+
+textarea {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    outline:none !important;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+textarea:focus {
+    border-bottom: 2px solid black !important;
+    outline: none;
+}
+
+#nome::-webkit-input-placeholder{
+
+    color: White;
+    font-weight: bold;
+}
+
+#tbg  input{
+    background-color: rgba(10,23,55,0);
+    color: white; border:
+    none !important;
+    text-align: center;
+}
+
+#tbg ::-webkit-input-placeholder{
+
+    color: White !important;
+
+}
+
+
+#tbg1 ::-webkit-input-placeholder{
+
+    color: black !important;
+
+}
