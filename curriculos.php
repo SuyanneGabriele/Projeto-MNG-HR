@@ -66,7 +66,79 @@
 
                     <div class="row">
                       <label class="col-sm-4" for="idade"><strong class="text-uppercase">Idade:</strong></label>
+<<<<<<< HEAD
                       <input type="number" name="idade" id="idade" class="col-sm-6" placeholder="Ex: 20">
+=======
+                      <input type="number" name="idade" id="idade" class="col-sm-6" style="border-left: none; border-right: none; border-top: none; outline:none;">
+                    </div>
+<<<<<<< HEAD
+
+                    <div class="form-group">
+
+                      <!-- Sobre -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Sobre" name="sobre">
+                      </div>
+
+                      <!-- Idade -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Idade" name="idade">
+                      </div>
+
+                      <!-- Email -->
+                      <div class="form-group">
+                        <input type="email" class="form-control form-control-user"  placeholder="noreply@provedor.com" name="email">
+                      </div>
+
+                      <!-- Telefone -->
+                      <div class="form-group">
+                        <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                      </div>
+
+                      <!-- Endereço -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+                      </div>
+
+                      <!-- Cidade -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Cidade" name="cidade">
+                      </div>
+
+                      <!-- Estado -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Estado" name="estado">
+                      </div>
+
+                      <!-- País -->
+                      <div class="form-group">
+                        <input type="text" class="form-control form-control-user" placeholder="Endereço" name="endereco">
+                      </div>
+
+                      <!-- Telefone -->
+                      <div class="form-group">
+                        <input type="number" class="form-control form-control-user" placeholder="(DDD) 99999-9999" name="telefone">
+                      </div>
+
+                      <!-- Email -->
+                      <div class="form-group">
+                        <input type="email" class="form-control form-control-user"  placeholder="Email@provedor.com" name="email">
+                      </div>
+
+                        <!-- Idiomas -->
+                      <div class="form-group">
+                         <input type="text" class="form-control form-control-user" placeholder="Idiomas (Ex: Espanhol, Inglês...)" name="idiomas">
+                      </div>
+
+                        <button type="submit" class="btn btn-primary btn-user btn-block" name="btnSalvar">Cadastrar</button>
+                      </form>
+                    </div>
+                  </div>
+=======
+                    <div class="row mt-3">
+                      <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+                      <div class="col-sm-8">anthony@company.com</div>
+>>>>>>> b827e5a87efc6cfa969744e4ecd425ec8b813f9c
                     </div>
 
                     <div class="row mt-2">
@@ -233,10 +305,82 @@
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+            <div class="card">
+              <div class="row">
+                <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body cc-education-header">
+                    <p>2009 - 2013</p>
+                    <div class="h5">Bachelor's Degree</div>
+                  </div>
+                </div>
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body">
+                    <div class="h5">Bachelor of Computer Science</div>
+                    <p class="category">University of Computer Science</p>
+                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row">
+                <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body cc-education-header">
+                    <p>2007 - 2009</p>
+                    <div class="h5">High School</div>
+                  </div>
+                </div>
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body">
+                    <div class="h5">Science and Mathematics</div>
+                    <p class="category">School of Secondary board</p>
+                    <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                  </div>
+>>>>>>> c803630b47616386a51ac2ff9a739ea9b7c5b9d9
+                </div>
+              </div>
+            </div>
+>>>>>>> b827e5a87efc6cfa969744e4ecd425ec8b813f9c
           </div>
         </div>
+<<<<<<< HEAD
+
+        <!-- Footer -->
+        <?php
+        require_once('include/footer.php')
+        ?>
+        <!-- End of Footer -->
+
+        <!-- End of Topbar -->
+      </div>
+      <!-- Inicio -->
+
+
+
+      <!-- Fim -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <?php
+  require_once('include/links_footer.php'); 
+  ?>
+
+</body>
+</html>
+=======
       </div>
     </div>
+<<<<<<< HEAD
   </form>
   <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
   <script src="perfil/js/core/popper.min.js"></script>
@@ -246,3 +390,14 @@
   <script src="perfil/scripts/main.js"></script>
 </body>
 </html>
+=======
+    <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+    <script src="perfil/js/core/popper.min.js"></script>
+    <script src="perfil/js/core/bootstrap.min.js"></script>
+    <script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+    <script src="perfil/js/aos.js"></script>
+    <script src="perfil/scripts/main.js"></script>
+  </body>
+  </html>
+>>>>>>> c803630b47616386a51ac2ff9a739ea9b7c5b9d9
+>>>>>>> b827e5a87efc6cfa969744e4ecd425ec8b813f9c
