@@ -216,58 +216,66 @@
       </div>
       <div class="section" id="scholarity">
         <div class="container cc-education">
-          <div class="h4 text-center mb-4 title">Escolaridade</div>
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-education-header">
-                  <p>2013 - 2015</p>
-                  <div class="h5">Master's Degree</div>
-                </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Master of Information Technology</div>
-                  <p class="category">University of Computer Science</p>
-                  <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="container cc-education">
+            <div class="h4 text-center mb-4 title">Escolaridade</div>
 
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-education-header">
-                  <p>2009 - 2013</p>
-                  <div class="h5">Bachelor's Degree</div>
+            <div class="card">
+              <div class="row">
+                <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+
+                  <div class="card-body cc-education-header">
+                    <div id="tbg"><input type="text" name="superior" id="superior" class="col-sm-12" placeholder="Data ex: Jan 2014 - Dez 2017"></div>
+                    <div class="h5 mt-3" id="tbg"><input type="text" name="superior" id="superior" class="col-sm-12" placeholder="Ensino Superior" row="2"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Bachelor of Computer Science</div>
-                  <p class="category">University of Computer Science</p>
-                  <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique  taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body cc-education-header">
-                  <p>2007 - 2009</p>
-                  <div class="h5">High School</div>
-                </div>
-              </div>
-              <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                <div class="card-body">
-                  <div class="h5">Science and Mathematics</div>
-                  <p class="category">School of Secondary board</p>
-                  <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body" id="tbg1">
+                    <div class="h5" id="tbg1"><input type="text" name="superior" id="superior" class="col-sm-12" placeholder="Nome da faculdade" row="2"></div>
+                    <textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Engenheiro de Software "></textarea>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="card">
+              <div class="row">
+                <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+
+                  <div class="card-body cc-education-header">
+                    <div id="tbg"><input type="text" name="medio" id="medio" class="col-sm-12" placeholder="Data ex: Jan 2010 - Dez 2013"></div>
+                    <div class="h5 mt-3" id="tbg"><input type="text" name="medio" id="medio" class="col-sm-12" value="Ensino Médio" row="2" disabled=""></div>
+                  </div>
+                </div>
+
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body" id="tbg1">
+                    <div class="h5" id="tbg1"><input type="text" name="medio" id="medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
+                    <textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="row">
+                <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+
+                  <div class="card-body cc-education-header">
+                    <div id="tbg"><input type="text" name="fundamental" id="fundamental" class="col-sm-12" placeholder="Data ex: Jan 2002 - Dez 2010"></div>
+                    <div class="mt-3" id="tbg" style="font-size:21px;"><input type="text" name="fundamental" id="fundamental" class="col-sm-12" value="Ensino Fundamental" row="2" disabled=""></div>
+                  </div>
+                </div>
+
+                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                  <div class="card-body" id="tbg1">
+                    <div class="mt-3" id="tbg1"  style="font-size:21px;"> <input type="text" name="fundamental" id="fundamental" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
+                    <textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino fundamental completo"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
