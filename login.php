@@ -46,11 +46,11 @@ if (!isset($_SESSION)){
                                 <div class="card-body p-0 text-center">
 
                                     <!-- Nested Row within Card Body -->
-                                    <div class="row">
+                                    <div class="row" id="imgcadastro" style="background-repeat: no-repeat; background-image: url('media/images/curriculum2.jpg'); ">
                                         <div class="col-lg-7 col" style="margin-left: auto; margin-right: auto;">
                                             <div class="p-5">
                                                 <div class="text-center">
-                                                    <h1 class="h4 text-gray-900 mb-4"><strong>Bem vindo!</strong></h1>
+                                                    <h1 class="h4 text-gray-900 mb-4"><strong>BEM VINDO!</strong></h1>
                                                 </div>
 
                                                 <form class="user" action="include/verifica.php" method="POST">
@@ -72,13 +72,13 @@ if (!isset($_SESSION)){
                                                 </div>
                                                 <div class="form-group">
 
-                                                   <input type="checkbox" class="form-check-input" name="lembrarSenha" id="lembrarSenha" <?=(isset($_COOKIE['lembrar3'])) ? 'checked' : ''?>>
-                                                   <label class="form-check-label" for="lembrarSenha">Lembre-se de mim</label>
-                                              </div>
-                                              <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
-                                          </form>
-                                          <hr>
-                                          <div class="text-center">
+                                                 <input type="checkbox" class="form-check-input" name="lembrarSenha" id="lembrarSenha" <?=(isset($_COOKIE['lembrar3'])) ? 'checked' : ''?>>
+                                                 <label class="form-check-label" for="lembrarSenha" style="color: rgba(0, 0, 0, 0.8);"><strong>Lembre-se de mim</strong></label>
+                                             </div>
+                                             <input type="submit" class="btn btn-primary btn-user btn-block" value="Entrar" style="font-weight: 800;">
+                                         </form>
+                                         <hr>
+                                         <div class="text-center">
                                             <a class="small" href="recuperar.php">Esqueci minha senha</a>
                                         </div>
                                         <div class="text-center">
@@ -99,7 +99,7 @@ if (!isset($_SESSION)){
 </div>
 </div>
 <?php
-    require_once('include/links_footer.php');
+require_once('include/links_footer.php');
 ?>
 
 </body>
