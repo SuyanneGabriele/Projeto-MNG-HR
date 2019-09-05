@@ -12,11 +12,11 @@
 
 	ul {
 		padding: 10px;
-	}
+	} 
 
 </style>
 
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar bg-gradient-dark sidebar-dark accordion" id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -28,24 +28,24 @@
 	</a>
 
 	<!-- Divider -->
-	<hr class="sidebar-divider my-0">
+	<hr class="sidebar-divider my-0" style="border-color: rgba(0, 0, 0, 0.2)";>
 
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active">
 		<a class="nav-link" href="index.php">
-			<i class="fas fa-fw fa fa-home"></i>
+			<i class="fas fa-fw fa fa-home text-white"></i>
 			<span>Início</span>
 		</a>
 	</li>
 
 	<!-- Divider -->
-	<hr class="sidebar-divider">
+	<hr class="sidebar-divider" style="border-color: rgba(0, 0, 0, 0.2)";>
 
 	<!-- Nav Item - Login -->
 
 	<li class="nav-item">
 		<a class="nav-link" href="login.php">
-			<i class="fas fa fa-male fa-2x text-gray-300"></i>
+			<i class="fas fa fa-male fa-2x text-white"></i>
 			<span>Login</span>
 		</a>
 	</li>
@@ -54,7 +54,7 @@
 	<!-- Nav Item - registrar -->
 	<li class="nav-item">
 		<a class="nav-link" href="registro.php">
-			<i class="fas fa fa-lock fa-2x text-gray-300"></i>
+			<i class="fas fa fa-lock fa-2x text-white"></i>
 			<span>Registrar</span>
 		</a>
 	</li>
@@ -63,7 +63,7 @@
 	<!-- Nav Item - Recuperar -->
 	<li class="nav-item">
 		<a class="nav-link" href="recuperar.php">
-			<i class="fas fa fa-key fa-2x text-gray-300"></i>
+			<i class="fas fa fa-key fa-2x text-white"></i>
 			<span>Recuperar senha</span>
 		</a>
 	</li>
@@ -72,7 +72,7 @@
 	<!-- Nav Item -  Vagas -->
 	<li class="nav-item">
 		<a class="nav-link" href="vagas.php">
-			<i class="fas fa fa-suitcase fa-2x text-gray-300"></i>
+			<i class="fas fa fa-suitcase fa-2x text-white"></i>
 			<span>Vagas</span>
 		</a>
 	</li>
@@ -81,7 +81,7 @@
 	<!-- Nav Item -  Vagas -->
 	<li class="nav-item">
 		<a class="nav-link" href="curriculos_admin.php">
-			<i class="fas fa fa-sticky-note fa-2x text-gray-300"></i>
+			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
 			<span>Currículos</span>
 		</a>
 	</li>
@@ -89,7 +89,7 @@
 
 	<li class="nav-item">
 		<a class="nav-link" href="curriculos.php">
-			<i class="fas fa fa-sticky-note fa-2x text-gray-300"></i>
+			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
 			<span>Currículos</span>
 		</a>
 	</li>
@@ -97,13 +97,13 @@
 
 	<li class="nav-item">
 		<a class="nav-link" href="perfil.php">
-			<i class="fas fa fa-male fa-2x text-gray-300"></i>
+			<i class="fas fa fa-male fa-2x text-white"></i>
 			<span>Meu Perfil</span>
 		</a>
 	</li>
 
 	<!-- Divider -->
-	<hr class="sidebar-divider d-none d-md-block">
+	<hr class="sidebar-divider d-none d-md-block" style="border-color: rgba(0, 0, 0, 0.2)";>
 
 </ul>
 <!-- End of Sidebar -->

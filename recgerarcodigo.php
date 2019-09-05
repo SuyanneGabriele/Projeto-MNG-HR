@@ -73,25 +73,27 @@ if (isset($_POST['new_password'])) {
 								<div class="card-body p-0 text-center">
 
 									<!-- Nested Row within Card Body -->
-									<div class="row">
-										<div class="col-lg-7 col" style="margin-left: auto; margin-right: auto;">
-											<div class="p-5">
-												<div class="text-center">
-													<h1 class="h4 text-gray-900 mb-4"><strong>Recuperação de senha</strong></h1>
-												</div>
+									<!-- <div class="row"> -->
+										<div class="row" style="background-image: url('media/images/imgcadastro3.png');">
+											<div class="col-lg-7 col" style="margin-left: auto; margin-right: auto;">
+												<div class="p-5">
+													<div class="text-center">
+														<h1 class="h4 text-gray-900 mb-4"><strong>Recuperação de senha</strong></h1>
+													</div>
 
-												<form class="user" method="POST">
-													<?php include('messages.php'); ?>
-													<div class="form-group">
-														<input type="password" class="form-control form-control-user" name="senha" placeholder="Insira sua nova senha">
-													</div>
-													<div class="form-group">
-														<input type="password" class="form-control form-control-user" name="senha2" placeholder="Insira sua senha novamente">
-													</div>
-													<div class="form-group">
-														<button type="submit" class="btn btn-primary btn-user btn-block text-white">Cadastrar nova senha</button>
-													</div>
-												</form>
+													<form class="user" method="POST">
+														<?php include('messages.php'); ?>
+														<div class="form-group">
+															<input type="password" class="form-control form-control-user" name="senha" placeholder="Insira sua nova senha">
+														</div>
+														<div class="form-group">
+															<input type="password" class="form-control form-control-user" name="senha2" placeholder="Insira sua senha novamente">
+														</div>
+														<div class="form-group">
+															<button type="submit" class="btn btn-primary btn-user btn-block text-white">Cadastrar nova senha</button>
+														</div>
+													</form>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -100,18 +102,17 @@ if (isset($_POST['new_password'])) {
 						</div>
 					</div>
 				</div>
+				<?php
+				require_once('include/footer.php')
+				?>
 			</div>
-			<?php
-			require_once('include/footer.php')
-			?>
 		</div>
-	</div>
-	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-	<!-- Custom scripts for all pages-->
-	<script src="js/sb-admin-2.min.js"></script>
-</body>
-</html>
+		<!-- Bootstrap core JavaScript-->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Core plugin JavaScript-->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="js/sb-admin-2.min.js"></script>
+	</body>
+	</html>
