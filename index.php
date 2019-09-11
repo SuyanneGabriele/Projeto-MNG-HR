@@ -11,7 +11,7 @@ require_once('include/indexb.php');
   <title>Início</title>
 
   <?php
-  require_once('include/links.php')
+  require_once('include/links.php');
   ?>
 
 </head>
@@ -52,15 +52,9 @@ require_once('include/indexb.php');
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1"><?php
-                      if($total > 0) {
-                        do {
-                          ?>
-                          <p><?=$linha['nome_vaga']?></p>
-                          <?php
-                        }while($linha = mysqli_fetch_assoc($dados));
-                      }
-                      ?></div>
+                      <div class="font-weight-bold text-primary mb-1">
+                        <p><?=$linha['nome_vaga']?></p>
+                      </div>
                       <hr>
                       <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
                     </div>
@@ -75,7 +69,9 @@ require_once('include/indexb.php');
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Programador PL - Java</div>
+                      <div class="font-weight-bold text-primary mb-1">
+                        <p><?=$linha2['nome_vaga']?></p>
+                      </div>
                       <hr>
                       <div style="font-size:16px;">Irá atuar em implementação de módulos de sistema Senior, ex: Controladoria, Gestão de Estoque, etc... </div><br>
                     </div>
@@ -90,7 +86,7 @@ require_once('include/indexb.php');
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Gerente de Projetos</div>
+                      <div class="font-weight-bold text-primary mb-1"><?=$linha3['nome_vaga']?></div>
                       <hr>
                       <div style="font-size:16px;">Vaga sem descrição</div><br>
                     </div>
@@ -105,7 +101,7 @@ require_once('include/indexb.php');
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Estoquista</div>
+                      <div class="font-weight-bold text-primary mb-1"><?=$linha4['nome_vaga']?></div>
                       <hr>
                       <div style="font-size:16px;">No mínimo 4 anos de exp. comprovada na função</div><br>
                     </div>

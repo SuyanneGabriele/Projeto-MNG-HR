@@ -30,14 +30,6 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 
 	<title>Vagas</title>
 
-	<?php
-	require_once('include/area_restrita.php');
-	require_once('include/links.php');
-	require_once('include/area_restrita.php');
-	require_once('include/area_restrita.php');
-	require_once('include/links.php');
-	require_once('include/area_restrita.php');
-	?>
 
 	<?php
 	require_once('include/links.php')
