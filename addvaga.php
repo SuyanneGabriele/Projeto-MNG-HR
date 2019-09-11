@@ -17,16 +17,19 @@ if (isset($_POST['btnSalvar'])) {
 	$diferenciais = mysqli_real_escape_string($con, trim($_POST['diferenciais']));
 
 
+	if (empty($nomeVaga) || empty($cidadeVaga) || empty($infoEmpresa) || empty($habilidades) || empty($diferenciais)) {
+		$_SESSION['insira_infos'] = true;
+	} else {
 		$sql = "INSERT INTO `vagas` (`id`, `nome_vaga`, `cidade`, `infoEmpresa`, `habilidades`, `diferenciais`) VALUES (DEFAULT, '$nomeVaga', '$cidadeVaga','$infoEmpresa', '$habilidades', '$diferenciais');";
 		$result = mysqli_query($con, $sql);
 
 		$_SESSION['add_sucesso'] = true;
 		header('Location: vagas.php');
 		exit;
-
-	
-
+	}
 }
+
+
 
 
 ?>
@@ -68,6 +71,13 @@ if (isset($_POST['btnSalvar'])) {
 							<hr>
 
 							<form method="POST" action="">
+								<?php if ($_SESSION['insira_infos']) { ?>
+									<div class="col-12">
+										<div class="alert alert-warning" role="alert">
+											Insira os dados e tente novamente!
+										</div>
+									</div>
+								<?php }; UNSET($_SESSION['insira_infos']); ?>
 								<div class="form-group">
 									<label for="nomeVaga" style="color: black; font-weight: 900;"><h1>Nome da vaga</h1></label>
 									<input type="text" class="form-control" name="nomeVaga" id="nomeVaga" placeholder="Digite o nome da vaga.">

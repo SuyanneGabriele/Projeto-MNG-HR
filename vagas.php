@@ -50,6 +50,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 		display: none;
 	}
 
+
 </style>
 <body id="page-top">
 
@@ -162,51 +163,62 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 														</nav> 
 													</div>
 													<div class="col-12 col-md-6 p-0">
-														<a href="addvaga.php" class="btn btn-info float-right mt-2"><strong>+</strong> Adicionar vaga</a>
+														<a href="addvaga.php" class="btn btn-info float-right mt-2">+ Adicionar vaga</a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
-				<!-- Fim -->
 			</div>
-
-			<!-- Footer -->
-			<?php
-			require_once('include/footer.php')
-			?>
-			<!-- End of Footer -->
-
 		</div>
 
-		<!-- End of Content Wrapper -->
+
+		<!-- Fim -->
+	<!-- End of Footer -->
+	<!-- Footer -->
+	</div> 
+	</div> 
+	</div> 
+	</div> 
+	</div> 
+
+	<footer class="sticky-footer bg-light shadow">
+
+		<div class="copyright text-center my-auto">
+			<span><strong> &copy; Todos os direitos reservados</strong></span>
+		</div>
+
+	</footer>
 
 
-		<!-- End of Page Wrapper -->
 
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top">
-			<i class="fas fa-angle-up"></i>
-		</a>
-
-		<script type="text/javascript">
-
-			$("#barra_pesquisa").keydown(function(){
-				$("#oculta_div").addClass("d-none");
-			});
-
-		</script>
-		<!-- Bootstrap core JavaScript-->
-		<?php
-		require_once('include/links_footer.php');
-		?>
+	<!-- End of Content Wrapper -->
 
 
-	</body>
+	<!-- End of Page Wrapper -->
 
-	</html>
+	<!-- Scroll to Top Button-->
+
+	<script type="text/javascript">
+
+		$("#barra_pesquisa").keydown(function(){
+			$("#oculta_div").addClass("d-none");
+		});
+
+	</script>
+	<!-- Bootstrap core JavaScript-->
+	<?php
+	require_once('include/links_footer.php');
+	?>
+
+
+</body>
+
+</html>

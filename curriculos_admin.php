@@ -1,3 +1,12 @@
+<?php 
+
+	require_once('include/conexao.php');
+
+	$sql = "SELECT * FROM curriculos";
+	$result = mysqli_query($con, $sql) or die();
+	$curriculo = $result->fetch_assoc();
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,19 +64,19 @@
 												<table class="table table-striped table-hover">
 													<thead>
 														<tr>
-															<th>Cod. Curriculo</th>
-															<th>Vagas</th>
+															<th>ID</th>
+															<th>Nome</th>
+															<th>Sobrenome</th>
 															<th></th>
 														</tr>
 													</thead>
 													<tbody>
-														<?php while ($resultado = mysqli_fetch_array($queryJogos)) { ?>
+														<?php while ($resultado = mysqli_fetch_array($result)) { ?>
 															<tr>
 																<th><?=$resultado['id']?></th>
-																<td><?=$resultado['nome_jogo']?></td>
-																<td class="text-center">
-																	<a href="cadastro.php?id=<?=$resultado['id']?>" class="btn btn-primary btn-sm">Editar</a>
-																</td>
+																<td><?=$resultado['nome']?></td>
+																<td><?=$resultado['sobrenome']?></td>
+																<td><a type="button" name="infoVaga" href="cadastro.php?id=<?=$resultado['id']?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
 															</tr>
 														<?php } ?>
 													</tbody>
