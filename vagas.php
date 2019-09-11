@@ -3,7 +3,7 @@ require_once('include/conexao.php');
 error_reporting(0);
 
 //  Definir itens por página
-$itens_por_pagina = 5;
+$itens_por_pagina = 8;
 
 //  Pegar página atual
 $pagina = (isset($_GET["pagina"]))? (int)$_GET["pagina"] : 1;
@@ -82,8 +82,15 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 													<h1 class="h4 text-gray-900 mb-4"><strong>Oportunidades</strong></h1>
 												</div>
 												<hr>
-												<form class="form-inline md-form form-sm mb-3 w-100" method="POST">
-													<input class="form-control form-control-sm mr-3 w-75 col-11" type="text" id="barra_pesquisa" name="pesquisar" placeholder="Pesquisar" aria-label="Search">
+												<form class="form-inline md-form form-sm mb-3 mr-2 w-100 Row" method="POST">
+													<?php if ($_SESSION['add_sucesso']) { ?>
+														<div class="col-12">
+															<div class="alert alert-success" role="alert">
+																Vaga adicionada com sucesso!
+															</div>
+														</div>
+													<?php }; UNSET($_SESSION['add_sucesso']); ?>
+													<input class="form-control form-control-sm ml-3 mr-3 w-75 col-11" type="text" id="barra_pesquisa" name="pesquisar" placeholder="Pesquisar" aria-label="Search">
 													<i class="fas fa fa-search"></i>
 													<?php
 													if ($pesquisar = $_POST['pesquisar'])
@@ -108,15 +115,15 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 												<?php 
 												if ($num >0) { ?>
 													<div class="topnav w-100 mt-3 d" id="oculta_div">
-														
+
 														<?php do{ ?>
-															<div class="topnav">
-																<a href="informacoes_vaga.php" style="text-decoration: none;">	
+															<div class="topnav mr-0">
+																<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">	
 																	<table class="w-100">
 																		<tbody>
 																			<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
 																			<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vaga['cidade']); ?></td>
-																			<td><button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button></td>
+																			<td><a type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
 																			<tr><hr></tr>
 																		</tbody>
 																	</table>
@@ -129,21 +136,26 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 
 												<!-- Pagination -->
 												<div class="row w-100 mt-3">
-													<nav aria-label="Page navigation example">
-														<ul class="pagination">
-															<li class="page-item"><a class="page-link" href="vagas.php?pagina=0">Anterior</a></li>
+													<div class="col-12 col-md-6">
+														<nav>
+															<ul class="pagination">
+																<li class="page-item"><a class="page-link" href="vagas.php?pagina=0">Anterior</a></li>
 
-															<?php 
-															for ($i = 0; $i < $num_pagina; $i++) {
-																$estilo = "";
-																if ($pagina == $i)
-																	$estilo = "\"active\"";
-																?>
-																<li class="page-item <?php echo $estilo; ?>"><a class="page-link" href="vagas.php?pagina=<?php echo $i; ?>"><?php echo $i+1;?></a></li>
-															<?php } ?>
-															<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
-														</ul>
-													</nav> 
+																<?php 
+																for ($i = 0; $i < $num_pagina; $i++) {
+																	$estilo = "";
+																	if ($pagina == $i)
+																		$estilo = "\"active\"";
+																	?>
+																	<li class="page-item <?php echo $estilo; ?>"><a class="page-link" href="vagas.php?pagina=<?php echo $i; ?>"><?php echo $i+1;?></a></li>
+																<?php } ?>
+																<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
+															</ul>
+														</nav> 
+													</div>
+													<div class="col-12 col-md-6 p-0">
+														<a href="addvaga.php" class="btn btn-info float-right mt-2"><strong>+</strong> Adicionar vaga</a>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -173,7 +185,6 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 		<a class="scroll-to-top rounded" href="#page-top">
 			<i class="fas fa-angle-up"></i>
 		</a>
-
 
 		<script type="text/javascript">
 
