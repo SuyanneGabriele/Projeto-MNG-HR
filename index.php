@@ -56,7 +56,7 @@ require_once('include/indexb.php');
                         <p><?=$linha['nome_vaga']?></p>
                       </div>
                       <hr>
-                      <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
+                      <div style="font-size:16px;"><p><?=$linha5['infoEmpresa']?></p></div><br>
                     </div>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ require_once('include/indexb.php');
                         <p><?=$linha2['nome_vaga']?></p>
                       </div>
                       <hr>
-                      <div style="font-size:16px;">Irá atuar em implementação de módulos de sistema Senior, ex: Controladoria, Gestão de Estoque, etc... </div><br>
+                      <div style="font-size:16px;"><p><?=$linha6['infoEmpresa']?></p></div><br>
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ require_once('include/indexb.php');
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1"><?=$linha3['nome_vaga']?></div>
                       <hr>
-                      <div style="font-size:16px;">Vaga sem descrição</div><br>
+                      <div style="font-size:16px;"><p><?=$linha7['infoEmpresa']?></p></div><br>
                     </div>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ require_once('include/indexb.php');
                     <div class="col mr-2">
                       <div class="font-weight-bold text-primary mb-1"><?=$linha4['nome_vaga']?></div>
                       <hr>
-                      <div style="font-size:16px;">No mínimo 4 anos de exp. comprovada na função</div><br>
+                      <div style="font-size:16px;"><p><?=$linha8['infoEmpresa']?></p></div><br>
                     </div>
                   </div>
                 </div>
