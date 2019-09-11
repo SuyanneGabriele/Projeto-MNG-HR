@@ -1,3 +1,6 @@
+<?php
+require_once('include/indexb.php');
+?>
 <!DOCTYPE html>
 <html>
 
@@ -43,12 +46,21 @@
           <div style="font-size:30px;">Ultimas vagas cadastradas</div><br>
           <div class="row">
             <!-- Earnings (Monthly) Card Example -->
+
             <div class="col-xl-4 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">Programador JR - PHP</div>
+                      <div class="font-weight-bold text-primary mb-1"><?php
+                      if($total > 0) {
+                        do {
+                          ?>
+                          <p><?=$linha['nome_vaga']?></p>
+                          <?php
+                        }while($linha = mysqli_fetch_assoc($dados));
+                      }
+                      ?></div>
                       <hr>
                       <div style="font-size:16px;">Conhecimentos desejados: Laravel, Composer, Git, POO...</div><br>
                     </div>
@@ -114,7 +126,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="ml-3 mb-3 mr-3" style="color: white; ">veja todas as vagas cadastradas em nossa base de oportunidades</p>   
+                  <p class="ml-3 mb-3 mr-3" style="color: white; ">Veja todas as vagas cadastradas em nossa base de oportunidades</p>   
                 </div>
               </a>  
             </div>
@@ -150,10 +162,9 @@
 
 <!-- Bootstrap core JavaScript-->
 <?php
-    require_once('include/links_footer.php');
+require_once('include/links_footer.php');
 ?>
 
 
 </body>
-
 </html>
