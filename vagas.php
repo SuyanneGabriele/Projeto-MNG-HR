@@ -36,9 +36,15 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 </head>
 <style type="text/css">
 
+<<<<<<< HEAD
+.oculta_pesquisa{
+	display: none;
+}
+=======
 	.oculta_pesquisa{
 		display: none;
 	}
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
 
 </style>
 <body id="page-top">
@@ -94,9 +100,34 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 														$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%$pesquisar%'";
 													$result3 = mysqli_query($con, $sql3);
 													while ($rows_vagas = mysqli_fetch_array($result3)){ ?>
+<<<<<<< HEAD
+												</form>
+												<div class="topnav">
+													<a href="informacoes_vaga.php" style="text-decoration: none;">
+														<table class="w-100">
+															<tbody>
+																<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
+																<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($rows_vagas['cidade']); ?></td>
+																<td><button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button></td>
+																<tr><hr></tr>
+															</tbody>
+														</table>
+													</a>
+												</div>
+												<?php } ?>
+
+												<?php
+												if ($num >0) { ?>
+												<div class="topnav w-100 mt-3 d" id="oculta_div">
+
+													<?php do{ ?>
+													<div class="topnav mr-0">
+														<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
+=======
 													</form>
 													<div class="topnav">
 														<a href="informacoes_vaga.php" style="text-decoration: none;">	
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
 															<table class="w-100">
 																<tbody>
 																	<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
@@ -106,6 +137,14 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 																</tbody>
 															</table>
 														</a>
+<<<<<<< HEAD
+														<?php } while($vaga = $result->fetch_assoc()); ?>
+													</div>
+
+												</div>
+												<?php } ?>
+												<hr>
+=======
 													</div>
 												<?php } ?>
 
@@ -131,6 +170,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 													</div>
 												<?php } ?> 
 
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
 												<!-- Pagination -->
 												<div class="row w-100 mt-3">
 													<div class="col-12 col-md-6">
@@ -138,7 +178,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 															<ul class="pagination">
 																<li class="page-item"><a class="page-link" href="vagas.php?pagina=0">Anterior</a></li>
 
-																<?php 
+																<?php
 																for ($i = 0; $i < $num_pagina; $i++) {
 																	$estilo = "";
 																	if ($pagina == $i)
@@ -146,6 +186,16 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 																	?>
 																	<li class="page-item <?php echo $estilo; ?>"><a class="page-link" href="vagas.php?pagina=<?php echo $i; ?>"><?php echo $i+1;?></a></li>
 
+<<<<<<< HEAD
+																	<?php } ?>
+																	<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
+																</ul>
+															</nav>
+														</div>
+														<div class="col-12 col-md-6 p-0">
+															<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px;">+ Adicionar vaga</a>
+														</div>
+=======
 																<?php } ?>
 																<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
 															</ul>
@@ -153,6 +203,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 													</div>
 													<div class="col-12 col-md-6 p-0">
 														<a href="addvaga.php" class="btn btn-info float-right mt-2">+ Adicionar vaga</a>
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
 													</div>
 												</div>
 											</div>
@@ -164,6 +215,16 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+=======
 
 			</div>
 		</div>
@@ -174,6 +235,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 </div> 
 </div> 
 </div> 
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
 
 <script type="text/javascript">
 
@@ -190,4 +252,8 @@ require_once('include/footer.php')
 <!-- End of Footer -->
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 90dd5cfc0c4f0abcf5250e5fdd703a301a14227c
