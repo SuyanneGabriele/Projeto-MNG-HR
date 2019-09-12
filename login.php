@@ -46,13 +46,13 @@ if (!isset($_SESSION)){
                                 <div class="card-body p-0 text-center">
 
                                     <!-- Nested Row within Card Body -->
-                                    <div class="row" id="imgcadastro" style="background-repeat: no-repeat; background-image: url('media/images/curriculum2.jpg'); ">
+                                    <div class="row" id="imgcadastro" style="background-image: url('media/images/curriculum2.jpg'); ">
+
                                         <div class="col-lg-7 col" style="margin-left: auto; margin-right: auto;">
                                             <div class="p-5">
                                                 <div class="text-center">
                                                     <h1 class="h4 text-gray-900 mb-4"><strong>BEM VINDO!</strong></h1>
                                                 </div>
-
                                                 <form class="user" action="include/verifica.php" method="POST">
                                                     <?php
                                                     if ($_SESSION['nao_autenticado']) {
