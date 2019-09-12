@@ -4,7 +4,7 @@
 	
 
 	li:hover {
-		background-color: #8DD99D;
+		background-color: #32a897;
 		margin-left: 10px;
 		border-radius: 10px;
 		font-weight: 750;
@@ -113,6 +113,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("li a[href='"+location.href.substring(location.href.lastIndexOf("/")+1,255)+"']").css("color","#64b063");
+		$("li a[href='"+location.href.substring(location.href.lastIndexOf("/")+1,255)+"']").css("color","#42e3cc");
 	});
 </script>
