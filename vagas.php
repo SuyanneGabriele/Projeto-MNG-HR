@@ -23,13 +23,11 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 
 	<meta charset="utf-8">
 
 	<title>Vagas</title>
-
 
 	<?php
 	require_once('include/links.php')
@@ -41,7 +39,6 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 .oculta_pesquisa{
 	display: none;
 }
-
 
 </style>
 <body id="page-top">
@@ -60,12 +57,11 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 			<div id="content">
 
 				<!-- Topbar -->
-
 				<?php
 				require_once('include/topbar.php')
 				?>
-
 				<!-- End of Topbar -->
+
 				<!-- Inicio -->
 
 				<div class="container">
@@ -100,7 +96,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 													while ($rows_vagas = mysqli_fetch_array($result3)){ ?>
 												</form>
 												<div class="topnav">
-													<a href="informacoes_vaga.php" style="text-decoration: none;">	
+													<a href="informacoes_vaga.php" style="text-decoration: none;">
 														<table class="w-100">
 															<tbody>
 																<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
@@ -113,13 +109,13 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 												</div>
 												<?php } ?>
 
-												<?php 
+												<?php
 												if ($num >0) { ?>
 												<div class="topnav w-100 mt-3 d" id="oculta_div">
 
 													<?php do{ ?>
 													<div class="topnav mr-0">
-														<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">	
+														<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
 															<table class="w-100">
 																<tbody>
 																	<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
@@ -129,12 +125,12 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 																</tbody>
 															</table>
 														</a>
-														<?php } while($vaga = $result->fetch_assoc()); ?> 
-													</div>	
+														<?php } while($vaga = $result->fetch_assoc()); ?>
+													</div>
 
 												</div>
-												<?php } ?> 
-
+												<?php } ?>
+												<hr>
 												<!-- Pagination -->
 												<div class="row w-100 mt-3">
 													<div class="col-12 col-md-6">
@@ -142,31 +138,22 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 															<ul class="pagination">
 																<li class="page-item"><a class="page-link" href="vagas.php?pagina=0">Anterior</a></li>
 
-																<?php 
+																<?php
 																for ($i = 0; $i < $num_pagina; $i++) {
 																	$estilo = "";
 																	if ($pagina == $i)
 																		$estilo = "\"active\"";
 																	?>
 																	<li class="page-item <?php echo $estilo; ?>"><a class="page-link" href="vagas.php?pagina=<?php echo $i; ?>"><?php echo $i+1;?></a></li>
-<<<<<<< HEAD
-																<?php } ?>
-																<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
-															</ul>
-														</nav> 
-													</div>
-													<div class="col-12 col-md-6 p-0">
-														<a href="addvaga.php" class="btn btn-info float-right mt-2">+ Adicionar vaga</a>
-=======
+
 																	<?php } ?>
 																	<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
 																</ul>
-															</nav> 
+															</nav>
 														</div>
 														<div class="col-12 col-md-6 p-0">
-															<a href="addvaga.php" class="btn btn-info float-right mt-2"><strong>+</strong> Adicionar vaga</a>
+															<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px;">+ Adicionar vaga</a>
 														</div>
->>>>>>> 5ce55f9fa25f1a31a7f72241c148d305a9fd255e
 													</div>
 												</div>
 											</div>
@@ -181,67 +168,12 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
 
-
-		<!-- Fim -->
-	<!-- End of Footer -->
-	<!-- Footer -->
-	</div> 
-	</div> 
-	</div> 
-	</div> 
-	</div> 
-
-	<footer class="sticky-footer bg-light shadow">
-
-		<div class="copyright text-center my-auto">
-			<span><strong> &copy; Todos os direitos reservados</strong></span>
-		</div>
-
-	</footer>
-
-
-
-	<!-- End of Content Wrapper -->
-
-
-	<!-- End of Page Wrapper -->
-
-	<!-- Scroll to Top Button-->
-
-	<script type="text/javascript">
-
-		$("#barra_pesquisa").keydown(function(){
-			$("#oculta_div").addClass("d-none");
-		});
-
-	</script>
-	<!-- Bootstrap core JavaScript-->
-	<?php
-	require_once('include/links_footer.php');
-	?>
-=======
-		<!-- Fim -->
 	</div>
-
-	<!-- Footer -->
-	<?php
-	require_once('include/footer.php')
-	?>
-	<!-- End of Footer -->
-
 </div>
-
-<!-- End of Content Wrapper -->
-
-
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-	<i class="fas fa-angle-up"></i>
-</a>
+</div>
+</div>
+</div>
 
 <script type="text/javascript">
 
@@ -250,13 +182,12 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 	});
 
 </script>
-<!-- Bootstrap core JavaScript-->
-<?php
-require_once('include/links_footer.php');
-?>
->>>>>>> 5ce55f9fa25f1a31a7f72241c148d305a9fd255e
 
+<!-- Footer -->
+<?php
+require_once('include/footer.php')
+?>
+<!-- End of Footer -->
 
 </body>
-
 </html>

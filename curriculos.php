@@ -195,7 +195,7 @@
 			<div class="section" id="experience">
 				<div class="container cc-experience area_clones">
 					<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
-					<button id="adicionar_card" type="button" class="btn" style="background-color: black !important;">+</button>
+					<div class="h4 text-center mb-2 title"><button id="adicionar_card" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button></div>
 
 					<div class="card card_exp_profissional">
 						<div class="row">
@@ -220,7 +220,7 @@
 			<div class="section" id="scholarity">
 				<div class="container cc-education area_clones">
 					<div class="h4 text-center mb-4 title">Escolaridade</div>
-					<button id="adicionar_card1" type="button" class="btn" style="background-color: black !important;">+</button>
+					<div class="h4 text-center mb-2 title"><button id="adicionar_card1" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button></div>
 					<div class="card card_escolaridade">
 						<div class="row box_pergunta hide">
 							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
