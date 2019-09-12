@@ -60,7 +60,7 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 3 Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há <?=$linha9['data_vagas'] - $linha9['data_vagas']  ?> Horas</i>
               </div>
             </div>
 
