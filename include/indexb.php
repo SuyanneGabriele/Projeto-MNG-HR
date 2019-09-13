@@ -15,14 +15,10 @@ $query5 = ("SELECT id, infoEmpresa FROM vagas ORDER BY id DESC LIMIT 1");
 $query6 = ("SELECT id, infoEmpresa FROM vagas ORDER BY id DESC LIMIT 1,1");
 $query7 = ("SELECT id, infoEmpresa FROM vagas ORDER BY id DESC LIMIT 2,2");
 $query8 = ("SELECT id, infoEmpresa FROM vagas ORDER BY id DESC LIMIT 3,3");
-$query9 = ("SELECT id, data_vagas FROM vagas ORDER BY id DESC LIMIT 1");
-$query10 = ("SELECT id, data_vagas FROM vagas ORDER BY id DESC LIMIT 1,1");
-$query11 = ("SELECT id, data_vagas FROM vagas ORDER BY id DESC LIMIT 2,2");
-$query12 = ("SELECT id, data_vagas FROM vagas ORDER BY id DESC LIMIT 3,3");
-
-
-
-
+$query9 = ("SELECT id, TIMEDIFF(now(), data_vagas) FROM vagas ORDER BY id DESC LIMIT 1");
+$query10 = ("SELECT id, TIMEDIFF(now(), data_vagas) FROM vagas ORDER BY id DESC LIMIT 1,1");
+$query11 = ("SELECT id, TIMEDIFF(now(), data_vagas) FROM vagas ORDER BY id DESC LIMIT 2,2");
+$query12 = ("SELECT id, TIMEDIFF(now(), data_vagas) FROM vagas ORDER BY id DESC LIMIT 3,3");
 
 // executa a query
 $dados = mysqli_query($con, $query);
@@ -66,4 +62,4 @@ $total10 = mysqli_num_rows($dados10);
 $total11 = mysqli_num_rows($dados11);
 $total12 = mysqli_num_rows($dados12);
 ?>
- 
+
