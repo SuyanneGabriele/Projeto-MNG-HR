@@ -5,6 +5,14 @@ require_once('include/conexao.php');
 if (!isset($_SESSION)){
   session_start();
 }
+
+$email = $_SESSION['email'];
+
+
+$sql_perfil = "SELECT * FROM cadastro_perfil WHERE email = '$email";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+
 $sql = "SELECT * FROM usuario WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
 $infoUsuario = $result->fetch_assoc();
@@ -16,18 +24,14 @@ $infoUsuario2 = $result2->fetch_assoc();
 $slq_profissao = "SELECT * FROM exp_profissional WHERE id = '$id'";
 $result3 = mysqli_query($con, $slq_profissao);
 $infoUsuario3 = $result3->fetch_assoc();
-$num3 = $result3->$num_rows3;
+$num3 = $result3->$num_rows3;  
 
 $sql_escolaridade = "SELECT * FROM escolaridade WHERE id = '$id'";
 $result4 = mysqli_query($con, $sql_escolaridade);
 $infoUsuario4 = $result4->fetch_assoc();
 $num4 = $result4->$num_rows4;
 
-$email = $_SESSION['email'];
-$sql_verificar = "SELECT * FROM usuario WHERE email = '$email";
-$result_verificar = mysqli_query($con, $sql_verificar);
 
-$idUsuario = $info_verificar['id'];
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +80,7 @@ $idUsuario = $info_verificar['id'];
               <div class="container">
                 <div class="content-center">
                   <div class="  "><a href="#"><img src="images/anthony.jpg" alt="Image"/></a></div>
-                  <div class="h2 title"><?php $infoUsuario2['nome']; ?></div>
+                  <div class="h2 title"><?php echo $infoUsuario['nome']; ?></div>
                 </div>
               </div>
             </div>
@@ -89,7 +93,7 @@ $idUsuario = $info_verificar['id'];
                 <div class="col-lg-6 col-md-12">
                   <div class="card-body">
                     <div class="h4 mt-0 title">Sobre</div>
-                    <?php $infoUsuario2['sobre']; ?>
+                    <?php echo $infoUsuario['sobre']; ?>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -97,31 +101,31 @@ $idUsuario = $info_verificar['id'];
                     <div class="h4 mt-0 title">Informações Básicas</div>
                     <div class="row">
                       <div class="col-sm-4"><strong class="text-uppercase">Idade:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['Idade']; ?></div>
+                      <div class="col-sm-8"><?php echo  $infoUsuario['idade']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['email']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['email']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Telefone:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['telefone']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['telefone']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['endereco']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['endereco']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['cidade']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['cidade']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Estado:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['estado']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['estado']; ?></div>
                     </div>
                     <div class="row mt-3">
                       <div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
-                      <div class="col-sm-8"><?php $infoUsuario2['idiomas']; ?></div>
+                      <div class="col-sm-8"><?php echo $infoUsuario['idiomas']; ?></div>
                     </div>
                   </div>
                 </div>
@@ -135,20 +139,28 @@ $idUsuario = $info_verificar['id'];
             <div class="h4 text-center mb-4 title">Experiências Profissionais</div>
             <div class="card">
               <div class="row">
-                <?php if ($num3 > 0) { ?>
+                <?php if ($num > 0) { ?>
+
+
+
+
+                      <?php while($infoUsuario = $result_join->fetch_assoc()) { ?>
                   <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body cc-experience-header">
-                      <p><?php $infoUsuario3['data_profissao']; ?></p>
-                      <div class="h5"><?php $infoUsuario2['cargo']; ?></div>
+                      <p><?php echo $infoUsuario['data_profissao']; ?></p>
+                      <div class="h5"><?php echo $infoUsuario['cargo']; ?></div>
                     </div>
                   </div>
                   <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body">
-                      <div class="h5"><?php $infoUsuario3['profissao']; ?></div>
-                      <p><?php $infoUsuario3['sobre_profissao']; ?></p>
-                      <?php while($infoUsuario3 = $result3->fetch_assoc()); ?>
+                      <div class="h5"><?php echo $infoUsuario['profissao']; ?></div>
+                      <p><?php echo $infoUsuario['sobre_profissao']; ?></p>
                     </div>
                   </div>
+                <?php } ?>
+
+
+
                 <?php } else {  ?>
                 </div>
               </div>
@@ -166,19 +178,19 @@ $idUsuario = $info_verificar['id'];
             <div class="h4 text-center mb-4 title">Escolaridade</div>
             <div class="card">
               <div class="row">
-                <?php if ($num4 > 0) { ?>
+                <?php if ($num > 0) { ?>
                   <div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
                     <div class="card-body cc-education-header">
                       <?php do{ ?>
-                        <p><?php $infoUsuario4['data_escolaridade']; ?></p>
-                        <div class="h5"><?php $infoUsuario4['ensino_superior']; ?></div>
+                        <p><?php echo $infoUsuario['data_escolaridade']; ?></p>
+                        <div class="h5"><?php echo $infoUsuario['ensino_superior']; ?></div>
                       </div>
                     </div>
                     <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                       <div class="card-body">
-                        <div class="h5"><?php $infoUsuario4['nome_faculdade']; ?></div>
-                        <p><?php $infoUsuario4['curso']; ?></p>
-                      <?php }  while ($infoUsuario4 = $result4->fetch_assoc()); ?>
+                        <div class="h5"><?php echo $infoUsuario['nome_faculdade']; ?></div>
+                        <p><?php echo $infoUsuario['curso']; ?></p>
+                      <?php } while($infoUsuario = $result_join->fetch_assoc()); ?>
                     </div>
 
                   <?php } else { ?>
@@ -196,22 +208,32 @@ $idUsuario = $info_verificar['id'];
   <?php } else { ?>
 
    <div class="container" style="width: 80%; margin-left: auto; margin-right: auto;">
-      <div>
-        <h1>Faça o login para acessar essa página!</h1>
-     </div>
-   </div>
-   <?php } ?>
+    <div>
+      <h1>Faça o login para acessar essa página!</h1>
+    </div>
+  </div>
+<?php } ?>
+
+<!-- Footer -->
+    <footer class="sticky-footer bg-light mt-4">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span><strong> &copy; Todos os direitos reservados</strong></span>
+        </div>
+      </div>
+    </footer>
+<!-- End of Footer -->
 
 
 
-   <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
-   <script src="perfil/js/core/popper.min.js"></script>
-   <script src="perfil/js/core/bootstrap.min.js"></script>
-   <script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
-   <script src="perfil/js/aos.js"></script>
-   <script src="perfil/scripts/main.js"></script>
- </body>
- </html>
+<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+<script src="perfil/js/core/popper.min.js"></script>
+<script src="perfil/js/core/bootstrap.min.js"></script>
+<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+<script src="perfil/js/aos.js"></script>
+<script src="perfil/scripts/main.js"></script>
+</body>
+</html>
 
 
 </div>
