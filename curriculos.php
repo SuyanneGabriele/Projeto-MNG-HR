@@ -1,3 +1,6 @@
+<?php
+	require_once('include/cadastro_backend.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -32,7 +35,7 @@
 			</nav>
 		</div>
 	</header>
-	<form class="user" action="perfil.php" method="POST">
+	<form class="user" action="" method="post">
 		<div class="page-content">
 			<div>
 				<div class="profile-page">
@@ -145,7 +148,7 @@
 						<div class="row">
 							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body cc-experience-header">
-									<div id="tbg"><input type="text" name="cargo" id="cargo" class="col-sm-12" placeholder="Data ex: Jan 2010 - Abril 2016"></div>
+									<div id="tbg"><input type="text" name="data_profissao" id="data_profissao" class="col-sm-12" placeholder="Data ex: Jan 2010 - Abril 2016"></div>
 									<div class="h5 mt-3" id="tbg"><input type="text" name="cargo" id="cargo" class="col-sm-12" placeholder="Cargo" row="2"></div>
 								</div>
 							</div>
@@ -153,7 +156,7 @@
 							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body" id="tbg1">
 									<div class="h5" id="tbg1"><input type="text" name="profissao" id="profissao" class="col-sm-12" placeholder="Profissão" row="2"></div>
-									<textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="O que você fazia na sua antiga profissão"></textarea>
+									<textarea id="textArea2" class="md-textarea form-control" name="sobre_profissao" rows="4" placeholder="O que você fazia na sua antiga profissão"></textarea>
 								</div>
 							</div>
 						</div>
@@ -169,15 +172,15 @@
 						<div class="row box_pergunta hide">
 							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body cc-education-header">
-									<div id="tbg"><input type="text" name="superior" id="superior" class="col-sm-12" placeholder="Data ex: Jan 2014 - Dez 2017"></div>
-									<div class="h5 mt-3" id="tbg"><input type="text" name="superior" id="superior" class="col-sm-12" value="Ensino Superior" disabled="" row="2"></div>
+									<div id="tbg"><input type="text" name="data_escolaridade" id="data_escolaridade" class="col-sm-12" placeholder="Data ex: Jan 2014 - Dez 2017"></div>
+									<div class="h5 mt-3" id="tbg"><input type="text" name="ensino_superior" id="ensino_superior" class="col-sm-12" value="Ensino Superior" disabled="" row="2"></div>
 								</div>
 							</div>
 
 							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body" id="tbg1">
-									<div class="h5" id="tbg1"><input type="text" name="superior" id="superior" class="col-sm-12" placeholder="Nome da faculdade" row="2"></div>
-									<textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Engenheiro de Software "></textarea>
+									<div class="h5" id="tbg1"><input type="text" name="nome_faculdade" id="nome_faculdade" class="col-sm-12" placeholder="Nome da faculdade" row="2"></div>
+									<textarea id="textArea2" class="md-textarea form-control" name="curso" rows="4" placeholder="Ex: Engenheiro de Software "></textarea>
 								</div>
 							</div>
 						</div>
@@ -220,7 +223,7 @@
 							</div>
 						</div>
 					</div>
-
+					<input type="submit" class="btn btn-primary" name="btnSalvar" value="Salvar">	
 				</div>
 			</div>
 		</div>

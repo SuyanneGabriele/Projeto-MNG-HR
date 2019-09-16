@@ -60,58 +60,67 @@ require_once('include/indexb.php');
                   </div>
                 </div>
                 <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
-                  <?php
-                  if (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)<=1){
-                    echo "menos de 1 hora";
-                  } elseif (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
-                    echo substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
-                  } else {
-                    echo "mais de 24 horas";
-                  }
-                  ?> 
-                </i>
-              </div>
+                 <?php
+                 if (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                  echo "menos de 1 Hora";
+                } elseif (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)>=1 && substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                  echo substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                } else {
+                  echo "mais de 24 horas";
+                }
+                ?> 
+              </i>
             </div>
+          </div>
 
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">
-                        <p><?=$linha2['nome_vaga']?></p>
-                      </div>
-                      <hr>
-                      <div style="font-size:16px;"><p><?=$linha6['infoEmpresa']?></p></div><br>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1">
+                      <p><?=$linha2['nome_vaga']?></p>
                     </div>
+                    <hr>
+                    <div style="font-size:16px;"><p><?=$linha6['infoEmpresa']?></p></div><br>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
-                  <?php
-                  if (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)<=1){
-                    echo "1 Hora";
-                  } elseif (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
-                    echo substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
-                  } else {
-                    echo "mais de 24 horas";
-                  }
-                  ?> 
-                </i>
               </div>
+              <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
+                <?php
+                if (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                  echo "menos de 1 Hora";
+                } elseif (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)>=1 && substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                  echo substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                } else {
+                  echo "mais de 24 horas";
+                }
+                ?> 
+              </i>
             </div>
+          </div>
 
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1"><?=$linha3['nome_vaga']?></div>
-                      <hr>
-                      <div style="font-size:16px;"><p><?=$linha7['infoEmpresa']?></p></div><br>
-                    </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary mb-1"><?=$linha3['nome_vaga']?></div>
+                    <hr>
+                    <div style="font-size:16px;"><p><?=$linha7['infoEmpresa']?></p></div><br>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há <?=substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2)?> Horas</i>
+              </div>
+              <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há                 
+                <?php
+                if (substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                  echo "menos de 1 Hora";
+                } elseif (substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2)>=1 && substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                  echo substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                } else {
+                  echo "mais de 24 horas";
+                }
+                ?> </i>
               </div>
             </div>
 
@@ -126,59 +135,68 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há <?=substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2)?> Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
+                  <?php
+                  if (substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                    echo "menos de 1 Hora";
+                  } elseif (substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2)>=1 && substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                    echo substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                  } else {
+                    echo "mais de 24 horas";
+                  }
+                  ?> </i>
+                </div>
               </div>
-            </div>
 
-            <div class="col-xl-4 col-md-6 mb-4">
-              <a href="vagas.php" style="text-decoration: none;"> 
-                <div class="card border-left-primary shadow h-100 py-2 bg-primary">
-                  <div class="card-body">
-                    <i class="fas fa fa-paste fa-4x" aria-hidden="true" style="color: white !important; margin-bottom: 20px;"></i>
-                    <div class="row no-gutters align-items-center">
-                      <span style="color: white; font-size:20px;">Ver mais</span><i class="ml-2 fas fa fa-long-arrow-right" aria-hidden="true" style="color: white !important; font-size: 30px;"></i><br>
-                      <div class="col mr-2">
+              <div class="col-xl-4 col-md-6 mb-4">
+                <a href="vagas.php" style="text-decoration: none;"> 
+                  <div class="card border-left-primary shadow h-100 py-2 bg-primary">
+                    <div class="card-body">
+                      <i class="fas fa fa-paste fa-4x" aria-hidden="true" style="color: white !important; margin-bottom: 20px;"></i>
+                      <div class="row no-gutters align-items-center">
+                        <span style="color: white; font-size:20px;">Ver mais</span><i class="ml-2 fas fa fa-long-arrow-right" aria-hidden="true" style="color: white !important; font-size: 30px;"></i><br>
+                        <div class="col mr-2">
+                        </div>
                       </div>
                     </div>
+                    <p class="ml-3 mb-3 mr-3" style="color: white; ">Veja todas as vagas cadastradas em nossa base de oportunidades</p>   
                   </div>
-                  <p class="ml-3 mb-3 mr-3" style="color: white; ">Veja todas as vagas cadastradas em nossa base de oportunidades</p>   
-                </div>
-              </a>  
+                </a>  
+              </div>
+
             </div>
 
-          </div>
+            <!-- Content Row -->
 
-          <!-- Content Row -->
+          </div>
+          <!-- /.container-fluid -->
 
         </div>
-        <!-- /.container-fluid -->
-
+        <!-- Fim -->
       </div>
-      <!-- Fim -->
-    </div>
 
-    <!-- Footer -->
-    <?php
-    require_once('include/footer.php')
-    ?>
-    <!-- End of Footer -->
+      <!-- Footer -->
+      <?php
+      require_once('include/footer.php')
+      ?>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Content Wrapper -->
+  <!-- End of Page Wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
 
-<!-- Bootstrap core JavaScript-->
-<?php
-require_once('include/links_footer.php');
-?>
+  <!-- Bootstrap core JavaScript-->
+  <?php
+  require_once('include/links_footer.php');
+  ?>
 
 
 </body>

@@ -36,9 +36,21 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 </head>
 <style type="text/css">
 
+<<<<<<< HEAD
 	.oculta_pesquisa{
 		display: none;
 	}
+=======
+<<<<<<< HEAD
+	.oculta_pesquisa{
+		display: none;
+	}
+=======
+.oculta_pesquisa{
+	display: none;
+}
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
+>>>>>>> e1a3863b840c27f282bccf17e855f0b1361563c9
 
 </style>
 <body id="page-top">
@@ -93,8 +105,22 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 													<!-- ---------	BARRA PESQUISAR ---------- -->
 													<input class="form-control form-control-sm ml-3 mr-3 w-75 col-11" type="search" id="barra_pesquisa" name="pesquisar" placeholder="Pesquisar" aria-label="Search">
 													<i class="fas fa fa-search"></i>
+<<<<<<< HEAD
+=======
+													<?php
+													if ($pesquisar = $_POST['pesquisar'])
+														$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%$pesquisar%'";
+													$result3 = mysqli_query($con, $sql3);
+													while ($rows_vagas = mysqli_fetch_array($result3)){ ?>
+<<<<<<< HEAD
+													</form>
+													<div class="topnav">
+														<a href="informacoes_vaga.php" style="text-decoration: none;">
+=======
+>>>>>>> e1a3863b840c27f282bccf17e855f0b1361563c9
 												</form>
 												<?php
+<<<<<<< HEAD
 												if ($pesquisar = $_POST['pesquisar'])
 													$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%$pesquisar%'";
 												$result3 = mysqli_query($con, $sql3);
@@ -102,6 +128,15 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 												while ($rows_vagas = mysqli_fetch_array($result3)){ ?>
 													<div class="topnav">
 														<a href="informacoes_vaga.php" style="text-decoration: none;">
+=======
+												if ($num >0) { ?>
+												<div class="topnav w-100 mt-3 d" id="oculta_div">
+
+													<?php do{ ?>
+													<div class="topnav mr-0">
+														<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
+>>>>>>> e1a3863b840c27f282bccf17e855f0b1361563c9
 															<table class="w-100">
 																<tbody>
 																	<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
@@ -111,6 +146,34 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 																</tbody>
 															</table>
 														</a>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+													</div>
+												<?php } ?>
+
+												<?php
+												if ($num >0) { ?>
+													<div class="topnav w-100 mt-3 d" id="oculta_div">
+
+														<?php do{ ?>
+															<div class="topnav mr-0">
+																<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
+																	<table class="w-100">
+																		<tbody>
+																			<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
+																			<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vaga['cidade']); ?></td>
+																			<td><a type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
+																			<tr><hr></tr>
+																		</tbody>
+																	</table>
+																</a>
+															<?php } while($vaga = $result->fetch_assoc()); ?>
+														</div>
+
+													</div>
+														<?php } while($vaga = $result->fetch_assoc()); ?>
+>>>>>>> e1a3863b840c27f282bccf17e855f0b1361563c9
 													</div>
 												<?php } ?>
 
@@ -151,6 +214,15 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 																		?>
 																		<li class="page-item <?php echo $estilo; ?>"><a class="page-link" href="vagas.php?pagina=<?php echo $i; ?>"><?php echo $i+1;?></a></li>
 
+<<<<<<< HEAD
+																<?php } ?>
+																<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
+															</ul>
+														</nav>
+													</div>
+													<div class="col-12 col-md-6 p-0">
+														<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
+=======
 																	<?php } ?>
 																	<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?php echo $num_pagina-1; ?>">Próximo</a></li>
 																</ul>
@@ -159,6 +231,7 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 														<div class="col-12 col-md-6 p-0">
 															<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
 														</div>
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
 													</div>
 												</div>
 											</div>
@@ -171,14 +244,22 @@ $num_pagina = ceil($num_total/$itens_por_pagina);
 					</div>
 
 				</div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
 			</div>
 		</div>
-
 	</div>
+
 </div>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
+</div>
+=======
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
 
 <script type="text/javascript">
 
@@ -202,4 +283,8 @@ require_once('include/footer.php')
 <!-- End of Footer -->
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 7cf0257bfba859cebdcda1b6f3f060684d35f80d
