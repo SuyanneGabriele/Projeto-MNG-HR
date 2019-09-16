@@ -20,15 +20,23 @@ if (isset($id_perfil)) {
 	$queryPerfil = mysqli_query($con, $sql);
 	$resultadoPerfil = mysqli_fetch_array($queryPerfil);
 
-		// Verificar se o perfil existe
+	// Verificar se o perfil existe
 	if (is_null($resultadoPerfil)) {
 		die("Perfil não encontrado.");
 	}
 }
 
+$email = $_SESSION['email'];
+
+
+$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+$idU = $info_perfil['id'];
+
 	// Verificando ação de SALVAR
 if (isset($_POST['btnSalvar'])) {
-		// Recebimento dos campos
+	// Recebimento dos campos
 	$nome = $_POST['nome'];
 	$sobre = $_POST['sobre'];
 	$idade = $_POST['idade'];
@@ -38,7 +46,6 @@ if (isset($_POST['btnSalvar'])) {
 	$cidade = $_POST['cidade'];
 	$estado = $_POST['estado'];
 	$idiomas = $_POST['idiomas'];
-	$fk_usuario = $_POST['fk_usuario'];
 	$profissao = $_POST['profissao'];
 	$sobre_profissao = $_POST['sobre_profissao'];
 	$data_profissao = $_POST['data_profissao'];
@@ -48,12 +55,15 @@ if (isset($_POST['btnSalvar'])) {
 	$data_escolaridade = $_POST['data_escolaridade'];
 	$ensino_superior = $_POST['ensino_superior'];
 
-		// INSERT
+	
+
+	// INSERT
 	if(!isset($id_perfil)){
 
 		$sql = "INSERT INTO cadastro_perfil 
 		VALUES (
-		DEFAULT, 
+		DEFAULT,
+		'$idU', 
 		'$nome',
 		'$sobre',
 		'$idade',
@@ -64,33 +74,32 @@ if (isset($_POST['btnSalvar'])) {
 		'$estado',
 		'$idiomas'
 	)";
-}
 
 
-
-	$sql2 = "INSERT INTO exp_profissional WHERE fk_usuario = $id_perfil
+	$sql2 = "INSERT INTO escolaridade
 	VALUES (
 	DEFAULT, 
-	'$fk_usuario',
-	'$profissao',
-	'$sobre_profissao',
-	'$data_profissao',
-	'$cargo'
-)";
-
-
-	$sql3 = "INSERT INTO escolaridade WHERE fk_usuario = $id_perfil
-	VALUES (
-	DEFAULT, 
-	'$fk_usuario',
+	'$idU',
 	'$nome_faculdade',
 	'$curso',
 	'$data_escolaridade',
 	'$ensino_superior'
+)"; 
+
+$sql3 = "INSERT INTO exp_profissional
+VALUES (
+DEFAULT, 
+'$idU',
+'$profissao',
+'$sobre_profissao',
+'$data_profissao',
+'$cargo'
 )";
+
+}
 }
 
-		// Executando o SQL
+// Executando o SQL
 mysqli_query($con, $sql);
 mysqli_query($con, $sql2);
 mysqli_query($con, $sql3);

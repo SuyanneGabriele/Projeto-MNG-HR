@@ -283,20 +283,21 @@
 				</div>
 			</div>
 		</div>
+	</form>
 
-		<!-- Footer -->
-		<?php
-		require_once('include/footer.php')
-		?>
-		<!-- End of Footer -->
+	<!-- Footer -->
+	<?php
+	require_once('include/footer.php')
+	?>
+	<!-- End of Footer -->
 
-		<!-- End of Topbar -->
-	</div>
-	<!-- Inicio -->
+	<!-- End of Topbar -->
+</div>
+<!-- Inicio -->
 
 
 
-	<!-- Fim -->
+<!-- Fim -->
 </div>
 <!-- End of Content Wrapper -->
 
@@ -314,7 +315,6 @@ require_once('include/links_footer.php');
 
 </div>
 </div>
-</form>
 <script src="perfil/js/core/jquery.3.2.1.min.js"></script>
 <script src="perfil/js/core/popper.min.js"></script>
 <script src="perfil/js/core/bootstrap.min.js"></script>

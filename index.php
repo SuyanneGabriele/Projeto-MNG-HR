@@ -42,10 +42,9 @@ require_once('include/indexb.php');
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Content Row -->
-          <div style="font-size:30px;">Ultimas vagas cadastradas</div><br>
-          <div class="row">
-            <!-- Earnings (Monthly) Card Example -->
+          <!-- Content Row --> <div style="font-size:30px;">Ultimas vagas
+          cadastradas</div><br> <div class="row">   <!-- Earnings (Monthly)
+            Card Example -->
 
             <div class="col-xl-4 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -60,7 +59,17 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 3 Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
+                  <?php
+                  if (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)<=1){
+                    echo "menos de 1 hora";
+                  } elseif (substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                    echo substr($linha9['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                  } else {
+                    echo "mais de 24 horas";
+                  }
+                  ?> 
+                </i>
               </div>
             </div>
 
@@ -77,7 +86,17 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 12 Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
+                  <?php
+                  if (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)<=1){
+                    echo "1 Hora";
+                  } elseif (substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                    echo substr($linha10['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                  } else {
+                    echo "mais de 24 horas";
+                  }
+                  ?> 
+                </i>
               </div>
             </div>
 
@@ -92,7 +111,7 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 3 Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há <?=substr($linha11['TIMEDIFF(now(), data_vagas)'], 0, 2)?> Horas</i>
               </div>
             </div>
 
@@ -107,7 +126,7 @@ require_once('include/indexb.php');
                     </div>
                   </div>
                 </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há mais de 24 Horas</i>
+                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há <?=substr($linha12['TIMEDIFF(now(), data_vagas)'], 0, 2)?> Horas</i>
               </div>
             </div>
 
