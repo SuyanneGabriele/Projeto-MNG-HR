@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 require_once('include/conexao.php');
 require_once('include/links.php');
 
