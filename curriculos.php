@@ -136,6 +136,11 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
+=======
+			
+
+>>>>>>> 70d47f1e2ea55e2fe5196cc1a676fb6f685368b7
 			<div class="section" id="experience">
 				<div class="container cc-experience area_clones">
 					<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
