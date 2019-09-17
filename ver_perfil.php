@@ -6,13 +6,12 @@ if (!isset($_SESSION)){
 	session_start();
 };
 
-$email = $_SESSION['email'];
+$id = $_GET['id'];
 
-$sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'"; 
+$sql_perfil = "SELECT * FROM `cadastro_perfil` where fk_perfil = '$id'"; 
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 
-$id = $info_perfil['fk_perfil'];
 
 $sql_profissao = "SELECT * FROM exp_profissional WHERE fk_usuario = '$id'";
 $result_profissao = mysqli_query($con, $sql_profissao);
@@ -60,7 +59,6 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 		</div>
 	</header>
 
-	<?php if (isset($email)) { ?>
 		<div class="page-content">
 			<div>
 				<div class="profile-page">
@@ -190,14 +188,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 					</div>
 				</div>
 			</div>
-		</div>
-	<?php } else { ?>
-		<div class="container" style="width: 80%; margin-left: auto; margin-right: auto;">
-			<div>
-				<h1>Faça o login para acessar essa página!</h1>	
-			</div>
-		</div>
-	<?php } ?>  
+		</div> 
 
 
 	<!-- Footer -->

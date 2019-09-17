@@ -2,9 +2,10 @@
 
 	require_once('include/conexao.php');
 
-	$sql = "SELECT * FROM curriculos";
+	$sql = "SELECT * FROM usuario";
 	$result = mysqli_query($con, $sql) or die();
-	$curriculo = $result->fetch_assoc();
+	$num = $result->num_rows;
+
 
  ?>
 <!DOCTYPE html>
@@ -17,7 +18,6 @@
 		/*require_once('include/area_restrita.php');*/
 	?>
 	<?php
-	error_reporting(0);
 	require_once('include/links.php');
 	?>
 </head>
@@ -66,7 +66,6 @@
 														<tr>
 															<th>ID</th>
 															<th>Nome</th>
-															<th>Sobrenome</th>
 															<th></th>
 														</tr>
 													</thead>
@@ -75,10 +74,11 @@
 															<tr>
 																<th><?=$resultado['id']?></th>
 																<td><?=$resultado['nome']?></td>
-																<td><?=$resultado['sobrenome']?></td>
-																<td><a type="button" name="infoVaga" href="cadastro.php?id=<?=$resultado['id']?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
+																<td><a type="button" name="infoVaga" href="ver_perfil.php?id=<?php echo utf8_encode($resultado['id']); ?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
 															</tr>
 														<?php } ?>
+
+
 													</tbody>
 												</table>
 											</div>
