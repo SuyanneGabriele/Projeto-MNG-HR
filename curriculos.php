@@ -26,7 +26,6 @@
 					<div class="collapse navbar-collapse justify-content-end" id="navigation">
 						<ul class="navbar-nav">
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Habilidades</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#scholarity">Escolaridade</a></li>
 						</ul>
@@ -137,8 +136,11 @@
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
+=======
 			
 
+>>>>>>> 70d47f1e2ea55e2fe5196cc1a676fb6f685368b7
 			<div class="section" id="experience">
 				<div class="container cc-experience area_clones">
 					<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
@@ -191,15 +193,15 @@
 							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 
 								<div class="card-body cc-education-header">
-									<div id="tbg"><input type="text" name="medio" id="medio" class="col-sm-12" placeholder="Data ex: Jan 2010 - Dez 2013"></div>
-									<div class="h5 mt-3" id="tbg"><input type="text" name="medio" id="medio" class="col-sm-12" value="Ensino Médio" row="2" disabled=""></div>
+									<div id="tbg"><input type="text" name="data_escolaridade_medio" id="data_escolaridade_medio" class="col-sm-12" placeholder="Data ex: Jan 2010 - Dez 2013"></div>
+									<div class="h5 mt-3" id="tbg"><input type="text" id="medio" class="col-sm-12" value="Ensino Médio" row="2" disabled=""></div>
 								</div>
 							</div>
 
 							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body" id="tbg1">
-									<div class="h5" id="tbg1"><input type="text" name="medio" id="medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
-									<textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"></textarea>
+									<div class="h5" id="tbg1"><input type="text" name="nome_medio" id="nome_medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
+									<textarea name="ensino_medio" id="ensino_medio" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"></textarea>
 								</div>
 							</div>
 						</div>
@@ -210,15 +212,15 @@
 							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 
 								<div class="card-body cc-education-header">
-									<div id="tbg"><input type="text" name="fundamental" id="fundamental" class="col-sm-12" placeholder="Data ex: Jan 2002 - Dez 2010"></div>
+									<div id="tbg"><input type="text" name="data_escolaridade_fundamental" id="fundamental" class="col-sm-12" placeholder="Data ex: Jan 2002 - Dez 2010"></div>
 									<div class="mt-3" id="tbg" style="font-size:21px;"><input type="text" name="fundamental" id="fundamental" class="col-sm-12" value="Ensino Fundamental" row="2" disabled=""></div>
 								</div>
 							</div>
 
 							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
 								<div class="card-body" id="tbg1">
-									<div class="mt-3" id="tbg1"  style="font-size:21px;"> <input type="text" name="fundamental" id="fundamental" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
-									<textarea id="textArea2" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino fundamental completo"></textarea>
+									<div class="mt-3" id="tbg1"  style="font-size:21px;"> <input type="text" name="nome_fundamental" id="nome_fundamental" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
+									<textarea name="ensino_fundamental" id="ensino_fundamental" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino fundamental completo"></textarea>
 								</div>
 							</div>
 						</div>

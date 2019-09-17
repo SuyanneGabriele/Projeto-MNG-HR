@@ -54,7 +54,10 @@ if (isset($_POST['btnSalvar'])) {
 	$curso = $_POST['curso'];
 	$data_escolaridade = $_POST['data_escolaridade'];
 	$ensino_superior = $_POST['ensino_superior'];
-
+	$nome_medio = $_POST['nome_medio'];
+	$data_escolaridade_medio = $_POST['data_escolaridade_medio'];
+	$nome_fundamental = $_POST['nome_fundamental'];
+	$data_escolaridade_fundamental = $_POST['data_escolaridade_fundamental'];
 	
 
 	// INSERT
@@ -83,7 +86,13 @@ if (isset($_POST['btnSalvar'])) {
 	'$nome_faculdade',
 	'$curso',
 	'$data_escolaridade',
-	'$ensino_superior'
+	'Ensino Superior',
+	'$nome_medio',
+	'$data_escolaridade_medio',
+	'Ensino Médio',
+	'$nome_fundamental',
+	'$data_escolaridade_fundamental',
+	'Ensino Fundamental'
 )"; 
 
 $sql3 = "INSERT INTO exp_profissional
