@@ -22,7 +22,7 @@ $num_profissao = mysqli_num_rows($result_profissao);
 $sql_escolaridade = "SELECT * FROM escolaridade WHERE fk_usuario = '$id'";
 $result_escolaridade = mysqli_query($con, $sql_escolaridade);
 $num_escolaridade = mysqli_num_rows($result_escolaridade);   
-	
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -129,11 +129,10 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 				<div class="section" id="experience">
 					<div class="container cc-experience">
 						<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
-						<div class="card">
-							<div class="row">
-								<?php if ($num_profissao > 0) { ?>
-
-									<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
+						<?php if ($num_profissao > 0) { ?>
+							<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
+								<div class="card">
+									<div class="row">
 										<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 											<div class="card-body cc-experience-header">
 												<p><?php echo utf8_encode($info_profissao['data_profissao']); ?></p>
@@ -146,11 +145,11 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 												<p><?php echo utf8_encode($info_profissao['sobre_profissao']); ?></p>
 											</div>
 										</div>
-									<?php } ?>
 
-								<?php } else {  ?>
+									</div>
 								</div>
-							</div>
+							<?php } ?>
+						<?php } else {  ?>
 							<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 								Não foi encontrado nenhum registro de profissão!
 							</div>
@@ -179,9 +178,9 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 												<p><?php echo utf8_encode($info_escolaridade['curso']); ?></p>
 											<?php }  ?>
 										</div>
-
-									<?php } else { ?>
 									</div>
+
+								<?php } else { ?>
 								</div>
 								<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 									Não foi encontrado nenhum registro de escolaridade!
@@ -195,7 +194,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 	<?php } else { ?>
 		<div class="container" style="width: 80%; margin-left: auto; margin-right: auto;">
 			<div>
-				<h1>Faça o login para acessar essa página!</h1>
+				<h1>Faça o login para acessar essa página!</h1>	
 			</div>
 		</div>
 	<?php } ?>  
@@ -213,11 +212,11 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 
 
 
-<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
-<script src="perfil/js/core/popper.min.js"></script>
-<script src="perfil/js/core/bootstrap.min.js"></script>
-<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
-<script src="perfil/js/aos.js"></script>
-<script src="perfil/scripts/main.js"></script>
+	<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+	<script src="perfil/js/core/popper.min.js"></script>
+	<script src="perfil/js/core/bootstrap.min.js"></script>
+	<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+	<script src="perfil/js/aos.js"></script>
+	<script src="perfil/scripts/main.js"></script>
 </body>
 </html>
