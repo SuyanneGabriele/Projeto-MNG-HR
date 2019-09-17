@@ -19,11 +19,11 @@ $infoUsuario = $result->fetch_assoc();
 
 $sql_infousuario = "SELECT * FROM cadastro_perfil WHERE id = '$id'";
 $result2 = mysqli_query($con, $sql_infousuario);
-$infoUsuario2 = $result2->fetch_assoc();
+$infresult3 = mysqli_query($con, $slq_profissao);
+$infoUsuario3oUsuario2 = $result2->fetch_assoc();
 
 $slq_profissao = "SELECT * FROM exp_profissional WHERE id = '$id'";
-$result3 = mysqli_query($con, $slq_profissao);
-$infoUsuario3 = $result3->fetch_assoc();
+$ = $result3->fetch_assoc();
 $num3 = $result3->$num_rows3;  
 
 $sql_escolaridade = "SELECT * FROM escolaridade WHERE id = '$id'";
