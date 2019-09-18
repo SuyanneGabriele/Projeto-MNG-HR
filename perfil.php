@@ -12,7 +12,7 @@ $sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 
-<<<<<<< HEAD
+
 $sql = "SELECT * FROM usuario WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
 $infoUsuario = $result->fetch_assoc();
@@ -25,13 +25,12 @@ $infoUsuario3oUsuario2 = $result2->fetch_assoc();
 $slq_profissao = "SELECT * FROM exp_profissional WHERE id = '$id'";
 $ = $result3->fetch_assoc();
 $num3 = $result3->$num_rows3;  
-=======
 $id = $info_perfil['fk_perfil'];
 
 $sql_profissao = "SELECT * FROM exp_profissional WHERE fk_usuario = '$id'";
 $result_profissao = mysqli_query($con, $sql_profissao);
 $num_profissao = mysqli_num_rows($result_profissao);    
->>>>>>> 70d47f1e2ea55e2fe5196cc1a676fb6f685368b7
+
 
 
 $sql_escolaridade = "SELECT * FROM escolaridade WHERE fk_usuario = '$id'";
@@ -55,7 +54,6 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body id="top">
-<<<<<<< HEAD
 	<header>
 		<div class="profile-page sidebar-collapse">
 			<nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-dark" color-on-scroll="400">
@@ -413,6 +411,5 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
   <script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
   <script src="perfil/js/aos.js"></script>
   <script src="perfil/scripts/main.js"></script>
->>>>>>> 455cb8e9e51406cb93260f5d9ce40ce74ddf9e43
 </body>
 </html>
