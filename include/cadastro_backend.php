@@ -62,7 +62,7 @@ if (isset($_POST['btnSalvar'])) {
 	$curso = $_POST['curso'];
 	$data_escolaridade = $_POST['data_escolaridade'];
 	$nome_medio = $_POST['nome_medio'];
-	$data_escolaridade_medio = ['data_escolaridade_medio'];	
+	$data_escolaridade_medio = $_POST['data_escolaridade_medio'];	
 	$nome_fundamental =  $_POST['nome_fundamental'];
 	$data_escolaridade_fundamental = $_POST['data_escolaridade_fundamental'];
 	
@@ -147,8 +147,6 @@ if (isset($_POST['btnSalvar'])) {
 }
 
 foreach ($nome_faculdade as $k => $v) {
-
-
 	$sql2 = "INSERT INTO escolaridade
 	VALUES (
 	DEFAULT, 
@@ -156,14 +154,10 @@ foreach ($nome_faculdade as $k => $v) {
 	'$nome_faculdade[$k]',
 	'$curso[$k]',
 	'$data_escolaridade[$k]',
-	'Ensino Superior',
-	'$nome_medio',
-	'$data_escolaridade_medio',
-	'Ensino Médio',
-	'$nome_fundamental',
-	'$data_escolaridade_fundamental',
-	'Ensino Fundamental'
-)";
+	'Ensino Superior'
+	)";
+
+mysqli_query($con, $sql2);
 
 }
 
@@ -179,8 +173,23 @@ foreach ($profissao as $k => $v) {
 	'$data_profissao[$k]',
 	'$cargo[$k]'
 )";
+
+mysqli_query($con, $sql3);
+
 }
 
+	$sql4 = "INSERT INTO escolaridade2
+	VALUES (
+	DEFAULT,
+	'$nome_medio',
+	'$data_escolaridade_medio',
+	'Ensino Médio',
+	'$nome_fundamental',
+	'$data_escolaridade_fundamental',
+	'Ensino Fundamental'
+)";
+	
+mysqli_query($con, $sql4);
 
 if($sql == TRUE){
 	echo "Usuário OK";      
@@ -191,7 +200,5 @@ if($sql == TRUE){
 }
 
 mysqli_query($con, $sql);
-mysqli_query($con, $sql2);
-mysqli_query($con, $sql3);
 
 // Executando o SQL
