@@ -2,10 +2,10 @@
 
 require_once('include/conexao.php');
 
-	//verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
+//	Verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
 $pagina = (!isset($_GET['pagina'])) ? 1 :  $_GET['pagina']; 
 
-    //seta a quantidade de itens por página, neste caso, 5 itens 
+//	Seta a quantidade de itens por página, neste caso, 5 itens 
 $exibir = 10; 
 
 $inicio_exibir = ($exibir * $pagina) - $exibir;
@@ -14,7 +14,7 @@ $sql = "SELECT * FROM usuario LIMIT $inicio_exibir, $exibir";
 $result = mysqli_query($con, $sql) or die();
 $num = $result->num_rows;
 
-//    seleciona todos os itens da tabela 
+//	Seleciona todos os itens da tabela 
 $sql2 = "SELECT * FROM vagas";
 $result2 = mysqli_query($con, $sql2) or die();
 $num2 = $result2->num_rows;
