@@ -1,18 +1,18 @@
 	
 <link rel="stylesheet" type="text/css" href="../media/css/estilos.css">
 <style type="text/css">
-	
 
-	li:hover {
-		background-color: #32a897;
-		margin-left: 10px;
-		border-radius: 10px;
-		font-weight: 750;
-	}
 
-	ul {
-		padding: 10px;
-	} 
+li:hover {
+	background-color: #32a897;
+	margin-left: 10px;
+	border-radius: 10px;
+	font-weight: 750;
+}
+
+ul {
+	padding: 10px;
+} 
 
 </style>
 
@@ -51,7 +51,7 @@
 	</li>
 
 
-	<!-- Nav Item - registrar -->
+	<!-- Nav Item - Registrar -->
 	<li class="nav-item">
 		<a class="nav-link" href="registro.php">
 			<i class="fas fa fa-lock fa-2x text-white"></i>
@@ -77,8 +77,15 @@
 		</a>
 	</li>
 
+	<!-- Nav Item -  Minhas Vagas -->
+	<li class="nav-item">
+		<a class="nav-link" href="vagas.php">
+			<i class="fas fa fa-suitcase fa-2x text-white"></i>
+			<span>Minhas vagas</span>
+		</a>
+	</li>
 
-	<!-- Nav Item -  Vagas -->
+	<!-- Nav Item -  Currículos Admin -->
 	<li class="nav-item">
 		<a class="nav-link" href="curriculos_admin.php">
 			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
@@ -86,6 +93,7 @@
 		</a>
 	</li>
 
+	<!-- Nav Item -  Currículos -->
 
 	<li class="nav-item">
 		<a class="nav-link" href="curriculos.php">
@@ -94,6 +102,7 @@
 		</a>
 	</li>
 
+<!-- Nav Item -  Perfil -->
 
 	<li class="nav-item">
 		<a class="nav-link" href="perfil.php">
