@@ -42,4 +42,4 @@ $('a.smooth-scroll')
   }
 });
 
-
+// Curriculo
