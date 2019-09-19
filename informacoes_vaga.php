@@ -21,7 +21,6 @@ $result = mysqli_query($con, $sql);
 $vagas = mysqli_fetch_assoc($result);
 
 $id_vaga = $vagas['id'];
-var_dump($id_vaga); 
 
 if (isset($_POST['candidatar'])) {
 

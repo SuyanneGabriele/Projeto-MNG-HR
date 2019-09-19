@@ -2,10 +2,6 @@
 
 require_once('include/conexao.php');
 
-$sql = "SELECT * FROM usuario";
-$result = mysqli_query($con, $sql) or die();
-$num = $result->num_rows;
-
 	//verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
 $pagina = (!isset($_GET['pagina'])) ? 1 :  $_GET['pagina']; 
 
@@ -14,16 +10,19 @@ $exibir = 10;
 
 $inicio_exibir = ($exibir * $pagina) - $exibir;
 
-    //seleciona todos os itens da tabela 
-// $sql = "SELECT * FROM vagas LIMIT $inicio_exibir, $exibir";
-// $result = mysqli_query($con, $sql) or die();
-// $num = $result->num_rows;
+$sql = "SELECT * FROM usuario LIMIT $inicio_exibir, $exibir";
+$result = mysqli_query($con, $sql) or die();
+$num = $result->num_rows;
 
-// $sql2 = "SELECT * FROM vagas";
-// $result2 = mysqli_query($con, $sql2) or die();
-// $num2 = $result2->num_rows;
-// $total2 = ceil($num2/$exibir);
+//    seleciona todos os itens da tabela 
+$sql2 = "SELECT * FROM vagas";
+$result2 = mysqli_query($con, $sql2) or die();
+$num2 = $result2->num_rows;
 
+$sql3 = "SELECT * FROM vagas";
+$result3 = mysqli_query($con, $sql3) or die();
+$num3 = $result3->num_rows;
+$total2 = ceil($num3/$exibir);
 
 ?>
 <!DOCTYPE html>
@@ -113,7 +112,7 @@ $inicio_exibir = ($exibir * $pagina) - $exibir;
 
 																			<?php } ?>
 
-																			<li class="page-item  <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
+																			<li class="page-item <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
 																		</ul>
 																	</nav>
 																</div>
