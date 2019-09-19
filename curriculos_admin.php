@@ -1,13 +1,30 @@
 <?php 
 
-	require_once('include/conexao.php');
+require_once('include/conexao.php');
 
-	$sql = "SELECT * FROM usuario";
-	$result = mysqli_query($con, $sql) or die();
-	$num = $result->num_rows;
+	//verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
+$pagina = (!isset($_GET['pagina'])) ? 1 :  $_GET['pagina']; 
 
+    //seta a quantidade de itens por página, neste caso, 5 itens 
+$exibir = 10; 
 
- ?>
+$inicio_exibir = ($exibir * $pagina) - $exibir;
+
+$sql = "SELECT * FROM usuario LIMIT $inicio_exibir, $exibir";
+$result = mysqli_query($con, $sql) or die();
+$num = $result->num_rows;
+
+//    seleciona todos os itens da tabela 
+$sql2 = "SELECT * FROM vagas";
+$result2 = mysqli_query($con, $sql2) or die();
+$num2 = $result2->num_rows;
+
+$sql3 = "SELECT * FROM vagas";
+$result3 = mysqli_query($con, $sql3) or die();
+$num3 = $result3->num_rows;
+$total2 = ceil($num3/$exibir);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +32,7 @@
 	<title>Listagem</title>
 	<!-- Bootstrap CSS -->
 	<?php
-		/*require_once('include/area_restrita.php');*/
+	/*require_once('include/area_restrita.php');*/
 	?>
 	<?php
 	require_once('include/links.php');
@@ -81,6 +98,26 @@
 
 													</tbody>
 												</table>
+												<!-- ------ INÍCIO PAGINAÇÃO ------ -->
+															<div class="row w-100 mt-3">
+																<div class="col-6 col-md-6">
+																	<nav>
+																		<ul class="pagination">
+																			<li class="page-item <?=($pagina == 1) ? 'disabled' : ''?>"><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina-1; ?>">Anterior</a></li>
+
+																			
+																			<?php for ($i = 1; $i <= $total2; $i++){?>
+
+																				<li class="page-item"><a class="page-link" href="curriculos_admin.php?pagina=<?=$i?>"><?php echo $i ?></a></li>
+
+																			<?php } ?>
+
+																			<li class="page-item <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
+																		</ul>
+																	</nav>
+																</div>
+
+																<!-- ------- FIM PAGINAÇÃO ------- -->
 											</div>
 										</div>
 									</div>
@@ -104,7 +141,7 @@
 	<!-- Boostrap JS -->
 
 	<?php
-	  require_once('include/links_footer.php');
+	require_once('include/links_footer.php');
 	?>
 
 </body>
