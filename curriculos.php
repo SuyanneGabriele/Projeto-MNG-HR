@@ -163,21 +163,38 @@ require_once('include/cadastro_backend.php');
 					<div class="section" id="experience">
 						<div class="container cc-experience area_clones">
 							<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
-							<div class="h4 text-center mb-2 title"><button id="adicionar_card" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button> <button id="remover_card" type="button" class="btn" style="background-color: black !important; font-size:15px;">Remover</button> </div>
+							<div class="h4 text-center mb-2 title"><button id="adicionar_card" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button></div>
 
-
-							<div class="card card_exp_profissional">
+							<div class="card card_exp_profissional" style="display: none;">
 								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-3 bg-dark">
 										<div class="card-body cc-experience-header">
 											<div id="tbg"><input type="text" name="data_profissao[]" id="data_profissao" class="col-sm-12" placeholder="Data ex: Jan 2010 - Abril 2016"></div>
 											<div class="h5 mt-3" id="tbg"><input type="text" name="cargo[]" id="cargo" class="col-sm-12" placeholder="Cargo" row="2"></div>
 										</div>
 									</div>
 
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-9" >
 										<div class="card-body" id="tbg1">
-											<div class="h5" id="tbg1"><input type="text" name="profissao[]" id="profissao" class="col-sm-12" placeholder="Profissão" row="2"></div>
+											<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="profissao[]" id="profissao" class="col-sm-11" placeholder="Profissão" row="2"></div>
+											<textarea id="textArea2" class="md-textarea form-control" name="sobre_profissao[]" rows="4" placeholder="O que você fazia na sua antiga profissão"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card card_exp_profissional">
+								<div class="row">
+									<div class="col-md-3 bg-dark">
+										<div class="card-body cc-experience-header">
+											<div id="tbg"><input type="text" name="data_profissao[]" id="data_profissao" class="col-sm-12" placeholder="Data ex: Jan 2010 - Abril 2016"></div>
+											<div class="h5 mt-3" id="tbg"><input type="text" name="cargo[]" id="cargo" class="col-sm-12" placeholder="Cargo" row="2"></div>
+										</div>
+									</div>
+
+									<div class="col-md-9" >
+										<div class="card-body" id="tbg1">
+											<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="profissao[]" id="profissao" class="col-sm-11" placeholder="Profissão" row="2"></div>
 											<textarea id="textArea2" class="md-textarea form-control" name="sobre_profissao[]" rows="4" placeholder="O que você fazia na sua antiga profissão"></textarea>
 										</div>
 									</div>
@@ -189,19 +206,39 @@ require_once('include/cadastro_backend.php');
 					<div class="section" id="scholarity">
 						<div class="container cc-education area_clones">
 							<div class="h4 text-center mb-4 title">Escolaridade</div>
-							<div class="h4 text-center mb-2 title"><button id="adicionar_card1" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button> <button id="remover_card1" type="button" class="btn" style="background-color: black !important; font-size:15px;">Remover</button> </div>
-							<div class="card card_escolaridade">
+							<div class="h4 text-center mb-2 title"><button id="adicionar_card_escolaridade" type="button" class="btn" style="background-color: black !important; font-size:15px;">Adicionar</button></div>
+							
+
+							<div class="card card_escolaridade" style="display: none;">
 								<div class="row box_pergunta hide">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-3 bg-dark">
 										<div class="card-body cc-education-header">
 											<div id="tbg"><input type="text" name="data_escolaridade[]" id="data_escolaridade" class="col-sm-12" placeholder="Data ex: Jan 2014 - Dez 2017"></div>
-											<div class="h5 mt-3" id="tbg"><input type="text" name="ensino_superior[]" id="ensino_superior" class="col-sm-12" value="Ensino Superior" disabled="" row="2"></div>
+											<div class="h5 mt-3" id="tbg"><input type="text" name="ensino_superior[]" id="ensino_superior" class="col-sm-11" value="Ensino Superior" disabled="" row="2"></div>
 										</div>
 									</div>
 
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-9" >
 										<div class="card-body" id="tbg1">
-											<div class="h5" id="tbg1"><input type="text" name="nome_faculdade[]" id="nome_faculdade" class="col-sm-12" placeholder="Nome da faculdade" row="2"></div>
+											<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="nome_faculdade[]" id="nome_faculdade" class="col-sm-11" placeholder="Nome da faculdade" row="2"></div>
+											<textarea id="textArea2" class="md-textarea form-control" name="curso[]" rows="4" placeholder="Ex: Engenheiro de Software "></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card card_escolaridade">
+								<div class="row box_pergunta hide">
+									<div class="col-md-3 bg-dark">
+										<div class="card-body cc-education-header">
+											<div id="tbg"><input type="text" name="data_escolaridade[]" id="data_escolaridade" class="col-sm-12" placeholder="Data ex: Jan 2014 - Dez 2017"></div>
+											<div class="h5 mt-3" id="tbg"><input type="text" name="ensino_superior[]" id="ensino_superior" class="col-sm-11" value="Ensino Superior" disabled="" row="2"></div>
+										</div>
+									</div>
+
+									<div class="col-md-9" >
+										<div class="card-body" id="tbg1">
+											<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="nome_faculdade[]" id="nome_faculdade" class="col-sm-11" placeholder="Nome da faculdade" row="2"></div>
 											<textarea id="textArea2" class="md-textarea form-control" name="curso[]" rows="4" placeholder="Ex: Engenheiro de Software "></textarea>
 										</div>
 									</div>
@@ -210,17 +247,17 @@ require_once('include/cadastro_backend.php');
 
 							<div class="card">
 								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-3 bg-dark">
 
 										<div class="card-body cc-education-header">
 											<div id="tbg"><input type="text" name="data_escolaridade_medio" id="data_escolaridade_medio" class="col-sm-12" placeholder="Data ex: Jan 2010 - Dez 2013"></div>
-											<div class="h5 mt-3" id="tbg"><input type="text" id="medio" class="col-sm-12" value="Ensino Médio" row="2" disabled=""></div>
+											<div class="h5 mt-3" id="tbg"><input type="text" id="medio" class="col-sm-11" value="Ensino Médio" row="2" disabled=""></div>
 										</div>
 									</div>
 
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-9" >
 										<div class="card-body" id="tbg1">
-											<div class="h5" id="tbg1"><input type="text" name="nome_medio" id="nome_medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
+											<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="nome_medio" id="nome_medio" class="col-sm-11" placeholder="Nome da escola" row="2"></div>
 											<textarea name="ensino_medio" id="ensino_medio" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"></textarea>
 										</div>
 									</div>
@@ -229,7 +266,7 @@ require_once('include/cadastro_backend.php');
 
 							<div class="card">
 								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-3 bg-dark">
 
 										<div class="card-body cc-education-header">
 											<div id="tbg"><input type="text" name="data_escolaridade_fundamental" id="fundamental" class="col-sm-12" placeholder="Data ex: Jan 2002 - Dez 2010"></div>
@@ -237,7 +274,7 @@ require_once('include/cadastro_backend.php');
 										</div>
 									</div>
 
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-9" >
 										<div class="card-body" id="tbg1">
 											<div class="mt-3" id="tbg1"  style="font-size:21px;"> <input type="text" name="nome_fundamental" id="nome_fundamental" class="col-sm-12" placeholder="Nome da escola" row="2" required=""></div>
 											<textarea name="ensino_fundamental" id="ensino_fundamental" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino fundamental completo" required=""></textarea>
