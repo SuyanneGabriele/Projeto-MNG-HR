@@ -19,7 +19,7 @@ $sql2 = "SELECT * FROM vagas";
 $result2 = mysqli_query($con, $sql2) or die();
 $num2 = $result2->num_rows;
 
-$sql3 = "SELECT * FROM vagas";
+$sql3 = "SELECT * FROM usuario";
 $result3 = mysqli_query($con, $sql3) or die();
 $num3 = $result3->num_rows;
 $total2 = ceil($num3/$exibir);
@@ -90,8 +90,8 @@ $total2 = ceil($num3/$exibir);
 														<?php while ($resultado = mysqli_fetch_array($result)) { ?>
 															<tr>
 																<th><?=$resultado['id']?></th>
-																<td><?=$resultado['nome']?></td>
-																<td><a type="button" name="infoVaga" href="ver_perfil.php?id=<?php echo utf8_encode($resultado['id']); ?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
+																<td><?=utf8_encode($resultado['nome'])?></td>
+																<td><a href="ver_perfil.php?id=<?php echo utf8_encode($resultado['id']); ?>"><button type="button" name="infoVaga" class="btn btn-info" style="float: right;">Ver detalhes</button></a></td>
 															</tr>
 														<?php } ?>
 

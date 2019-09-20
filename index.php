@@ -46,36 +46,38 @@ require_once('include/indexb.php');
           cadastradas</div><br> <div class="row">   <!-- Earnings (Monthly)
             Card Example -->
             <?php if ($num_vagas > 0 ) { ?>
-            <?php while($info_index = $result_vagas->fetch_assoc()) { ?>
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="font-weight-bold text-primary mb-1">
-                        <p><?=$info_index['nome_vaga']?></p>
+              <?php while($info_index = $result_vagas->fetch_assoc()) { ?>
+                <div class="col-xl-4 col-md-6 mb-4">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_index['id']); ?>" style="text-decoration: none;">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                            <div class="font-weight-bold text-primary mb-1">
+                              <p><?=utf8_encode($info_index['nome_vaga']);?></p>
+                            </div>
+                            <hr>
+                            <div style="font-size:16px; color: gray;"><p><?=utf8_encode($info_index['infoEmpresa']);?></p></div><br>
+                          </div>
+                        </div>
                       </div>
-                      <hr>
-                      <div style="font-size:16px;"><p><?=$info_index['infoEmpresa']?></p></div><br>
-                    </div>
+                      <i class="fa fa-clock-o ml-3 mb-4" style="color: gray;" aria-hidden="true"> Há 
+                       <?php
+                       if (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                        echo "menos de 1 Hora";
+                      } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)==1){
+                        echo "1 Hora";
+                      } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
+                        echo substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                      } else {
+                        echo "mais de 24 horas";
+                      }
+                      ?> 
+                    </i>
                   </div>
-                </div>
-                <i class="fa fa-clock-o ml-3 mb-4" aria-hidden="true"> Há 
-                 <?php
-                 if (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
-                  echo "menos de 1 Hora";
-                } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)==1){
-                  echo "1 Hora";
-                } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
-                  echo substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
-                } else {
-                  echo "mais de 24 horas";
-                }
-                ?> 
-              </i>
-            </div>
-          </div>
-          <?php } ?>
+                <!-- </a> -->
+              </div>
+            <?php } ?>
           <?php } ?>
 
           <div class="col-xl-4 col-md-6 mb-4">

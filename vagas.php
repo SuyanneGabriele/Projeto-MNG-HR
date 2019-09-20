@@ -147,7 +147,7 @@ $total2 = ceil($num2/$exibir);
 																					<tbody>
 																						<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
 																						<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vaga['cidade']); ?></td>
-																						<td><a type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-primary" style="float: right;">Ver detalhes</a></td>
+																						<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
 																						<tr><hr></tr>
 																					</tbody>
 																				</table>

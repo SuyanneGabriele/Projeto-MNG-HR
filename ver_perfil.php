@@ -44,6 +44,11 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 	<link href="perfil/css/bootstrap.min.css" rel="stylesheet">
 	<link href="perfil/styles/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		#vaga_escolhida:hover {
+			margin-left: 2px;
+		}
+	</style>
 </head>
 <body id="top">
 	<header>
@@ -88,7 +93,7 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 							<div class="col-lg-6 col-md-12">
 								<div class="card-body">
 									<div class="h4 mt-0 title">Sobre</div>
-									<?php echo utf8_encode($info_perfil['sobre']); ?>
+									<?php echo utf8_decode(utf8_encode($info_perfil['sobre'])); ?>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-12" id="infos">
@@ -108,19 +113,19 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 									</div>
 									<div class="row mt-3">
 										<div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['endereco']); ?></div>
+										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['endereco'])); ?></div>
 									</div>
 									<div class="row mt-3">
 										<div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['cidade']); ?></div>
+										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['cidade'])); ?></div>
 									</div>
 									<div class="row mt-3">
 										<div class="col-sm-4"><strong class="text-uppercase">Estado:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['estado']); ?></div>
+										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['estado'])); ?></div>
 									</div>
 									<div class="row mt-3">
 										<div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['idiomas']); ?></div>
+										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['idiomas'])); ?></div>
 									</div>
 								</div>
 							</div>
@@ -138,16 +143,16 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 						<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
 							<div class="card">
 								<div class="row">
-									<div class="col-md-3 bg-dark	" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 										<div class="card-body cc-experience-header">
 											<p><?php echo utf8_encode($info_profissao['data_profissao']); ?></p>
-											<div class="h5"><?php echo utf8_encode($info_profissao['cargo']); ?></div>
+											<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
 										</div>
 									</div>
 									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
 										<div class="card-body">
-											<div class="h5"><?php echo utf8_encode($info_profissao['profissao']); ?></div>
-											<p><?php echo utf8_encode($info_profissao['sobre_profissao']); ?></p>
+											<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['profissao'])); ?></div>
+											<p><?php echo utf8_decode(utf8_encode($info_profissao['sobre_profissao'])); ?></p>
 										</div>
 									</div>
 
@@ -203,47 +208,54 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 					<?php if ($num_candidatado > 0) { ?>
 						<div class="card">
 							<div class="row">
-								<div class="card-body">
-									<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
-										<div class="col-12 h6"><p>O candidato está interessado na vaga <a style="color: #32a897; text-decoration: none;" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['id']); ?>" style="text-decoration: none; color: black;"><?php echo utf8_encode($info_vaga['nome_vaga']); ?></a></p>	
-											</div>
-										<?php }  ?>
+								<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body cc-education-header">
+										<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
+										<h5 style="vertical-align: middle">O candidato está interessado na vaga</h5>
+										<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
+									</div>
+								</div>
+								<div class="col-md-9 mt-4 mb-4" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body">
+										<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
+											<a id="vaga_escolhida" style="text-decoration: none; color: black;" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"style="text-decoration: none; color: black;"><?php echo utf8_encode($info_vaga['nome_vaga']); ?><br></a>	
+										<?php } ?>
 									</div>
 								</div>
 							</div>
-
-									<hr>	
-						<?php } else { ?>
-							<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
-								Não foi encontrado nenhum registro de candidatura!
-							</div>
-						<?php } ?>
-					</div>
+						</div>
+						<hr>	
+					<?php } else { ?>
+						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
+							Não foi encontrado nenhum registro de candidatura!
+						</div>
+					<?php } ?>
 				</div>
 			</div>
-
-			<!-- --------- FIM VAGAS CANDIDATADAS --------- -->
 		</div>
-	</div> 
+
+		<!-- --------- FIM VAGAS CANDIDATADAS --------- -->
+	</div>
+</div> 
 
 
-	<!-- Footer -->
-	<footer class="sticky-footer bg-light mt-4">
-		<div class="container my-auto">
-			<div class="copyright text-center my-auto">
-				<span><strong> &copy; Todos os direitos reservados</strong></span>
-			</div>
+<!-- Footer -->
+<footer class="sticky-footer bg-light mt-4">
+	<div class="container my-auto">
+		<div class="copyright text-center my-auto">
+			<span><strong> &copy; Todos os direitos reservados</strong></span>
 		</div>
-	</footer>
-	<!-- End of Footer -->
+	</div>
+</footer>
+<!-- End of Footer -->
 
 
 
-	<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
-	<script src="perfil/js/core/popper.min.js"></script>
-	<script src="perfil/js/core/bootstrap.min.js"></script>
-	<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
-	<script src="perfil/js/aos.js"></script>
-	<script src="perfil/scripts/main.js"></script>
+<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+<script src="perfil/js/core/popper.min.js"></script>
+<script src="perfil/js/core/bootstrap.min.js"></script>
+<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+<script src="perfil/js/aos.js"></script>
+<script src="perfil/scripts/main.js"></script>
 </body>
 </html>

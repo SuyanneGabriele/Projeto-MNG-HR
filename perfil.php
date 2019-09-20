@@ -82,7 +82,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 								<div class="col-lg-6 col-md-12">
 									<div class="card-body">
 										<div class="h4 mt-0 title">Sobre</div>
-										<?php echo utf8_encode($info_perfil['sobre']); ?>
+										<?php echo utf8_decode(utf8_encode($info_perfil['sobre'])); ?>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-12" id="infos">
@@ -102,7 +102,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['endereco']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['endereco'])); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
@@ -114,7 +114,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['idiomas']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['idiomas'])); ?></div>
 										</div>
 									</div>
 								</div>

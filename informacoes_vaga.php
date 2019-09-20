@@ -29,8 +29,16 @@ if (isset($_POST['candidatar'])) {
   $result_insert = mysqli_query($con, $sql_insert);
 
   $_SESSION['sucesso'] = true;
+}
 
-};
+if (isset($_POST['descandidatar'])) {
+
+  $sql_delete = "DELETE FROM vagas_usuarios WHERE fk_vaga = '$id_vaga'";
+  $result_delete = mysqli_query($con, $sql_delete);
+
+  $_SESSION['descandidatado'] = true;
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -83,6 +91,14 @@ if (isset($_POST['candidatar'])) {
                   </h5>
                 </div>
               <?php }; UNSET($_SESSION['sucesso']); ?>
+
+              <?php if ($_SESSION['descandidatado']) { ?>
+                <div class="col-12">
+                  <h5 class="alert alert-danger" role="alert">
+                    Você foi cancelou a sua candidatura com sucesso!
+                  </h5>
+                </div>
+              <?php }; UNSET($_SESSION['descandidatado']); ?>
               <h1><span style="color: black;"><strong><?php echo utf8_encode($vagas['nome_vaga']); ?></span></strong></h1>
               <span style="font-size: 20px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vagas['cidade']); ?></span><br>
               <a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br>
@@ -98,6 +114,7 @@ if (isset($_POST['candidatar'])) {
               <?php } while($vaga = $result->fetch_assoc()); ?>
               <form method="POST" action="">
                 <button name="candidatar" type="submit" class="btn btn-info float-right mt-2" style="margin-right: -12px">Candidatar-me</button>
+                <button name="descandidatar" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Cancelar candidatura</button>
               </form>
             </div>
           </div>
