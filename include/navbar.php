@@ -79,7 +79,7 @@ ul {
 
 	<!-- Nav Item -  Minhas Vagas -->
 	<li class="nav-item">
-		<a class="nav-link" href="vagas.php">
+		<a class="nav-link" href="minhas_vagas.php">
 			<i class="fas fa fa-suitcase fa-2x text-white"></i>
 			<span>Minhas vagas</span>
 		</a>

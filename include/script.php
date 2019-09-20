@@ -3,21 +3,36 @@
 	$(document).ready(function(){
 		var btnclone=$("#adicionar_card");
 
-		$(btnclone).click(function(){
-			var clone = $(".card_exp_profissional:last").clone();
+		$(document).on('click', "#adicionar_card", function(){
+			var clone = $(".card_exp_profissional:first").clone();
 
-			clone.insertAfter('.card_exp_profissional:last');
+			clone.show();
+
+			clone.insertAfter('.card_exp_profissional:first');
+
+		});
+	});
+
+		$(document).ready(function(){
+		var btnclone=$("#adicionar_card_escolaridade");
+
+		$(document).on('click', "#adicionar_card_escolaridade", function(){
+
+			var clone = $(".card_escolaridade:first").clone();
+
+			clone.show();
+
+			clone.insertAfter('.card_escolaridade:first');
 
 		});
 	});
 
 	$(document).ready(function(){
-		var btnclone =$("#adicionar_card1");
+		var btnRemover=$(".remover_card");
 
-		$(btnclone).click(function(){
-			var clone = $(".card_escolaridade:last").clone();
-
-			clone.insertAfter('.card_escolaridade:last');
+		$(document).on('click', ".remover_card", function(){
+			
+			$(this).parent().parent().parent().parent().parent().remove();
 
 		});
 	});
