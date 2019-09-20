@@ -29,6 +29,7 @@ $sql_vaga = "SELECT fk_usuario, fk_vaga, nome_vaga FROM vagas_usuarios
 INNER JOIN vagas ON vagas_usuarios.fk_vaga = vagas.id WHERE fk_usuario = '$id'";
 $result_vaga = mysqli_query($con, $sql_vaga);
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -94,20 +95,19 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 									<!-- Nested Row within Card Body -->
 									<div class="section" id="vagasCandidatadas">
 										<div class="container cc-education">
-											<div class="h4 text-center mb-4 title mt-3">Vagas Candidatadas</div>
+											<div class="h3 text-center mb-4 title mt-3" style="color: black; font-weight: 750;">Minhas vagas</div>			
 											<?php if ($num_candidatado > 0) { ?>
-											<div class="card">
+											<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
+											<div class="card mb-4" style="border-left: none !important; border-right: none !important;">
 												<div class="row">
 													<div class="card-body">
-														<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
-														<div class="col-12 h6"><p>O candidato está interessado na vaga <a style="color: #32a897; text-decoration: none;" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['id']); ?>" style="text-decoration: none; color: black;"><?php echo utf8_encode($info_vaga['nome_vaga']); ?></a></p>	
+														<div class="col-12"><a style="color: black; :hover{
+															color:white text-decoration: none;};" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"><?php echo utf8_encode($info_vaga['nome_vaga']); ?></a>	
 														</div>
-														<?php }  ?>
 													</div>
 												</div>
 											</div>
-
-											<hr>	
+											<?php } ?>
 											<?php } else { ?>
 											<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 												Não foi encontrado nenhum registro de candidatura!
@@ -115,6 +115,7 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 											<?php } ?>
 										</div>
 									</div>	
+
 								</div>
 							</div>
 						</div>
@@ -126,8 +127,6 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 
 			<script type="text/javascript">
 				<!-- Page Wrapper -->
-
-
 				$("#barra_pesquisa").keydown(function(){
 					$("#oculta_div").addClass("d-none");
 				});

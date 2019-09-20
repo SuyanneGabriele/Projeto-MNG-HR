@@ -1,4 +1,19 @@
-	
+<?php
+
+require_once('include/conexao.php');
+if (!isset($_SESSION)){
+	session_start();
+};
+$email = $_SESSION['email'];
+
+
+$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+
+
+?>	
+
 <link rel="stylesheet" type="text/css" href="../media/css/estilos.css">
 <style type="text/css">
 
@@ -79,7 +94,7 @@ ul {
 
 	<!-- Nav Item -  Minhas Vagas -->
 	<li class="nav-item">
-		<a class="nav-link" href="minhas_vagas.php">
+		<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
 			<i class="fas fa fa-suitcase fa-2x text-white"></i>
 			<span>Minhas vagas</span>
 		</a>
@@ -102,7 +117,7 @@ ul {
 		</a>
 	</li>
 
-<!-- Nav Item -  Perfil -->
+	<!-- Nav Item -  Perfil -->
 
 	<li class="nav-item">
 		<a class="nav-link" href="perfil.php">
