@@ -127,7 +127,5 @@ require_once('include/indexb.php');
 <?php
 require_once('include/links_footer.php');
 ?>
-
-
 </body>
 </html>
