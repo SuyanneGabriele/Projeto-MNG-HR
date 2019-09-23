@@ -90,37 +90,44 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 					<div class="row justify-content-center">
 						<div class="col-xl-10 col-lg-12 col-md-9">
 							<div class="card o-hidden border-0 shadow-lg my-5">
-								<div class="card-body p-0">
+								<div class="card-body p-0 text-center">
 
 									<!-- Nested Row within Card Body -->
-									<div class="section" id="vagasCandidatadas">
-										<div class="container cc-education">
-											<div class="h3 text-center mb-4 title mt-3" style="color: black; font-weight: 750;">Minhas vagas</div>			
-											<?php if ($num_candidatado > 0) { ?>
-											<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
-											<div class="card mb-4" style="border-left: none !important; border-right: none !important;">
-												<div class="row">
-													<div class="card-body">
-														<div class="col-12"><a style="color: black; :hover{
-															color:white text-decoration: none;};" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"><?php echo utf8_encode($info_vaga['nome_vaga']); ?></a>	
-														</div>
-													</div>
+									<div class="row">
+										<div class="col-lg-12 col" style="margin-left: auto; margin-right: auto;">
+											<div class="p-5">
+												<div class="text-center">
+													<h1 class="h4 text-gray-900 mb-4"><strong>Minhas Vagas</strong></h1>
 												</div>
+												<table class="table table-striped table-hover">
+													<thead>
+														<tr>
+															<th>ID</th>
+															<th>Nome</th>
+															<th></th>
+														</tr>
+													</thead>
+													<tbody>
+														<?php if ($num_candidatado > 0) { ?>
+														<?php while ($info_vaga = mysqli_fetch_array($result_vaga)) { ?>
+														<tr>
+															<td><?=$info_vaga['fk_vaga']?></td>
+															<td>
+																<?php echo utf8_encode($info_vaga['nome_vaga']); ?>	
+															</td>
+															<td><a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"><button type="button" name="infoVaga"  class="btn btn-info" style="float: right;">Ver detalhes</button></a></td>
+														</tr>
+														<?php } ?>
+														<?php } ?>
+													</tbody>
+												</table>
 											</div>
-											<?php } ?>
-											<?php } else { ?>
-											<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
-												Não foi encontrado nenhum registro de candidatura!
-											</div>
-											<?php } ?>
 										</div>
-									</div>	
-
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 
