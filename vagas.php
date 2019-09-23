@@ -20,6 +20,13 @@ $result2 = mysqli_query($con, $sql2) or die();
 $num2 = $result2->num_rows;
 $total2 = ceil($num2/$exibir);
 
+$email = $_SESSION['email'];
+
+$sql_nivel = "SELECT * FROM usuario WHERE email = '$email'";
+$result_nivel = mysqli_query($con, $sql_nivel);
+$info_nivel = mysqli_fetch_assoc($result_nivel);
+$nivel = $info_nivel['nivel']; 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +56,7 @@ $total2 = ceil($num2/$exibir);
 	.oculta_pesquisa{
 		display: none;
 	}
-	=======
+
 	.oculta_pesquisa{
 		display: none;
 	}
@@ -101,6 +108,14 @@ $total2 = ceil($num2/$exibir);
 															</div>
 														</div>
 													<?php }; UNSET($_SESSION['add_sucesso']); ?>
+
+													<?php if ($_SESSION['excluido']) { ?>
+														<div class="col-12">
+															<h5 class="alert alert-danger" role="alert">
+																Vaga excluida com sucesso!
+															</h5>
+														</div>
+													<?php }; UNSET($_SESSION['excluido']); ?>
 													<!-- -------- FIM ALERTA -------- -->
 
 													<!-- -------- INICIO PESQUISAR -------- -->
@@ -125,7 +140,7 @@ $total2 = ceil($num2/$exibir);
 																		<table class="w-100">
 																			<tbody>
 																				<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
-																				<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($rows_vagas['cidade']); ?></td>
+																				<td style="font-size: 15px; color: rgba(0 , 0, 0, .5);"><?php echo utf8_encode($rows_vagas['cidade']); ?></td>
 																				<td><button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button></td>
 																				<tr><hr></tr>
 																			</tbody>
@@ -179,9 +194,11 @@ $total2 = ceil($num2/$exibir);
 
 																<!-- ------- FIM PAGINAÇÃO ------- -->
 
-																<div class="col-5 col-md-6 p-0">
-																	<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
-																</div>
+																<?php if ($info_nivel['nivel'] == '1') { ?>
+																	<div class="col-5 col-md-6 p-0">
+																		<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
+																	</div>
+																<?php } ?>
 
 															</div>	
 
@@ -195,17 +212,6 @@ $total2 = ceil($num2/$exibir);
 
 							</div>
 						</div>
-
-
-						<script type="text/javascript">
-							<!-- Page Wrapper -->
-
-
-							$("#barra_pesquisa").keydown(function(){
-								$("#oculta_div").addClass("d-none");
-							});
-						</script>
-
 
 						<!-- Footer -->
 						<?php

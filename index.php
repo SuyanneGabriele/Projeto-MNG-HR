@@ -1,5 +1,29 @@
 <?php
 require_once('include/indexb.php');
+
+function limita_caracteres($texto, $limite, $quebra = true) {
+  $tamanho = strlen($texto);
+
+  //  Verifica se o tamanho é menor ou igual ao limite
+  if ($tamanho <= $limite) {
+    $novo_texto = $texto;
+
+    //  Se o tamanho do texto for maior que o limite
+  } else {
+    //  Verifica a opção de quebrar texto
+    if ($quebra == true) {
+      $novo_texto = trim(substr($texto, 0, $limite)).'...';
+      //  Se não, corta $texto na última palavra antes do limite
+    } else {
+      //  Localiza o último espaço antes de $limite
+      $ultimo_espaço = strrpos(substr($texto, 0, $limite),' ');
+      //  Corta o $texto até a posição localizada
+      $novo_texto = trim(substr($texto, 0, $ultimo_espaço)).'...';
+    }
+  }
+  //  Retorna o valor formatado
+  return $novo_texto;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,8 +72,8 @@ require_once('include/indexb.php');
             <?php if ($num_vagas > 0 ) { ?>
               <?php while($info_index = $result_vagas->fetch_assoc()) { ?>
                 <div class="col-xl-4 col-md-6 mb-4">
-                  <div class="card border-left-primary shadow h-100 py-2">
-                    <a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_index['id']); ?>" style="text-decoration: none;">
+                  <div class="card border-left-primary shadow h-100 mt-2 mb-1">
+                    <a href="informacoes_vaga.php?infoVaga=<?php echo utf8_decode(utf8_encode($info_index['id'])); ?>" style="text-decoration: none;">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
@@ -57,7 +81,7 @@ require_once('include/indexb.php');
                               <p><?=utf8_encode($info_index['nome_vaga']);?></p>
                             </div>
                             <hr>
-                            <div style="font-size:16px; color: gray;"><p><?=utf8_encode($info_index['infoEmpresa']);?></p></div><br>
+                            <div style="font-size:16px; color: gray;"><p class="mb-0"><?=limita_caracteres(utf8_encode($info_index['habilidades']), 80); ?></p></div><br>
                           </div>
                         </div>
                       </div>
@@ -80,7 +104,7 @@ require_once('include/indexb.php');
             <?php } ?>
           <?php } ?>
 
-          <div class="col-xl-4 col-md-6 mb-4">
+          <div class="col-xl-4 col-md-6 mb-4 mt-2">
             <a href="vagas.php" style="text-decoration: none;"> 
               <div class="card border-left-primary shadow h-100 py-2 bg-primary">
                 <div class="card-body">
