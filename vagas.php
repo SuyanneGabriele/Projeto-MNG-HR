@@ -116,6 +116,14 @@ $nivel = $info_nivel['nivel'];
 															</h5>
 														</div>
 													<?php }; UNSET($_SESSION['excluido']); ?>
+
+													<?php if ($_SESSION['editado']) { ?>
+														<div class="col-12">
+															<h5 class="alert alert-success" role="alert">
+																Vaga editada com sucesso!
+															</h5>
+														</div>
+													<?php }; UNSET($_SESSION['editado']); ?>
 													<!-- -------- FIM ALERTA -------- -->
 
 													<!-- -------- INICIO PESQUISAR -------- -->

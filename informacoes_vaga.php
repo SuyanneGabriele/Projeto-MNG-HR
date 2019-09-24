@@ -153,7 +153,9 @@ header('Location: editarVaga.php');
                 <?php } ?>
                 <?php if ($nivel == 1) { ?>
                   <button onclick="return confirm('Você tem certeza que deseja excluir essa vaga?');" name="excluirVaga" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Excluir vaga</button>
-                  <button name="editarVaga" type="submit" class="btn btn-info float-right mt-2 mr-2  " style="margin-right: -12px">Editar vaga</button>
+
+                  <a href="editarvaga.php?editarVaga=<?php echo utf8_encode($vagas['id']); ?>">
+                  <button name="editarVaga" type="button" class="btn btn-info float-right mt-2 mr-2  " style="margin-right: -12px">Editar vaga</button></a>
 
                 <?php } ?>
 

@@ -37,7 +37,7 @@ $info_perfil = $result_perfil->fetch_assoc();
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
 		<div class="sidebar-brand-icon">
 			<i class="fas fa-laugh-wink">
-				<img src="media/images/logo.png" width="100">
+				<img src="media/images/logo.png" width="60">
 			</i>
 		</div>
 	</a>
