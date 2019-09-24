@@ -200,14 +200,15 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 
 
 	<!-- Footer -->
-	<footer class="sticky-footer bg-light mt-4">
-		<div class="container my-auto">
-			<div class="copyright text-center my-auto">
-				<span><strong> &copy; Todos os direitos reservados</strong></span>
-			</div>
+	<footer class="page-footer font-small blue">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© Feito por Management Human Resources
 		</div>
+		<!-- Copyright -->
+
 	</footer>
-	<!-- End of Footer -->
+	<!-- Footer -->
 
 
 

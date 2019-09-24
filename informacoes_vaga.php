@@ -13,6 +13,7 @@ $email = $_SESSION['email'];
 $sql_usuario = "SELECT * FROM usuario WHERE email = '$email'"; 
 $result_usuario = mysqli_query($con, $sql_usuario);
 $infoUsuario = $result_usuario->fetch_assoc();
+$nivel = $infoUsuario['nivel'];
 
 $id_usuario = $infoUsuario  ['id'];
 
@@ -25,10 +26,20 @@ $id_vaga = $vagas['id'];
 
 if (isset($_POST['candidatar'])) {
 
-  $sql_insert = "INSERT INTO vagas_usuarios (`id`, `fk_usuario`, `fk_vaga`) VALUES (DEFAULT, '$id_usuario', '$id_vaga')";
-  $result_insert = mysqli_query($con, $sql_insert);
+  $verificar = "SELECT * FROM vagas_usuarios WHERE fk_vaga = '$id_vaga'";
+  $result_verificar = mysqli_query($con, $verificar);
+  $num_verificar = mysqli_num_rows($result_verificar);
 
-  $_SESSION['sucesso'] = true;
+  if ($num_verificar>0) {
+    $_SESSION['ja_cadastrado'] = true;
+
+  } else {
+
+    $sql_insert = "INSERT INTO vagas_usuarios (`id`, `fk_usuario`, `fk_vaga`) VALUES (DEFAULT, '$id_usuario', '$id_vaga')";
+    $result_insert = mysqli_query($con, $sql_insert);
+
+    $_SESSION['sucesso'] = true;
+  }
 }
 
 if (isset($_POST['descandidatar'])) {
@@ -39,6 +50,18 @@ if (isset($_POST['descandidatar'])) {
   $_SESSION['descandidatado'] = true;
 }
 
+if (isset($_POST['excluirVaga'])) {
+
+  $sql_excluir = "DELETE FROM vagas WHERE id = '$id_vaga'";
+  $result_excluir = mysqli_query($con, $sql_excluir);
+  $_SESSION['excluido'] = true;
+  header('Location: vagas.php');
+
+}
+
+if (isset($_POST['editarVaga'])) {
+header('Location: editarVaga.php');
+};
 
 ?>
 <!DOCTYPE html>
@@ -84,6 +107,7 @@ if (isset($_POST['descandidatar'])) {
             <div class="card-body">
               <h4>Informações da vaga</h4>
               <hr>
+              <!-- ------- AVISOS ------- -->
               <?php if ($_SESSION['sucesso']) { ?>
                 <div class="col-12">
                   <h5 class="alert alert-success" role="alert">
@@ -99,6 +123,16 @@ if (isset($_POST['descandidatar'])) {
                   </h5>
                 </div>
               <?php }; UNSET($_SESSION['descandidatado']); ?>
+
+              <?php if ($_SESSION['ja_cadastrado']) { ?>
+                <div class="col-12">
+                  <h5 class="alert alert-warning" role="alert">
+                    Você já está candidatado para essa vaga!
+                  </h5>
+                </div>
+              <?php }; UNSET($_SESSION['ja_cadastrado']); ?>
+
+              <!-- ------- FIM AVISOS ------- -->
               <h1><span style="color: black;"><strong><?php echo utf8_encode($vagas['nome_vaga']); ?></span></strong></h1>
               <span style="font-size: 20px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vagas['cidade']); ?></span><br>
               <a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br>
@@ -113,8 +147,16 @@ if (isset($_POST['descandidatar'])) {
                 <a href='#topo' style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-up mr-2"></i>Voltar ao topo</a>
               <?php } while($vaga = $result->fetch_assoc()); ?>
               <form method="POST" action="">
-                <button name="candidatar" type="submit" class="btn btn-info float-right mt-2" style="margin-right: -12px">Candidatar-me</button>
-                <button name="descandidatar" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Cancelar candidatura</button>
+                <?php if ($nivel == 0) { ?>
+                  <button name="candidatar" type="submit" class="btn btn-info float-right mt-2" style="margin-right: -12px">Candidatar-me</button>
+                  <button name="descandidatar" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Cancelar candidatura</button>
+                <?php } ?>
+                <?php if ($nivel == 1) { ?>
+                  <button onclick="return confirm('Você tem certeza que deseja excluir essa vaga?');" name="excluirVaga" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Excluir vaga</button>
+                  <button name="editarVaga" type="submit" class="btn btn-info float-right mt-2 mr-2  " style="margin-right: -12px">Editar vaga</button>
+
+                <?php } ?>
+
               </form>
             </div>
           </div>

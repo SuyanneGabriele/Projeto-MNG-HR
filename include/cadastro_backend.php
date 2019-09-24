@@ -24,6 +24,7 @@ $idU = $info_perfil['id'];
 	// Buscar informações do perfil
 if (isset($id_perfil)) {
 	$sql = "SELECT * FROM cadastro_perfil WHERE fk_perfil = $idU";
+
 	$queryPerfil = mysqli_query($con, $sql);
 	$resultadoPerfil = mysqli_fetch_array($queryPerfil);
 
