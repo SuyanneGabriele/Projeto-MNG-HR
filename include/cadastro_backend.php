@@ -1,10 +1,10 @@
 <?php
 
-	// Eliminar a exibição de avisos
+// Eliminar a exibição de avisos
 
 error_reporting(0);
 
-	// Conexão com o banco de dados
+// Conexão com o banco de dados
 
 
 
@@ -34,9 +34,6 @@ if (isset($id_perfil)) {
 	}
 }
 
-
-
-
 	// Verificando ação de SALVAR
 if (isset($_POST['btnSalvar'])) {
 
@@ -65,7 +62,7 @@ if (isset($_POST['btnSalvar'])) {
 	$nome_fundamental =  $_POST['nome_fundamental'];
 	$data_escolaridade_fundamental = $_POST['data_escolaridade_fundamental'];
 	
-	// InstÃĒncia uma classe para o upload
+	// Instãncia uma classe para o upload
 	$upload = new Uploader('arquivos');
 	$uploads = $upload->upload();
 	$uploads = $uploads[0]['dados']['nome_novo'];
