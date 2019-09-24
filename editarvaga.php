@@ -16,11 +16,30 @@ $nivel = $infoUsuario['nivel'];
 
 $id_usuario = $infoUsuario  ['id'];
 
-$infoVaga = $_GET['infoVaga'];
-$sql = "SELECT * FROM vagas WHERE id = '$infoVaga'";
+$editarVaga = $_GET['editarVaga'];
+$sql = "SELECT * FROM vagas WHERE id = '$editarVaga'";
 $result = mysqli_query($con, $sql);
 $vagas = mysqli_fetch_assoc($result);
-var_dump($vagas);
+
+if (isset($_POST['btnSalvarEdicao'])) {
+
+	//	Receber campos
+	$nomeVaga = mysqli_real_escape_string($con, trim($_POST['nomeVaga']));
+	$cidadeVaga = mysqli_real_escape_string($con, trim($_POST['cidadeVaga']));
+	$infoEmpresa = mysqli_real_escape_string($con, trim($_POST['infoEmpresa']));
+	$habilidades = mysqli_real_escape_string($con, trim($_POST['habilidades']));
+	$diferenciais = mysqli_real_escape_string($con, trim($_POST['diferenciais']));
+
+	if (empty($nomeVaga) || empty($cidadeVaga) || empty($infoEmpresa) || empty($habilidades) || empty($diferenciais)) {	$_SESSION['insira_infos'] = true; } else { 
+
+		$sql_update = "UPDATE `vagas` SET `nome_vaga` = '$nomeVaga', `cidade` = '$cidadeVaga', `infoEmpresa` = '$infoEmpresa', `habilidades` = '$habilidades', `diferenciais` = '$diferenciais' WHERE `vagas`.`id` = '$editarVaga';";
+		$result_update = mysqli_query($con, $sql_update);
+		$_SESSION['editado'] = true;
+		header('Location: vagas.php');
+		exit;
+}
+};
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +72,8 @@ var_dump($vagas);
 				<!-- Inicio -->
 
 				<div class="container mb-5">
-					<h2>Adicionar vaga</h2>
+					<h2>Editar vaga</h2>
+					<h5>Por favor, preencha todos os campos</h5>
 					<div class="card">
 						<div class="card-body">
 							<h4>Informações da vaga</h4>
@@ -73,24 +93,23 @@ var_dump($vagas);
 								</div>
 								<div class="form-group">
 									<label for="cidadeVaga" style="color: black; font-weight: 900;"><h2>Cidade da vaga</h2></label>
-									<input type="text" class="form-control" name="cidadeVaga" id="cidadeVaga" placeholder="Digite o nome da cidade.">
+									<input type="text" class="form-control" name="cidadeVaga" id="cidadeVaga" placeholder="<?php echo $vagas['cidade']; ?>">
 								</div>
-								<span style="font-size: 20px; color: rgba(0,0,0,.5);">Local</span><br>
 								<strong style="font-size: 18px;" class="mt-3">Sobre a oportunidade</strong>
 								<div class="form-group">
 									<label for="textareaDiferenciais" style="font-size: 16px; font-weight: 900;">Inserir informações sobre a empresa e como ela atua.</label>
-									<textarea class="form-control" name="infoEmpresa" id="infoEmpresa" placeholder="Explicar o que o funcionário irá fazer e o que ele deve esperar quando começar a trabalhar ali."></textarea>
+									<textarea class="form-control" name="infoEmpresa" id="infoEmpresa" placeholder="<?php echo $vagas['infoEmpresa']; ?>"></textarea>
 								</div>
 								<div class="form-group">
 									<label for="textareaDiferenciais" style="font-size: 16px; font-weight: 900;">Do que precisamos?</label>
-									<textarea class="form-control" name="habilidades" id="habilidades" placeholder="Citar as habilidades necessárias para o profissional se candidatar."></textarea>
+									<textarea class="form-control" name="habilidades" id="habilidades" placeholder="<?php echo $vagas['habilidades']; ?>"></textarea>
 								</div>
 								<div class="form-group">
 									<label for="textareaDiferenciais" style="font-size: 16px; font-weight: 900;">O que pode o diferenciar?</label>
-									<textarea class="form-control" name="diferenciais" id="diferenciais" placeholder="Listar os possíveis diferenciais."></textarea>
+									<textarea class="form-control" name="diferenciais" id="diferenciais" placeholder="<?php echo $vagas['diferenciais']; ?>"></textarea>
 								</div>
 
-								<input type="submit" class="btn btn-info" name="btnSalvar" value="+ Adicionar vaga">	
+								<input type="submit" class="btn btn-info" name="btnSalvarEdicao" value="Salvar alterações">	
 							</form>					
 						</div>
 						
