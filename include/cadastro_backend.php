@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 	// Buscar informações do perfil
 if (isset($id_perfil)) {
-	$sql = "SELECT * FROM cadastro_perfil WHERE id = $id_perfil";
+	$sql = "SELECT * FROM cadastro_perfil WHERE id = $fk_perfil";
 	$queryPerfil = mysqli_query($con, $sql);
 	$resultadoPerfil = mysqli_fetch_array($queryPerfil);
 

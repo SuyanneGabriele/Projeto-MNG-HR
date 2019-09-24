@@ -124,7 +124,7 @@ $info_perfil = $result_perfil->fetch_assoc();
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 
 		<li class="nav-item">
-			<a class="nav-link" href="curriculos.php">
+			<a class="nav-link" href="curriculos.php?fk_perfil=<?php echo utf8_encode($info_perfil['id']);?>">
 				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
 				<span>Meu currículo</span>
 			</a>
