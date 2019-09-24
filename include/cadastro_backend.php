@@ -22,20 +22,12 @@ $idU = $info_perfil['id'];
 
 
 	// Buscar informações do perfil
-if (isset($id_perfil)) {
-	$sql = "SELECT * FROM cadastro_perfil WHERE fk_perfil = $idU";
+if (isset($idU)) {
+	$sql1 = "SELECT * FROM cadastro_perfil, exp_profissional, escolaridade, escolaridade2 WHERE fk_perfil = $idU";
 
-	$queryPerfil = mysqli_query($con, $sql);
-	$resultadoPerfil = mysqli_fetch_array($queryPerfil);
-
-	// Verificar se o perfil existe
-	if (is_null($resultadoPerfil)) {
-		die("Perfil não encontrado.");
-	}
+	$queryPerfil1 = mysqli_query($con, $sql1);
+	$resultadoPerfil1 = mysqli_fetch_array($queryPerfil1);
 }
-
-
-
 
 	// Verificando ação de SALVAR
 if (isset($_POST['btnSalvar'])) {
@@ -228,6 +220,7 @@ if(!isset($id_perfil)){
 	$sql4 = "INSERT INTO escolaridade2
 	VALUES (
 	DEFAULT,
+	'$idU',
 	'$nome_medio',
 	'$data_escolaridade_medio',
 	'Ensino Médio',
