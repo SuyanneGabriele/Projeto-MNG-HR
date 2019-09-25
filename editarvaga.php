@@ -4,7 +4,7 @@ require_once('include/conexao.php');
 require_once('include/links.php');
 
 if (!isset($_SESSION)){
-  session_start();
+	session_start();
 };
 
 $email = $_SESSION['email'];
@@ -37,7 +37,7 @@ if (isset($_POST['btnSalvarEdicao'])) {
 		$_SESSION['editado'] = true;
 		header('Location: vagas.php');
 		exit;
-}
+	}
 };
 
 ?>
@@ -112,23 +112,18 @@ if (isset($_POST['btnSalvarEdicao'])) {
 								<input type="submit" class="btn btn-info" name="btnSalvarEdicao" value="Salvar alterações">	
 							</form>					
 						</div>
-						
-
 					</div>
 				</div>
 
-
-
 				<!-- Fim -->
+				
 			</div>
 		</span>
-
 		<?php
 		require_once('include/footer.php');
 		?>
 	</div>
 </div>
-
 
 </body>
 </html>

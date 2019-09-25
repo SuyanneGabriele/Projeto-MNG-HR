@@ -10,7 +10,7 @@ $exibir = 10;
 
 $inicio_exibir = ($exibir * $pagina) - $exibir;
 
-$sql = "SELECT * FROM usuario LIMIT $inicio_exibir, $exibir";
+$sql = "SELECT * FROM usuario WHERE nivel = '0' LIMIT $inicio_exibir, $exibir";
 $result = mysqli_query($con, $sql) or die();
 $num = $result->num_rows;
 
@@ -94,30 +94,28 @@ $total2 = ceil($num3/$exibir);
 																<td><a href="ver_perfil.php?id=<?php echo utf8_encode($resultado['id']); ?>"><button type="button" name="infoVaga" class="btn btn-info" style="float: right;">Ver detalhes</button></a></td>
 															</tr>
 														<?php } ?>
-
-
 													</tbody>
 												</table>
 												<!-- ------ INÍCIO PAGINAÇÃO ------ -->
-															<div class="row w-100 mt-3">
-																<div class="col-6 col-md-6">
-																	<nav>
-																		<ul class="pagination">
-																			<li class="page-item <?=($pagina == 1) ? 'disabled' : ''?>"><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina-1; ?>">Anterior</a></li>
+												<div class="row w-100 mt-3">
+													<div class="col-6 col-md-6">
+														<nav>
+															<ul class="pagination">
+																<li class="page-item <?=($pagina == 1) ? 'disabled' : ''?>"><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina-1; ?>">Anterior</a></li>
+																
+																<?php for ($i = 1; $i <= $total2; $i++){?>
 
-																			
-																			<?php for ($i = 1; $i <= $total2; $i++){?>
+																	<li class="page-item"><a class="page-link" href="curriculos_admin.php?pagina=<?=$i?>"><?php echo $i ?></a></li>
 
-																				<li class="page-item"><a class="page-link" href="curriculos_admin.php?pagina=<?=$i?>"><?php echo $i ?></a></li>
+																<?php } ?>
 
-																			<?php } ?>
+																<li class="page-item <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
+															</ul>
+														</nav>
+													</div>
 
-																			<li class="page-item <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="curriculos_admin.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
-																		</ul>
-																	</nav>
-																</div>
-
-																<!-- ------- FIM PAGINAÇÃO ------- -->
+													<!-- ------- FIM PAGINAÇÃO ------- -->
+												</div>
 											</div>
 										</div>
 									</div>
@@ -126,23 +124,22 @@ $total2 = ceil($num3/$exibir);
 						</div>
 					</div>
 				</div>
+
+				<!-- Footer -->
+				<?php
+				require_once('include/footer.php')
+				?>
+				<!-- End of Footer -->
 			</div>
-
-			<!-- Footer -->
-			<?php
-			require_once('include/footer.php')
-			?>
-			<!-- End of Footer -->
+			<!-- End of Content Wrapper -->
 		</div>
-		<!-- End of Content Wrapper -->
-	</div>
 
-	<!-- End of Page Wrapper -->
-	<!-- Boostrap JS -->
+		<!-- End of Page Wrapper -->
+		<!-- Boostrap JS -->
 
-	<?php
-	require_once('include/links_footer.php');
-	?>
+		<?php
+		require_once('include/links_footer.php');
+		?>
 
-</body>
-</html>
+	</body>
+	</html>

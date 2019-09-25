@@ -134,8 +134,8 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 									<div class="row">
 										<div class="col-md-3 bg-dark " data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
 											<div class="card-body cc-experience-header">
-												<p><?php echo utf8_encode($info_profissao['data_profissao']); ?></p>
-												<div class="h5"><?php echo utf8_encode($info_profissao['cargo']); ?></div>
+												<p><?php echo utf8_decode(utf8_encode($info_profissao['data_profissao'])); ?></p>
+												<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
 											</div>
 										</div>
 										<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
