@@ -1,29 +1,7 @@
 <?php 
 require_once('conexao.php');
-require_once('classes/uploader.class.php');
+// require_once('classes/uploader.class.php');
 
-
-$email = $_SESSION['email'];
-
-
-$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
-$result_perfil = mysqli_query($con, $sql_perfil);
-$info_perfil = $result_perfil->fetch_assoc();
-$idU = $info_perfil['id'];
-
-
-  // Buscar informações do perfil
-if (isset($id_perfil)) {
-  $sql = "SELECT * FROM cadastro_perfil WHERE fk_perfil = $idU";
-
-  $queryPerfil = mysqli_query($con, $sql);
-  $resultadoPerfil = mysqli_fetch_array($queryPerfil);
-
-  // Verificar se o perfil existe
-  if (is_null($resultadoPerfil)) {
-    die("Perfil não encontrado.");
-  }
-}
 
 ?>
 
