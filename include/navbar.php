@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 
 require_once('include/conexao.php');
 if (!isset($_SESSION)){
@@ -12,15 +12,6 @@ $sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 $idU = $info_perfil['id'];
-
-
-$sql1 = "SELECT * FROM cadastro_perfil WHERE fk_usuario = $idU";
-
-$queryPerfil1 = mysqli_query($con, $sql1);
-$inf_perfil = $queryPerfil1->fetch_assoc();
-
-$id_perfil = $inf_perfil['id'];
-
 ?>	
 
 <link rel="stylesheet" type="text/css" href="../media/css/estilos.css">
