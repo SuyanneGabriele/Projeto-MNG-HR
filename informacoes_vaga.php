@@ -60,7 +60,7 @@ if (isset($_POST['excluirVaga'])) {
 }
 
 if (isset($_POST['editarVaga'])) {
-header('Location: editarVaga.php');
+  header('Location: editarVaga.php');
 };
 
 ?>
@@ -75,7 +75,6 @@ header('Location: editarVaga.php');
   ?>
 
 </head>
-
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -155,47 +154,46 @@ header('Location: editarVaga.php');
                   <button onclick="return confirm('Você tem certeza que deseja excluir essa vaga?');" name="excluirVaga" type="submit" class="btn btn-danger float-right mt-2 mr-2  " style="margin-right: -12px">Excluir vaga</button>
 
                   <a href="editarvaga.php?editarVaga=<?php echo utf8_encode($vagas['id']); ?>">
-                  <button name="editarVaga" type="button" class="btn btn-info float-right mt-2 mr-2  " style="margin-right: -12px">Editar vaga</button></a>
+                    <button name="editarVaga" type="button" class="btn btn-info float-right mt-2 mr-2  " style="margin-right: -12px">Editar vaga</button></a>
 
-                <?php } ?>
+                  <?php } ?>
 
-              </form>
+                </form>
+              </div>
             </div>
           </div>
+
+          <!-- Fim -->
         </div>
 
-        <!-- Fim -->
+
+
+
+        <!-- Footer -->
+        <?php
+        require_once('include/footer.php');
+        ?>
+        <!-- End of Footer -->
+
       </div>
-
-
-
-
-      <!-- Footer -->
-      <?php
-      require_once('include/footer.php');
-      ?>
-      <!-- End of Footer -->
+      <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
 
-  <!-- Bootstrap core JavaScript-->
-  <?php
-  require_once('include/links_footer.php');
-  ?>
+    <!-- Bootstrap core JavaScript-->
+    <?php
+    require_once('include/links_footer.php');
+    ?>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>

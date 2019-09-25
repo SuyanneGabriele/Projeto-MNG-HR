@@ -3,7 +3,7 @@ error_reporting(0);
 require_once('include/conexao.php');
 require_once('include/links.php');
 
-	//	Puxar informações do banco de dados
+//	Puxar informações do banco de dados
 $sql = "SELECT * FROM vagas";
 $result = mysqli_query($con, $sql);
 $vaga = mysqli_fetch_assoc($result);
@@ -29,9 +29,6 @@ if (isset($_POST['btnSalvar'])) {
 	}
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,29 +37,23 @@ if (isset($_POST['btnSalvar'])) {
 	<title>Adicionar vaga - Página</title>
 </head>
 <body>
-
 	<div id="wrapper">
-
 		<?php
 		require_once('include/navbar.php');
 		?>
-
 		<!-- Content Wrapper -->
 		<span id='topo'></span>
 		<div id="content-wrapper" class="d-flex flex-column">
 
 			<!-- Content -->
 			<div id="content">
-
 				<!-- Topbar -->
-
 				<?php
 				require_once('include/topbar.php');
 				?>
-
 				<!-- End of Topbar -->
-				<!-- Inicio -->
 
+				<!-- Inicio -->
 				<div class="container mb-5">
 					<h2>Adicionar vaga</h2>
 					<div class="card">
@@ -102,25 +93,22 @@ if (isset($_POST['btnSalvar'])) {
 								</div>
 
 								<input type="submit" class="btn btn-info" name="btnSalvar" value="+ Adicionar vaga">	
-							</form>					
+								<a href="vagas.php?pagina=1"><button type="button" class="btn btn-danger" name="btnSalvar">Cancelar</button><a>
+								</form>					
+							</div>
+							
+
 						</div>
-						
-
 					</div>
+					<!-- Fim -->
+
 				</div>
+			</span>
 
-
-
-				<!-- Fim -->
-			</div>
-		</span>
-
-		<?php
-		require_once('include/footer.php');
-		?>
+			<?php
+			require_once('include/footer.php');
+			?>
+		</div>
 	</div>
-</div>
-
-
 </body>
 </html>

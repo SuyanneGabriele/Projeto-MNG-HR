@@ -28,7 +28,6 @@
 		$_SESSION['UsuarioEmail'] = $resultado['email']; 
 		$_SESSION['UsuarioNivel'] = $resultado['nivel']; 
 		header("Location: restrito.php");
-
 	}
 
 ?>
