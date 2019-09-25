@@ -2,15 +2,8 @@
 
 require_once('include/conexao.php');
 error_reporting(0);
-if (!isset($_SESSION)){
-	session_start();
-};
 
 $id = $_GET['id'];
-
-$sql_perfil = "SELECT * FROM cadastro_perfil where fk_perfil = '$id'"; 
-$result_perfil = mysqli_query($con, $sql_perfil);
-$info_perfil = $result_perfil->fetch_assoc();
 
 $sql_profissao = "SELECT * FROM exp_profissional WHERE fk_usuario = '$id'";
 $result_profissao = mysqli_query($con, $sql_profissao);

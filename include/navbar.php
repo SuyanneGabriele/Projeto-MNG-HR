@@ -5,12 +5,21 @@ require_once('include/conexao.php');
 if (!isset($_SESSION)){
 	session_start();
 };
-$email = $_SESSION['email'];
 
+$email = $_SESSION['email'];
 
 $sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
+$idU = $info_perfil['id'];
+
+
+$sql1 = "SELECT * FROM cadastro_perfil WHERE fk_usuario = $idU";
+
+$queryPerfil1 = mysqli_query($con, $sql1);
+$inf_perfil = $queryPerfil1->fetch_assoc();
+
+$id_perfil = $inf_perfil['id'];
 
 ?>	
 
@@ -18,16 +27,16 @@ $info_perfil = $result_perfil->fetch_assoc();
 <style type="text/css">
 
 
-	li:hover {
-		background-color: #32a897;
-		margin-left: 10px;
-		border-radius: 10px;
-		font-weight: 750;
-	}
+li:hover {
+	background-color: #32a897;
+	margin-left: 10px;
+	border-radius: 10px;
+	font-weight: 750;
+}
 
-	ul {
-		padding: 10px;
-	} 
+ul {
+	padding: 10px;
+} 
 
 </style>
 
@@ -47,8 +56,8 @@ $info_perfil = $result_perfil->fetch_assoc();
 
 	<!-- Nav Item - Dashboard -->
 	<?php if ($email != NULL) { ?>
-		<p class="mt-3" style="color: white; text-align: center;">Bem vindo, <?=$info_perfil['nome']?>!</p>
-		<hr class="sidebar-divider d-none d-md-block mb-0" style="border-color: rgba(0, 0, 0, 0.2)";>
+	<p class="mt-3" style="color: white; text-align: center;">Bem vindo, <?=$info_perfil['nome']?>!</p>
+	<hr class="sidebar-divider d-none d-md-block mb-0" style="border-color: rgba(0, 0, 0, 0.2)";>
 	<?php } ?>
 
 	<li class="nav-item active">
@@ -64,31 +73,31 @@ $info_perfil = $result_perfil->fetch_assoc();
 	<!-- Nav Item - Login -->
 	<?php if (is_null($email)) { ?>
 
-		<li class="nav-item">
-			<a class="nav-link" href="login.php">
-				<i class="fas fa fa-male fa-2x text-white"></i>
-				<span>Login</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="login.php">
+			<i class="fas fa fa-male fa-2x text-white"></i>
+			<span>Login</span>
+		</a>
+	</li>
 
 
-		<!-- Nav Item - Registrar -->
-		<li class="nav-item">
-			<a class="nav-link" href="registro.php">
-				<i class="fas fa fa-lock fa-2x text-white"></i>
-				<span>Registrar</span>
-			</a>
-		</li>
+	<!-- Nav Item - Registrar -->
+	<li class="nav-item">
+		<a class="nav-link" href="registro.php">
+			<i class="fas fa fa-lock fa-2x text-white"></i>
+			<span>Registrar</span>
+		</a>
+	</li>
 	<?php } ?>
 
 	<!-- Nav Item - Recuperar -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
-		<li class="nav-item">
-			<a class="nav-link" href="recuperar.php">
-				<i class="fas fa fa-key fa-2x text-white"></i>
-				<span>Recuperar senha</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="recuperar.php">
+			<i class="fas fa fa-key fa-2x text-white"></i>
+			<span>Recuperar senha</span>
+		</a>
+	</li>
 	<?php } ?>
 
 
@@ -102,42 +111,42 @@ $info_perfil = $result_perfil->fetch_assoc();
 
 	<!-- Nav Item -  Minhas Vagas -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
-		<li class="nav-item">
-			<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
-				<i class="fas fa fa-suitcase fa-2x text-white"></i>
-				<span>Minhas vagas</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
+			<i class="fas fa fa-suitcase fa-2x text-white"></i>
+			<span>Minhas vagas</span>
+		</a>
+	</li>
 	<?php } ?>
 
 	<!-- Nav Item -  Currículos Admin -->
 	<?php if ($info_perfil['nivel'] == 1) { ?>
-		<li class="nav-item">
-			<a class="nav-link" href="curriculos_admin.php">
-				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
-				<span>Currículos</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="curriculos_admin.php">
+			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
+			<span>Currículos</span>
+		</a>
+	</li>
 	<?php } ?>
 
 	<!-- Nav Item -  Currículos -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 
-		<li class="nav-item">
-			<a class="nav-link" href="curriculos.php?fk_perfil=<?php echo utf8_encode($info_perfil['id']);?>">
-				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
-				<span>Meu currículo</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="curriculos.php?id=<?php echo utf8_encode($id_perfil['id']);?>">
+			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
+			<span>Meu currículo</span>
+		</a>
+	</li>
 
-		<!-- Nav Item -  Perfil -->
+	<!-- Nav Item -  Perfil -->
 
-		<li class="nav-item">
-			<a class="nav-link" href="perfil.php">
-				<i class="fas fa fa-male fa-2x text-white"></i>
-				<span>Meu Perfil</span>
-			</a>
-		</li>
+	<li class="nav-item">
+		<a class="nav-link" href="perfil.php">
+			<i class="fas fa fa-male fa-2x text-white"></i>
+			<span>Meu Perfil</span>
+		</a>
+	</li>
 	<?php } ?>
 
 	<!-- Divider -->
