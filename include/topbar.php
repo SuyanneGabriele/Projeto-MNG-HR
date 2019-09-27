@@ -2,6 +2,16 @@
 require_once('conexao.php');
 // require_once('classes/uploader.class.php');
 
+$email = $_SESSION['email'];
+
+
+$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+$idU = $info_perfil['id'];
+
+$pegando_foto = "SELECT nome_foto FROM cadastro_perfil WHERE fk_perfil = $idU";
+$resultado_nome_foto = mysqli_query($con, $pegando_foto);
 
 ?>
 

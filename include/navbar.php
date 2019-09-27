@@ -19,10 +19,6 @@ $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 $id_usuario = $info_perfil['id'];
 
-$sql_id = "SELECT id FROM cadastro_perfil WHERE fk_perfil = '$id_usuario'";
-$result_id = mysqli_query($con, $sql_id);
-$id = mysqli_fetch_assoc($result_id);
-
 ?>
 
 <link rel="stylesheet" type="text/css" href="../media/css/estilos.css">
@@ -146,7 +142,7 @@ ul {
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 
 	<li class="nav-item">
-		<a class="nav-link" href="curriculos.php?fk_perfil=<?php echo $id['id']; ?>">
+		<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario; ?>">
 			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
 			<span>Meu currículo</span>
 		</a>
