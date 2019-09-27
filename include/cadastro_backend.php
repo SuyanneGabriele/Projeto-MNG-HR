@@ -11,6 +11,7 @@ error_reporting(0);
 require_once('conexao.php');
 require_once('classes/uploader.class.php');
 
+$id_perfil = $_GET['id'];
 
 $email = $_SESSION['email'];
 
@@ -20,7 +21,6 @@ $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 $idU = $info_perfil['id'];
 
-
 	// Buscar informações do perfil
 if (isset($idU)) {
 	$sql1 = "SELECT * FROM cadastro_perfil, exp_profissional, escolaridade, escolaridade2 WHERE fk_perfil = $idU";
@@ -28,6 +28,10 @@ if (isset($idU)) {
 	$queryPerfil1 = mysqli_query($con, $sql1);
 	$resultadoPerfil1 = mysqli_fetch_array($queryPerfil1);
 }
+
+$sqlteste = "SELECT fk_perfil FROM cadastro_perfil WHERE fk_perfil = $id_perfil";
+$resultado = mysqli_query($con, $sqlteste);
+$resultado2 = mysqli_fetch_assoc($resultado);
 
 	// Verificando ação de SALVAR
 if (isset($_POST['btnSalvar'])) {
@@ -131,7 +135,7 @@ if (isset($_POST['btnSalvar'])) {
 		$_SESSION['data_escolaridade_fundamental'] = $_POST['data_escolaridade_fundamental'];
 	}
 
-	if (($insert!="nananinanao") && !isset($id_perfil)) {
+	if (($insert!="nananinanao") && !isset($resultado2)) {
 		$sql = "INSERT INTO cadastro_perfil 
 		VALUES (
 		DEFAULT,
@@ -147,13 +151,19 @@ if (isset($_POST['btnSalvar'])) {
 		'$idiomas',
 		'$nome_foto'
 	)";
-} else if(($insert!="nananinanao") && isset($id_perfil)){
-	$sql = "UPDATE `cadastro_perfil` SET `nome` = '$nome', `idade` = '$idade', `telefone` = '$telefone', `endereco` = '$endereco', `cidade` = '$cidade', `idiomas` = '$idiomas' WHERE `cadastro_perfil`.`id` = '$id_perfil';";
+
+} else if(($insert!="nananinanao") && isset($resultado2)){
+	$sql = "UPDATE `cadastro_perfil` SET `nome` = '$nome', `sobre` = '$sobre', `idade` = '$idade', `email` = '$email', `telefone` = '$telefone', `endereco` = '$endereco', `cidade` = '$cidade', `estado` = '$estado', `idiomas` = '$idiomas', `nome_foto` = '$nome_foto' WHERE `cadastro_perfil`.`fk_perfil` = $id_perfil";
 
 }
 
 
-if(!isset($id_perfil)){
+if(isset($resultado2)){
+	foreach ($nome_faculdade as $k => $v) {
+		$sql2 = "UPDATE `escolaridade` SET `nome_faculdade[$k]` = '$nome_faculdade[$k]', `curso[$k]` = '$curso[$k]', `data_escolaridade[$k]` = '$data_escolaridade[$k]', `ensino_superior[$k]` = 'Ensino Superior' WHERE `escolaridade`.`fk_usuario` = $id_perfil";
+	mysqli_query($con, $sql2);
+}
+} else{
 	foreach ($nome_faculdade as $k => $v) {
 		$sql2 = "INSERT INTO escolaridade
 		VALUES (
@@ -163,28 +173,14 @@ if(!isset($id_perfil)){
 		'$curso[$k]',
 		'$data_escolaridade[$k]',
 		'Ensino Superior'
-	)";
-
-
-	mysqli_query($con, $sql2);
-
-}
-} else{
-	foreach ($nome_faculdade as $k => $v) {
-		$sql2 = "UPDATE escolaridade WHERE id = '$id_perfil'
-		SET (
-		nome_faculdade = '$nome_faculdade[$k]',
-		curso = '$curso[$k]',
-		data_escolaridade = '$data_escolaridade[$k]'
-	)";
-
+	)"; 
 
 	mysqli_query($con, $sql2);
 
 }
 }
 
-if(!isset($id_perfil)){
+if(!isset($resultado2)){
 	foreach ($profissao as $k => $v) {
 
 		$sql3 = "INSERT INTO exp_profissional
@@ -203,20 +199,14 @@ if(!isset($id_perfil)){
 } else {
 	foreach ($profissao as $k => $v) {
 
-		$sql3 = "UPDATE exp_profissional WHERE id = '$id_perfil'
-		SET (
-		profissao = '$profissao[$k]',
-		sobre_profissao = '$sobre_profissao[$k]',
-		data_profissao = '$data_profissao[$k]',
-		cargo = '$cargo[$k]'
-	)";
+		$sql3 = "UPDATE `exp_profissional` SET `profissao[$k]` = '$profissao[$k]', `sobre_profissao[$k]` = '$sobre_profissao[$k]', `data_profissao[$k]` = '$data_profissao[$k]', `cargo[$k]` = '$cargo[$k]' WHERE `exp_profissional`.`fk_usuario` = $id_perfil";
 
 	mysqli_query($con, $sql3);
 
 }
 }
 
-if(!isset($id_perfil)){
+if(!isset($resultado2)){
 	$sql4 = "INSERT INTO escolaridade2
 	VALUES (
 	DEFAULT,
@@ -231,13 +221,7 @@ if(!isset($id_perfil)){
 
 } else {
 
-	$sql4 = "UPDATE escolaridade2 WHERE id = '$id_perfil'
-	SET (
-	nome_medio = '$nome_medio',
-	data_escolaridade_medio = '$data_escolaridade_medio',
-	nome_fundamental = '$nome_fundamental',
-	data_escolaridade_fundamental = '$data_escolaridade_fundamental'
-)";
+	$sql4 = "UPDATE `escolaridade2` SET `nome_medio` = '$nome_medio', `data_escolaridade_medio` = '$data_escolaridade_medio', `ensino_medio` = 'Ensino Médio', `nome_fundamental` = '$nome_fundamental', `data_escolaridade_fundamental` = '$data_escolaridade_fundamental', `ensino_fundamental` = 'Ensino Fundamental' WHERE `escolaridade2`.`fk_usuario` = $id_perfil";
 
 }
 mysqli_query($con, $sql4);
