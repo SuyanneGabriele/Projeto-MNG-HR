@@ -1,49 +1,54 @@
 <?php
 
 require_once('include/conexao.php');
-if (!isset($_SESSION)){
-  session_start();
-}
-error_reporting(0);
-$errors = [];
+require_once('include/funcoes.php');
+date_default_timezone_set('America/Sao_Paulo');
 
 if (isset($_POST['reset_password'])) {
-  $email = mysqli_real_escape_string($con, $_POST['email']);
+  $email = $_POST['email'];
+  $sql_email = "SELECT email, nome FROM usuario WHERE email = '$email'";
+  $result_email = mysqli_query($con, $sql_email);
+  $email1 = mysqli_fetch_assoc($result_email);
 
-  //  Verificar se o email existe no  banco de dados
-  $query = "SELECT email FROM usuario WHERE email = '$email'";
-  $results = mysqli_query($con, $query);
+  if (isset($email1['email'])) {
+    $token = mt_rand(100000, 900000);
 
-  if (empty($email)) {
-      //  CRIAR ALERTA PARA CASO ELE NÃO PREENCHA O EMAIL
-    array_push($errors, "Digite seu email!");
+    $insert_token = "UPDATE `usuario` SET `token_recuperacao` = '$token' WHERE `email` = '$email';";
+    $result_token = mysqli_query($con, $insert_token);
+    $token_data = date('H:i');
+    $token_datacode = base64_encode($token_data); 
+    $token2 = $token.'-'.$token_datacode;
+    $token_final = str_replace('-', '', $token2);
+    $token_final1 = str_replace('=', '', $token_final);
 
-  }else if (mysqli_num_rows($results) <= 0) {
-      //  CRIAR ALERTA "NÃO EXISTE USUÁRIO COM ESTE EMAIL"
-    array_push($errors, "Não existe um usuário com este email!");
+    $update_token = "UPDATE `usuario` SET `token_recuperacao` = '$token_final1' WHERE `email` = '$email';";
+    $result_token2 = mysqli_query($con, $update_token);
+    
+    //  Aviso que o usuári irá receber um email para redefiniçã ode senha
+    $_SESSION['enviar_email'] = true;
+
+    //  Enviar email
+
+    $nome = $email1['nome'];
+
+    $corpo = "<h1>Clique no link para redefinir sua senha, $nome</h1>";
+    $corpo .= "<p>http://localhost/phpVespertino/Projeto-MNG-HR/senha.php?token=$token_final1</p>";
+
+    $envio = enviar_email($email, 'testesuy@gmail.com', 'Recuperação de senha', 'Recuperação de senha - Management Human Resources', $corpo);
+
+    if ($envio == true) {
+      $_SESSION['enviamos'] = true;
+    } else {
+      echo "Erro ao enviar contato.<br>";
+      echo $envio;
+    }
 
   }
-  //  Cria um token único com o tamanho de 100
-  $token = bin2hex(random_bytes(50));
 
-  if (count($errors) == 0) {
-    //  Guarda o token na tabela password_reset contra o email do usuário
-    $sql = "INSERT INTO `password_reset` (`email`, `token`) VALUES (`$email`, `$token`);";
-    $results = mysqli_query($con, $sql);
-
-    //  Envia um email para o usuário com o token no link do email
-    $to = $email;
-    $subject = "Redefina sua senha no managerhr.com";
-    $msg = "Olá, clique nesse link <a href=\"recgerarcodigo.php?token=" . $token . "\">link</a> para redefinir sua senha.";
-    $msg = wordwrap($msg,70);
-    $headers = "From: info@managerhr.com";
-    mail($to, $subject, $msg, $headers);
-    header('Location: login.php');
-  }
 }
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,12 +95,21 @@ if (isset($_POST['reset_password'])) {
                     <div class="p-5">
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-2">Esqueceu sua senha?</h1>
+                        <!-- ----- AVISOS ----- -->
+                        <?php if ($_SESSION['enviamos']) { ?>
+                          <div class="col-12">
+                            <div class="alert alert-success" role="alert">
+                              Email enviado com sucesso!
+                            </div>
+                          </div>
+                        <?php }; UNSET($_SESSION['enviamos']); ?>
+                        <!-- ------ FIM AVISOS ----- -->
                         <p class="mb-4">Insira seu email e nós enviaremos um link para o seu email para redefinição de senha.</p>
                       </div>
                       <?php include('messages.php'); ?>
                       <form class="user" method="POST">
                         <div class="form-group">
-                          <input type="email" class="form-control form-control-user" name="email" placeholder="Insira seu email">
+                          <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Insira seu email">
                         </div>
                         <button type="submit" name="reset_password" class="btn btn-primary btn-user btn-block text-white">Redefinir senha</button>
                       </form>
