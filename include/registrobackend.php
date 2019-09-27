@@ -1,6 +1,6 @@
 	<?php
 
-session_start();
+// session_start();
 
 include_once('conexao.php');
 
@@ -29,9 +29,9 @@ if ($con->query($sql) === true) {
 $_SESSION['status_cadastro'] = true;
 
 
-$id_usuario_criado = mysql_insert_id($con);
+$id_usuario_criado = mysqli_insert_id($con);
 
-$sql_perfil = "INSERT INTO cadastro_perfil (`id`, `fk_perfil`, `nome`, `sobre`, `idade`, `email`, `telefone`, `endereco`, `cidade`, `estado`, `idiomas`) VALUES (DEFAULT, '$id_usuario_criado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);";
+$sql_perfil = "INSERT INTO cadastro_perfil (`id`, `fk_perfil`, `nome`, `sobre`, `idade`, `email`, `telefone`, `endereco`, `cidade`, `estado`, `idiomas`, `nome_foto`) VALUES (DEFAULT, '$id_usuario_criado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);";
 $result_perfil = mysqli_query($con, $sql_perfil);
 
 

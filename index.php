@@ -85,7 +85,7 @@ function limita_caracteres($texto, $limite, $quebra = true) {
                           </div>
                         </div>
                       </div>
-                      <i class="fa fa-clock-o ml-3 mb-4" style="color: gray;" aria-hidden="true"> Há 
+                      <i class="fa fa-clock-o ml-3" style="color: gray;" aria-hidden="true"> Há 
                        <?php
                        if (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
                         echo "menos de 1 Hora";
