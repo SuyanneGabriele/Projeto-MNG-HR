@@ -154,10 +154,20 @@ ul {
 
 	<!-- Nav Item -  Perfil -->
 
+<<<<<<< HEAD
 	<li class="nav-item">
 		<a class="nav-link" href="perfil.php">
 			<i class="fas fa fa-male fa-2x text-white"></i>
 			<span>Meu Perfil</span>
+=======
+		<!-- Sidebar - Brand -->
+		<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+			<div class="sidebar-brand-icon">
+				<i class="fas fa-laugh-wink">
+					<img src="media/images/logo.png" width="55">
+				</i>
+			</div>
+>>>>>>> 6eaf2a132198ececf1b18069268f76de71f8ed6f
 		</a>
 	</li>
 	<?php } ?>
