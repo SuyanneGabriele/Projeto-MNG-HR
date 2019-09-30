@@ -4,7 +4,7 @@
 
 	//	Verifica se há algum campo vazio
 	if (!empty($_POST) AND (!empty($_POST['loginEmail'])) OR (!empty($_POST['loginSenha']))) {
-		Location('index.html');
+		Location('index.php');
 	} else {
 		die('Verifique seus dados e tente novamente.');
 	}

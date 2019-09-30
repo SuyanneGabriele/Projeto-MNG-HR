@@ -18,6 +18,9 @@ if (isset($token)) {
 		$result_update = mysqli_query($con, $sql_update);
 		$_SESSION['sucesso'] = true;
 
+		$sql_delete = "DELETE FROM usuario WHERE token_recuperacao = '$token'";
+		$result_delete = mysqli_query($con, $sql_delete);
+
 	}
 }
 ?>

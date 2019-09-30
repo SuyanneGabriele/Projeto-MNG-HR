@@ -1,52 +1,68 @@
+<?php
+include_once('include/conexao.php');
+
+error_reporting(0);
+if (!isset($_SESSION)){
+    session_start();
+}
+?> 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Login - Sistema Gestão RH</title>
+    <title>Faça login</title>
     <?php
     require_once('include/links.php');       
     ?>
 </head>
-<body">
+<body style="background-color: rgba(0, 0, 0, 0.8);">
 
-<!-- Page Wrapper -->
-<div id="wrapper">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-    <!-- Sidebar --> 
+        <!-- Sidebar --> 
+        <?php 
+        require_once('include/navbar.php');
+        ?>
+        <!-- End of Sidebar -->
 
-    <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
 
-        <!-- Main Content -->
-        <div id="content">
+                <!-- Topbar -->
+                <?php
+                require_once('include/topbar.php')
+                ?>
+                <!-- End of Topbar -->
 
-            <!-- Topbar -->
-            <!-- End of Topbar -->
+                <div class="container">
+                    <!-- Outer Row -->
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-12 col-md-9">
+                            <div class="card o-hidden border-0 shadow-lg my-5">
+                                <div class="card-body p-0 text-center">
 
-            <div class="container">
-                <!-- Outer Row -->
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-12 col-md-9">
-                        <div class="card o-hidden border-0 shadow-lg my-5">
-                            <div class="card-body p-0 text-center">
 
-                                <!-- Nested Row within Card Body -->
-                                <div class="row">
                                     <div class="col-lg-7 col" style="margin-left: auto; margin-right: auto;">
                                         <div class="p-5">
                                             <div class="text-center">
-                                                <h1 class="h4 text-gray-900 mb-4"><strong>Você não está logado!</strong></h1>
+                                                <h4 class="h4 mb-4" style="color: black;">Faça o login para poder acessar essa página!</h4>
                                             </div>
 
+                                            <h5 class="text-gray">Faça o login ou cadastre-se para continuar.</h5>
 
                                             <hr>
                                             <div class="text-center">
-                                                <p class="small" href="recuperar.php">Faça login para continuar</p>
+                                                <a class="small" href="recuperar.php">Esqueci minha senha</a>
                                             </div>
                                             <div class="text-center">
-                                                <a class="small" href="login.php">Fazer Login</a>
+                                                <a class="small" href="registro.php">Criar uma conta</a>
+                                            </div>
+                                            <div class="text-center">
+                                                <a class="small" href="login.php">Faça o login</a>
                                             </div>
                                         </div>
                                     </div>
@@ -56,12 +72,14 @@
                     </div>
                 </div>
             </div>
+            <?php
+            require_once('include/footer.php')
+            ?>
         </div>
     </div>
-</div>
-<?php
-require_once('include/links_footer.php');
-?>
+    <?php
+    require_once('include/links_footer.php');
+    ?>
 
 </body>
 </html>

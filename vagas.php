@@ -1,5 +1,6 @@
 <?php
 require_once('include/conexao.php');
+require_once('include/area_restrita');
 error_reporting(0);
 
 //	Verifica a página atual caso seja informada na URL, senão atribui como 1ª página 

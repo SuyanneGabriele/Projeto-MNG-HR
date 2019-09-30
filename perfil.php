@@ -1,6 +1,7 @@
 <?php
 
 require_once('include/conexao.php');
+require_once('include/area_restrita.php');
 
 if (!isset($_SESSION)){
 	session_start();
