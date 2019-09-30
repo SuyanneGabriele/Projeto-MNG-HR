@@ -121,7 +121,7 @@ $id_usuario = $info_perfil['id'];
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 		<li class="nav-item">
 			<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
-				<i class="fas fa fa-suitcase fa-2x text-white"></i>
+				<i class="fas fa fa-briefcase fa-2x text-white"></i>
 				<span>Minhas vagas</span>
 			</a>
 		</li>
@@ -142,7 +142,7 @@ $id_usuario = $info_perfil['id'];
 
 		<li class="nav-item">
 			<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario; ?>">
-				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
+				<i class="fas fa fa-black-tie fa-2x text-white"></i>
 				<span>Fazer um currículo</span>
 			</a>
 		</li>
