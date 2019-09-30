@@ -27,10 +27,19 @@ $resultado_nome_foto2 = mysqli_fetch_assoc($resultado_nome_foto);
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
     <!-- Nav Item - User Information -->
-    <li class="nav-item dropdown no-arrow">
+    <li class="nav-item dropdown no-arrow" style="hover:none !important;">
       <a class="nav-link dropdown-toggle" href="sair.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong><img src="uploads/<?= $resultado_nome_foto2['nome_foto'] ?>" class="img-profile rounded-circle"></strong></span>
+        <span  class="mr-2 d-none d-lg-inline text-gray-600 small">
+          <?php if($info_perfil['id'] == "1") { ?>
+            <img src="uploads/avatar.png" class="img-profile rounded-circle">
+          <?php } else { ?>
+            <img src="uploads/<?= $resultado_nome_foto2['nome_foto'] ?>" class="img-profile rounded-circle">
+          <?php } ?>
+        </span>
       </a>
+
+
+
       <!-- Dropdown - User Information -->
       <div href="include/logoff.php" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
         <a href="include/logoff.php" class="dropdown-item" style=" color: rgb(0,0,0,.6);"><strong>Sair</strong></a>

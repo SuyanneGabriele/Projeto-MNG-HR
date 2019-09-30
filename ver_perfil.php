@@ -29,6 +29,8 @@ $sql_vaga = "SELECT fk_usuario, fk_vaga, nome_vaga FROM vagas_usuarios
 INNER JOIN vagas ON vagas_usuarios.fk_vaga = vagas.id WHERE fk_usuario = '$id'";
 $result_vaga = mysqli_query($con, $sql_vaga);
 
+var_dump($info_perfil['id']);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -74,12 +76,19 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 	<div class="page-content">
 		<div>
 			<div class="profile-page">
-				<div class="wrapper">
-					<div class="page-header page-header-small" filter-color="green">
-						<div class="container">
-							<div class="content-center">
-								<div><img src="uploads/avatar.png" alt="Foto de perfil"/></div>
-								<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
+				<div class="profile-page">
+					<div class="wrapper">
+						<div class="page-header page-header-small" filter-color="green">
+							<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
+							<div class="container">
+								<div class="content-center">
+									<?php if($info_perfil['id'] == "1") { ?>
+										<img src="uploads/avatar.png">
+									<?php } else { ?>
+										<img src="uploads/<?= $resultado_nome_foto2['nome_foto'] ?>">
+									<?php } ?>
+									<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
+								</div>
 							</div>
 						</div>
 					</div>
