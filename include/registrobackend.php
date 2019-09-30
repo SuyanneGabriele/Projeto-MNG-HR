@@ -27,6 +27,7 @@ $sql = "INSERT INTO `usuario` (`ID`, `nome`, `sobrenome`, `email`, `senha`, `niv
 
 if ($con->query($sql) === true) {
 $_SESSION['status_cadastro'] = true;
+}
 
 
 $con->close();

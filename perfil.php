@@ -1,11 +1,7 @@
 <?php
 
 require_once('include/conexao.php');
-
-if (!isset($_SESSION)){
-	session_start();
-};
-
+require_once('include/area_restrita.php');
 $email = $_SESSION['email'];
 
 $sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";
@@ -21,6 +17,7 @@ $num_profissao = mysqli_num_rows($result_profissao);
 $sql_escolaridade = "SELECT * FROM escolaridade WHERE fk_usuario = '$id'";
 $result_escolaridade = mysqli_query($con, $sql_escolaridade);
 $num_escolaridade = mysqli_num_rows($result_escolaridade);  
+
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +56,6 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 		</div>
 	</header>
 
-	<?php if (isset($email)) { ?>
 		<div class="page-content">
 			<div>
 				<div class="profile-page">
@@ -68,14 +64,14 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 							<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
 							<div class="container">
 								<div class="content-center">
-									<div><a href="#"><img src="images/anthony.jpg" alt="Foto de perfil"/></a></div>
+									<div class="cc-profile-image"><a href="#"><img src="uploads/<?=$info_perfil['nome_foto']?>" alt="Foto de perfil"/></a></div>
 									<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="section" id="about">
+				<div class="section" id="about"> 
 					<div class="container">
 						<div class="card" data-aos="fade-up" data-aos-offset="10">
 							<div class="row">
@@ -190,13 +186,6 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 				</div>
 			</div>
 		</div>
-	<?php } else { ?>
-		<div class="container" style="width: 80%; margin-left: auto; margin-right: auto;">
-			<div>
-				<h1>Faça o login para acessar essa página!</h1>
-			</div>
-		</div>
-	<?php } ?>  
 
 
 	<!-- Footer -->

@@ -1,6 +1,5 @@
 <?php
 error_reporting(0);
-
 require_once('include/conexao.php');
 if (!isset($_SESSION)){
 	session_start();
@@ -25,27 +24,27 @@ $id_usuario = $info_perfil['id'];
 <style type="text/css">
 
 
-li:hover {
-	background-color: #32a897;
-	margin-left: 10px;
-	border-radius: 10px;
-	font-weight: 750;
-}
-li:hover {
-	background-color: #32a897;
-	margin-left: 10px;
-	border-radius: 10px;
-	font-weight: 750;
-}
+	li:hover {
+		background-color: #32a897;
+		margin-left: 10px;
+		border-radius: 10px;
+		font-weight: 750;
+	}
+	li:hover {
+		background-color: #32a897;
+		margin-left: 10px;
+		border-radius: 10px;
+		font-weight: 750;
+	}
 
-ul {
-	padding: 10px;
-}
+	ul {
+		padding: 10px;
+	}
 
 
-ul {
-	padding: 10px;
-}
+	ul {
+		padding: 10px;
+	}
 
 </style>
 
@@ -65,8 +64,8 @@ ul {
 
 	<!-- Nav Item - Dashboard -->
 	<?php if ($email != NULL) { ?>
-	<p class="mt-3" style="color: white; text-align: center;">Bem vindo, <?=$info_perfil['nome']?>!</p>
-	<hr class="sidebar-divider d-none d-md-block mb-0" style="border-color: rgba(0, 0, 0, 0.2)";>
+		<p class="mt-3" style="color: white; text-align: center;">Bem vindo, <?=$info_perfil['nome']?>!</p>
+		<hr class="sidebar-divider d-none d-md-block mb-0" style="border-color: rgba(0, 0, 0, 0.2)";>
 	<?php } ?>
 
 	<li class="nav-item active">
@@ -82,31 +81,31 @@ ul {
 	<!-- Nav Item - Login -->
 	<?php if (is_null($email)) { ?>
 
-	<li class="nav-item">
-		<a class="nav-link" href="login.php">
-			<i class="fas fa fa-male fa-2x text-white"></i>
-			<span>Login</span>
-		</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" href="login.php">
+				<i class="fas fa fa-male fa-2x text-white"></i>
+				<span>Login</span>
+			</a>
+		</li>
 
 
-	<!-- Nav Item - Registrar -->
-	<li class="nav-item">
-		<a class="nav-link" href="registro.php">
-			<i class="fas fa fa-lock fa-2x text-white"></i>
-			<span>Registrar</span>
-		</a>
-	</li>
+		<!-- Nav Item - Registrar -->
+		<li class="nav-item">
+			<a class="nav-link" href="registro.php">
+				<i class="fas fa fa-lock fa-2x text-white"></i>
+				<span>Registrar</span>
+			</a>
+		</li>
 	<?php } ?>
 
 	<!-- Nav Item - Recuperar -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
-	<li class="nav-item">
-		<a class="nav-link" href="recuperar.php">
-			<i class="fas fa fa-key fa-2x text-white"></i>
-			<span>Recuperar senha</span>
-		</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" href="recuperar.php">
+				<i class="fas fa fa-key fa-2x text-white"></i>
+				<span>Recuperar senha</span>
+			</a>
+		</li>
 	<?php } ?>
 
 
@@ -120,43 +119,41 @@ ul {
 
 	<!-- Nav Item -  Minhas Vagas -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
-	<li class="nav-item">
-		<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
-			<i class="fas fa fa-suitcase fa-2x text-white"></i>
-			<span>Minhas vagas</span>
-		</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" href="minhas_vagas.php?id=<?php echo utf8_encode($info_perfil['id']);?>">
+				<i class="fas fa fa-suitcase fa-2x text-white"></i>
+				<span>Minhas vagas</span>
+			</a>
+		</li>
 	<?php } ?>
 
 	<!-- Nav Item -  Currículos Admin -->
 	<?php if ($info_perfil['nivel'] == 1) { ?>
-	<li class="nav-item">
-		<a class="nav-link" href="curriculos_admin.php">
-			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
-			<span>Currículos</span>
-		</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" href="curriculos_admin.php">
+				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
+				<span>Currículos</span>
+			</a>
+		</li>
 	<?php } ?>
 
-	<!-- Nav Item -  Currículos -->
+	<!-- Nav Item - Cadastrar Currículo -->
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 
-	<li class="nav-item">
-		<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario; ?>">
-			<i class="fas fa fa-sticky-note fa-2x text-white"></i>
-			<span>Meu currículo</span>
-		</a>
-	</li>
+		<li class="nav-item">
+			<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario; ?>">
+				<i class="fas fa fa-sticky-note fa-2x text-white"></i>
+				<span>Fazer um currículo</span>
+			</a>
+		</li>
 
-	<!-- Nav Item -  Perfil -->
-
-
-	<li class="nav-item">
-		<a class="nav-link" href="perfil.php">
-			<i class="fas fa fa-male fa-2x text-white"></i>
-			<span>Meu Perfil</span>
-		</a>
-	</li>
+		<!-- Nav Item -  Perfil -->
+		<li class="nav-item">
+			<a class="nav-link" href="perfil.php">
+				<i class="fas fa fa-male fa-2x text-white"></i>
+				<span>Meu Perfil</span>
+			</a>
+		</li>
 	<?php } ?>
 
 	<!-- Divider -->

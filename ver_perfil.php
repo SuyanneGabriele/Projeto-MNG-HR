@@ -76,10 +76,9 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 			<div class="profile-page">
 				<div class="wrapper">
 					<div class="page-header page-header-small" filter-color="green">
-						<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
 						<div class="container">
 							<div class="content-center">
-								<div><a href="#"><img src="images/anthony.jpg" alt="Foto de perfil"/></a></div>
+								<div><img src="uploads/avatar.png" alt="Foto de perfil"/></div>
 								<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
 							</div>
 						</div>
