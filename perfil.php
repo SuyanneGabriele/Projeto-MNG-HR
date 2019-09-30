@@ -2,6 +2,14 @@
 
 require_once('include/conexao.php');
 require_once('include/area_restrita.php');
+<<<<<<< HEAD
+=======
+
+if (!isset($_SESSION)){
+	session_start();
+};
+
+>>>>>>> 17b930da4e14d2ba66193a611cddb0e61a505de5
 $email = $_SESSION['email'];
 
 $sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";

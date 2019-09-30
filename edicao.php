@@ -1,5 +1,6 @@
  <?php
  require_once('include/cadastro_backend.php');
+ require_once('include/area_restrita.php');
 
  ?>
  <!DOCTYPE html>

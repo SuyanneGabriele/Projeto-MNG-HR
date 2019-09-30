@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 require_once('include/conexao.php');
+require_once('include/area_restrita.php');
 require_once('include/links.php');
 
 //	Puxar informações do banco de dados

@@ -1,6 +1,7 @@
 <?php
 
 require_once('include/conexao.php');
+require_once('include/area_restrita.php');
 require_once('include/funcoes.php');
 date_default_timezone_set('America/Sao_Paulo');
 

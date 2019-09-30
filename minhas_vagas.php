@@ -1,6 +1,7 @@
 <?php
 
 require_once('include/conexao.php');
+require_once('include/area_restrita.php');
 error_reporting(0);
 
 $id = $_GET['id'];

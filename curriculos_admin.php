@@ -1,6 +1,7 @@
 <?php 
 
 require_once('include/conexao.php');
+require_once('include/area_restrita.php');
 
 //	Verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
 $pagina = (!isset($_GET['pagina'])) ? 1 :  $_GET['pagina']; 
