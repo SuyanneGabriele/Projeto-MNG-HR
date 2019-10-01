@@ -87,12 +87,12 @@ function limita_caracteres($texto, $limite, $quebra = true) {
                       </div>
                       <i class="fa fa-clock-o ml-3" style="color: gray;" aria-hidden="true"> Há 
                        <?php
-                       if (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)<1){
+                       if (explode(':', $info_index['TIMEDIFF(now(), data_vagas)'])[0]<1){
                         echo "menos de 1 Hora";
-                      } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)==1){
+                      } elseif (explode(':', $info_index['TIMEDIFF(now(), data_vagas)'])[0]==1){
                         echo "1 Hora";
-                      } elseif (substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2)>1 && substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2) <=24 ) {
-                        echo substr($info_index['TIMEDIFF(now(), data_vagas)'], 0, 2). " horas";
+                      } elseif (explode(':', $info_index['TIMEDIFF(now(), data_vagas)'])[0]>1 && explode(':', $info_index['TIMEDIFF(now(), data_vagas)'])[0] <=24 ) {
+                        echo explode(':', $info_index['TIMEDIFF(now(), data_vagas)'])[0]. " horas";
                       } else {
                         echo "mais de 24 horas";
                       }

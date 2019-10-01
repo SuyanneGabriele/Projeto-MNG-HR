@@ -164,6 +164,11 @@ if(isset($resultado2)){
 	mysqli_query($con, $sql2);
 }
 } else{
+
+	unset($nome_faculdade[0]);
+	unset($curso[0]);
+	unset($data_escolaridade[0]);	
+
 	foreach ($nome_faculdade as $k => $v) {
 		$sql2 = "INSERT INTO escolaridade
 		VALUES (
@@ -181,6 +186,12 @@ if(isset($resultado2)){
 }
 
 if(!isset($resultado2)){
+
+	unset($profissao[0]);
+	unset($sobre_profissao[0]);
+	unset($data_profissao[0]);	
+	unset($cargo[0]);	
+
 	foreach ($profissao as $k => $v) {
 
 		$sql3 = "INSERT INTO exp_profissional

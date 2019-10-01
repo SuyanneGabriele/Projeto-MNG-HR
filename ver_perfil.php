@@ -44,6 +44,8 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 	<link href="perfil/css/bootstrap.min.css" rel="stylesheet">
 	<link href="perfil/styles/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="perfil/styles/main.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">	
 	<style type="text/css">
 	#vaga_escolhida:hover {
 		margin-left: 2px;
@@ -248,13 +250,9 @@ $result_vaga = mysqli_query($con, $sql_vaga);
 
 
 <!-- Footer -->
-<footer class="sticky-footer bg-light mt-4">
-	<div class="container my-auto">
-		<div class="copyright text-center my-auto">
-			<span><strong> &copy; Todos os direitos reservados</strong></span>
-		</div>
-	</div>
-</footer>
+<?php
+require_once('include/footer.php');
+?>
 <!-- End of Footer -->
 
 

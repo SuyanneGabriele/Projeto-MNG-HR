@@ -42,6 +42,8 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 	<link href="perfil/css/bootstrap.min.css" rel="stylesheet">
 	<link href="perfil/styles/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="perfil/styles/main.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<style type="text/css">
 
 	#borda {		
@@ -65,9 +67,10 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 					<div class="collapse navbar-collapse justify-content-end" id="navigation">
 						<ul class="navbar-nav">
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#infos">Informações</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#scholarity">Escolaridade</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="index.php">Voltar</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="include/logoff.php">Sair</a></li>
 						</ul>
 					</div>
 				</div>
@@ -256,14 +259,9 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 
 
 		<!-- Footer -->
-		<footer class="page-footer font-small blue">
-
-			<!-- Copyright -->
-			<div class="footer-copyright text-center py-3">© Feito por Management Human Resources
-			</div>
-			<!-- Copyright -->
-
-		</footer>
+		<?php
+		require_once('include/footer.php');
+		?>
 		<!-- Footer -->
 
 
@@ -274,5 +272,6 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 		<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
 		<script src="perfil/js/aos.js"></script>
 		<script src="perfil/scripts/main.js"></script>
+
 	</body>
 	</html>
