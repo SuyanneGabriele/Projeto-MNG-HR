@@ -50,17 +50,17 @@ $nivel = $info_nivel['nivel'];
 </head>
 <style type="text/css">
 
-.oculta_pesquisa{
-	display: none;
-}
+	.oculta_pesquisa{
+		display: none;
+	}
 
-.oculta_pesquisa{
-	display: none;
-}
+	.oculta_pesquisa{
+		display: none;
+	}
 
-.oculta_pesquisa{
-	display: none;
-}
+	.oculta_pesquisa{
+		display: none;
+	}
 
 </style>
 <body id="page-top">
@@ -103,133 +103,138 @@ $nivel = $info_nivel['nivel'];
 												<form class="form-inline md-form form-sm mb-3 mr-2 w-100 Row" method="POST">
 													<!-- ---------- ALERTA ----------- -->
 													<?php if ($_SESSION['add_sucesso']) { ?>
-													<div class="col-12">
-														<div class="alert alert-success" role="alert">
-															Vaga adicionada com sucesso!
+														<div class="col-12">
+															<div class="alert alert-success" role="alert">
+																Vaga adicionada com sucesso!
+															</div>
 														</div>
-													</div>
 													<?php }; UNSET($_SESSION['add_sucesso']); ?>
 
 													<?php if ($_SESSION['excluido']) { ?>
-													<div class="col-12">
-														<h5 class="alert alert-danger" role="alert">
-															Vaga excluida com sucesso!
-														</h5>
-													</div>
+														<div class="col-12">
+															<h5 class="alert alert-danger" role="alert">
+																Vaga excluida com sucesso!
+															</h5>
+														</div>
 													<?php }; UNSET($_SESSION['excluido']); ?>
 
 													<?php if ($_SESSION['editado']) { ?>
-													<div class="col-12">
-														<h5 class="alert alert-success" role="alert">
-															Vaga editada com sucesso!
-														</h5>
-													</div>
+														<div class="col-12">
+															<h5 class="alert alert-success" role="alert">
+																Vaga editada com sucesso!
+															</h5>
+														</div>
 													<?php }; UNSET($_SESSION['editado']); ?>
+
+													<?php if ($_SESSION['npesquisar']) { ?>
+														<div class="col-12">
+															<h5 class="alert alert-warning" role="alert">
+																Não foi encontrado nenhum resultado com a sua pesquisa!
+															</h5>
+														</div>
+													<?php }; UNSET($_SESSION['npesquisar']); ?>
 													<!-- -------- FIM ALERTA -------- -->
 
 													<!-- -------- INICIO PESQUISAR -------- -->
 													<input class="form-control form-control-sm ml-3 mr-3 w-75 col-11" type="text" id="barra_pesquisa" name="pesquisar" placeholder="Pesquisar" aria-label="Search">
-													<i class="fas fa fa-search"></i>
+													<button type="submit"><i class="fas fa fa-search"></i></button>
 												</form> 
 												<?php
-												if ($pesquisar = $_POST['pesquisar'])
-													$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%$pesquisar%'";
-												$result3 = mysqli_query($con, $sql3);
-												while ($rows_vagas = mysqli_fetch_array($result3)){ ?>
-												<div class="topnav">
-													<a href="informacoes_vaga.php" style="text-decoration: none;">
-														<table class="w-100">
-															<tbody>
-																<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
-																<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($rows_vagas['cidade']); ?></td>
-																<td><button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button></td>
-															</form>
-															<div class="topnav">
-																<a href="informacoes_vaga.php" style="text-decoration: none;">
+												if ($pesquisar = $_POST['pesquisar']) {
+													$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%pesquisar%'";
+													$result3 = mysqli_query($con, $sql3);
+													$rows_vagas = mysqli_fetch_assoc($result3);
+													$nome = $rows_vagas['nome_vaga'];	
+													$sql_pesquisar = "SELECT * FROM vagas WHERE nome_vaga = '$nome'";
+													$result_pesquisar = mysqli_query($con, $sql_pesquisar);
+													while ($rows_vagas2 = mysqli_fetch_array($result_pesquisar)){ ?>
+														<div class="topnav">
+															<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" style="text-decoration: none;">
+																<table class="w-100">
+																	<tbody>
+																		<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas2['nome_vaga']); ?></td></tr>
+																		<td style="font-size: 15px; color: rgba(0 , 0, 0, .5);"><?php echo utf8_encode($rows_vagas2['cidade']); ?></td>
+																		<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
+																		<tr><hr></tr>
+																	</tbody>
+																</table>
+															</a>
+														</div>
+													<?php } $_SESSION['npesquisar'] = true; ?>
+												<?php } ?>
+												<!-- ------- FIM PESQUISAR ------- -->
+
+												<!-- ------- INÍCIO INFORMAÇÕES VAGAS ------ -->
+												<?php
+												if ($num >0) { ?>
+
+													<?php while($vaga = $result->fetch_assoc()) { ?>
+														<div class="topnav w-100 mt-3 d" id="oculta_div">
+															<div class="topnav mr-0">
+																<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
 																	<table class="w-100">
 																		<tbody>
-																			<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas['nome_vaga']); ?></td></tr>
-																			<td style="font-size: 15px; color: rgba(0 , 0, 0, .5);"><?php echo utf8_encode($rows_vagas['cidade']); ?></td>
-																			<td><button type="button" class="btn btn-primary" style="float: right;">Ver detalhes</button></td>
+																			<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
+																			<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vaga['cidade']); ?></td>
+																			<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
 																			<tr><hr></tr>
 																		</tbody>
 																	</table>
 																</a>
 															</div>
-															<?php } ?>
-															<!-- ------- FIM PESQUISAR ------- -->
-
-															<!-- ------- INÍCIO INFORMAÇÕES VAGAS ------ -->
-															<?php
-															if ($num >0) { ?>
-
-															<?php while($vaga = $result->fetch_assoc()) { ?>
-															<div class="topnav w-100 mt-3 d" id="oculta_div">
-																<div class="topnav mr-0">
-																	<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" name="infoVaga" style="text-decoration: none;">
-																		<table class="w-100">
-																			<tbody>
-																				<tr style="color: black;"><td><?php echo utf8_encode($vaga['nome_vaga']); ?></td></tr>
-																				<td style="font-size: 15px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vaga['cidade']); ?></td>
-																				<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($vaga['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
-																				<tr><hr></tr>
-																			</tbody>
-																		</table>
-																	</a>
-																</div>
-															</div>
-															<?php } ?>
-															<?php } ?>
-															<!-- ------ FIM INFORMAÇÕES VAGAS ------- -->
-
-															<!-- ------ INÍCIO PAGINAÇÃO ------ -->
-															<div class="row w-100 mt-3">
-																<div class="col-6 col-md-6">
-																	<nav>
-																		<ul class="pagination">
-																			<li class="page-item <?=($pagina == 1) ? 'disabled' : ''?>"><a class="page-link" href="vagas.php?pagina=<?php echo $pagina-1; ?>">Anterior</a></li>
-
-																			
-																			<?php for ($i = 1; $i <= $total2; $i++){?>
-
-																			<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?=$i?>"><?php echo $i ?></a></li>
-
-																			<?php } ?>
-
-																			<li class="page-item  <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="vagas.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
-																		</ul>
-																	</nav>
-																</div>
-
-																<!-- ------- FIM PAGINAÇÃO ------- -->
-
-																<?php if ($info_nivel['nivel'] == '1') { ?>
-																<div class="col-5 col-md-6 p-0">
-																	<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
-																</div>
-																<?php } ?>
-															</div>	
 														</div>
+													<?php } ?>
+												<?php } ?>
+												<!-- ------ FIM INFORMAÇÕES VAGAS ------- -->
+
+												<!-- ------ INÍCIO PAGINAÇÃO ------ -->
+												<div class="row w-100 mt-3">
+													<div class="col-6 col-md-6">
+														<nav>
+															<ul class="pagination">
+																<li class="page-item <?=($pagina == 1) ? 'disabled' : ''?>"><a class="page-link" href="vagas.php?pagina=<?php echo $pagina-1; ?>">Anterior</a></li>
+
+
+																<?php for ($i = 1; $i <= $total2; $i++){?>
+
+																	<li class="page-item"><a class="page-link" href="vagas.php?pagina=<?=$i?>"><?php echo $i ?></a></li>
+
+																<?php } ?>
+
+																<li class="page-item  <?=($pagina == $total2) ? 'disabled' : ''?>  "><a class="page-link" href="vagas.php?pagina=<?php echo $pagina+1; ?>">Próximo</a></li>
+															</ul>
+														</nav>
 													</div>
-												</div>
+
+													<!-- ------- FIM PAGINAÇÃO ------- -->
+
+													<?php if ($info_nivel['nivel'] == '1') { ?>
+														<div class="col-5 col-md-6 p-0">
+															<a href="addvaga.php" class="btn btn-info float-right mt-2" style="margin-right: -12px">+ Adicionar vaga</a>
+														</div>
+													<?php } ?>
+												</div>	
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- Footer -->
-						<?php
-						require_once('include/footer.php');
-						require_once('include/links_footer.php');
-						?>
-						<!-- End of Footer -->
-						<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-						<!-- Font Awesome -->
-						<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-						<!-- Custom styles for this template-->
-						<link href="media/css/sb-admin-2.min.css" rel="stylesheet">
+					</div>
+				</div>
+			</div>
+			<!-- Footer -->
+			<?php
+			require_once('include/footer.php');
+			require_once('include/links_footer.php');
+			?>
+			<!-- End of Footer -->
+			<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+			<!-- Font Awesome -->
+			<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+			<!-- Custom styles for this template-->
+			<link href="media/css/sb-admin-2.min.css" rel="stylesheet">
 
 
-					</body>
-					</html>
+		</body>
+		</html>
