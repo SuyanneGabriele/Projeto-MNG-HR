@@ -13,7 +13,6 @@ $idU = $info_perfil['id'];
 $pegando_foto = "SELECT nome_foto FROM cadastro_perfil WHERE fk_perfil = $idU";
 $resultado_nome_foto = mysqli_query($con, $pegando_foto);
 $resultado_nome_foto2 = mysqli_fetch_assoc($resultado_nome_foto);
-
 ?>
 
 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
@@ -30,7 +29,7 @@ $resultado_nome_foto2 = mysqli_fetch_assoc($resultado_nome_foto);
     <li class="nav-item dropdown no-arrow" style="hover:none !important;">
       <a class="nav-link dropdown-toggle" href="sair.php" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span  class="mr-2 d-none d-lg-inline text-gray-600 small">
-          <?php if($info_perfil['id'] == "1") { ?>
+          <?php if($resultado_nome_foto2['nome_foto'] == NULL) { ?>
             <img src="uploads/avatar.png" class="img-profile rounded-circle">
           <?php } else { ?>
             <img src="uploads/<?= $resultado_nome_foto2['nome_foto'] ?>" class="img-profile rounded-circle">

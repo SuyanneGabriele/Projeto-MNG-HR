@@ -27,7 +27,6 @@ $sql_escolaridade2 = "SELECT * FROM escolaridade2 WHERE fk_usuario = '$id'";
 $result_escolaridade2 = mysqli_query($con, $sql_escolaridade2);
 $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);  
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,15 +44,15 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
 
-		#borda {		
-			border-left: none !important;
-			border-right: none !important;
-			border-top: none !important;
-			outline:none !important;
-			border-bottom: 1px solid rgba(0,0,0,.2);
-		}
+	#borda {		
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		outline:none !important;
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
 
-	</style>
+</style>
 </head>
 <body id="top">
 	<header>
@@ -84,192 +83,196 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 						<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
 						<div class="container">
 							<div class="content-center">
-								<div class="cc-profile-image"><a href="#"><img src="uploads/<?=$info_perfil['nome_foto']?>" alt="Foto de perfil"/></a></div>
-								<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section" id="about"> 
-				<div class="container">
-					<div class="card" data-aos="fade-up" data-aos-offset="10">
-						<div class="row">
-							<div class="col-lg-6 col-md-12">
-								<div class="card-body">
-									<div id="borda" class="h4 mt-0 title">Sobre</div>
-									<?php echo utf8_decode(utf8_encode($info_perfil['sobre'])); ?>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-12" id="infos">
-								<div class="card-body">
-									<div class="h4 mt-0 title">Informações Básicas</div>
-									<div class="row">
-										<div class="col-sm-4"><strong class="text-uppercase">Idade:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['idade']); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['email']); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Telefone:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['telefone']); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['endereco'])); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['cidade']); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Estado:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_encode($info_perfil['estado']); ?></div>
-									</div>
-									<div class="row mt-3">
-										<div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
-										<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['idiomas'])); ?></div>
-									</div>
+								<div class="cc-profile-image"><?php if($info_perfil['nome_foto'] == NULL) { ?>
+									<img src="uploads/avatar.png" class="img-profile rounded-circle">
+									<?php } else { ?>
+									<img src="uploads/<?= $info_perfil['nome_foto'] ?>" class="img-profile rounded-circle">
+									<?php } ?></a></div>
+									<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+				<div class="section" id="about"> 
+					<div class="container">
+						<div class="card" data-aos="fade-up" data-aos-offset="10">
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<div class="card-body">
+										<div id="borda" class="h4 mt-0 title">Sobre</div>
+										<?php echo utf8_decode(utf8_encode($info_perfil['sobre'])); ?>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-12" id="infos">
+									<div class="card-body">
+										<div class="h4 mt-0 title">Informações Básicas</div>
+										<div class="row">
+											<div class="col-sm-4"><strong class="text-uppercase">Idade:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['idade']); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['email']); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Telefone:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['telefone']); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['endereco'])); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['cidade']); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Estado:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['estado']); ?></div>
+										</div>
+										<div class="row mt-3">
+											<div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['idiomas'])); ?></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-			<!-- -----------------  EXPERIÊNCIA PROFISSIONAL -------------------- -->
+				<!-- -----------------  EXPERIÊNCIA PROFISSIONAL -------------------- -->
 
-			<div class="section" id="experience">
-				<div class="container cc-experience">
-					<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
-					<?php if ($num_profissao > 0) { ?>
+				<div class="section" id="experience">
+					<div class="container cc-experience">
+						<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
+						<?php if ($num_profissao > 0) { ?>
 						<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark " data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-experience-header">
-											<p><?php echo utf8_decode(utf8_encode($info_profissao['data_profissao'])); ?></p>
-											<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
-										</div>
+						<div class="card">
+							<div class="row">
+								<div class="col-md-3 bg-dark " data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body cc-experience-header">
+										<p><?php echo utf8_decode(utf8_encode($info_profissao['data_profissao'])); ?></p>
+										<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
 									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div id="borda" class="h5"><?php echo utf8_encode($info_profissao['profissao']); ?></div>
-											<p><?php echo utf8_encode($info_profissao['sobre_profissao']); ?></p>
-										</div>
-									</div>
-
 								</div>
+								<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body">
+										<div id="borda" class="h5"><?php echo utf8_encode($info_profissao['profissao']); ?></div>
+										<p><?php echo utf8_encode($info_profissao['sobre_profissao']); ?></p>
+									</div>
+								</div>
+
 							</div>
+						</div>
 						<?php } ?>
-					<?php } else {  ?>
+						<?php } else {  ?>
 						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 							Não foi encontrado nenhum registro de profissão!
 						</div>
-					<?php } ?>
+						<?php } ?>
+					</div>
 				</div>
-			</div>
 
-			<!-- -----------------  ESCOLARIDADE  -------------------- -->
+				<!-- -----------------  ESCOLARIDADE  -------------------- -->
 
-			<div class="section" id="scholarity">
-				<div class="container cc-education">
-					<div class="h4 text-center mb-4 title">Escolaridade</div>
-					<?php if ($num_escolaridade > 0) { ?>
+				<div class="section" id="scholarity">
+					<div class="container cc-education">
+						<div class="h4 text-center mb-4 title">Escolaridade</div>
+						<?php if ($num_escolaridade > 0) { ?>
 						<?php while($info_escolaridade = $result_escolaridade->fetch_assoc()) { ?>
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-education-header">
-											<p><?php echo utf8_encode($info_escolaridade['data_escolaridade']); ?></p>
-											<div class="h5"><?php echo utf8_encode($info_escolaridade['ensino_superior']); ?></div>
-										</div>
+						<div class="card">
+							<div class="row">
+								<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body cc-education-header">
+										<p><?php echo utf8_encode($info_escolaridade['data_escolaridade']); ?></p>
+										<div class="h5"><?php echo utf8_encode($info_escolaridade['ensino_superior']); ?></div>
 									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div id="borda" class="h5"><?php echo utf8_encode($info_escolaridade['nome_faculdade']); ?></div>
-											<p><?php echo utf8_encode($info_escolaridade['curso']); ?></p>
-										</div>
+								</div>
+								<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body">
+										<div id="borda" class="h5"><?php echo utf8_encode($info_escolaridade['nome_faculdade']); ?></div>
+										<p><?php echo utf8_encode($info_escolaridade['curso']); ?></p>
 									</div>
 								</div>
 							</div>
+						</div>
 						<?php }  ?>
 
-					<?php } else { ?>
+						<?php } else { ?>
 						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 							Não foi encontrado nenhum registro de escolaridade!
 						</div>
-					<?php } ?>	
+						<?php } ?>	
 
-					<?php if ($num_escolaridade2 > 0) { ?>
+						<?php if ($num_escolaridade2 > 0) { ?>
 						<?php while($info_escolaridade2 = $result_escolaridade2->fetch_assoc()) { ?>
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-education-header">
-											<p><?php echo utf8_encode($info_escolaridade2['data_escolaridade_medio']); ?></p>
-											<div class="h5">Ensino Médio</div>
-										</div>
+						<div class="card">
+							<div class="row">
+								<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body cc-education-header">
+										<p><?php echo utf8_encode($info_escolaridade2['data_escolaridade_medio']); ?></p>
+										<div class="h5">Ensino Médio</div>
 									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div id="borda" class="h5"><?php echo utf8_encode(utf8_decode($info_escolaridade2['nome_medio'])); ?></div>
-											<p>Ensino médio completo.</p>
-										</div>
+								</div>
+								<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body">
+										<div id="borda" class="h5"><?php echo utf8_encode(utf8_decode($info_escolaridade2['nome_medio'])); ?></div>
+										<p>Ensino médio completo.</p>
 									</div>
 								</div>
 							</div>
+						</div>
 
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-education-header">
-											<p><?php echo utf8_encode($info_escolaridade2['data_escolaridade_fundamental']); ?></p>
-											<div class="h5">Ensino Fundamental</div>
-										</div>
+						<div class="card">
+							<div class="row">
+								<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body cc-education-header">
+										<p><?php echo utf8_encode($info_escolaridade2['data_escolaridade_fundamental']); ?></p>
+										<div class="h5">Ensino Fundamental</div>
 									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div id="borda" class="h5"><?php echo utf8_encode($info_escolaridade2['nome_fundamental']); ?></div>
-											<p>Ensino fundamental completo.</p>
-										</div>
+								</div>
+								<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+									<div class="card-body">
+										<div id="borda" class="h5"><?php echo utf8_encode($info_escolaridade2['nome_fundamental']); ?></div>
+										<p>Ensino fundamental completo.</p>
 									</div>
 								</div>
 							</div>
+						</div>
 						<?php }  ?>
 
-					<?php } else { ?>
+						<?php } else { ?>
 						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
 							Não foi encontrado nenhum registro de escolaridade!
 						</div>
-					<?php } ?>
+						<?php } ?>
 
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<!-- Footer -->
-	<footer class="page-footer font-small blue">
+		<!-- Footer -->
+		<footer class="page-footer font-small blue">
 
-		<!-- Copyright -->
-		<div class="footer-copyright text-center py-3">© Feito por Management Human Resources
-		</div>
-		<!-- Copyright -->
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3">© Feito por Management Human Resources
+			</div>
+			<!-- Copyright -->
 
-	</footer>
-	<!-- Footer -->
+		</footer>
+		<!-- Footer -->
 
 
 
-	<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
-	<script src="perfil/js/core/popper.min.js"></script>
-	<script src="perfil/js/core/bootstrap.min.js"></script>
-	<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
-	<script src="perfil/js/aos.js"></script>
-	<script src="perfil/scripts/main.js"></script>
-</body>
-</html>
+		<script src="perfil/js/core/jquery.3.2.1.min.js"></script>
+		<script src="perfil/js/core/popper.min.js"></script>
+		<script src="perfil/js/core/bootstrap.min.js"></script>
+		<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
+		<script src="perfil/js/aos.js"></script>
+		<script src="perfil/scripts/main.js"></script>
+	</body>
+	</html>

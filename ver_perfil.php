@@ -1,11 +1,11 @@
 <?php
 
 require_once('include/conexao.php');
-
 if (!isset($_SESSION)){
 	session_start();
 };
 
+error_reporting(0);
 $id = $_GET['id'];
 
 $sql_perfil = "SELECT * FROM `cadastro_perfil` where fk_perfil = '$id'"; 
@@ -29,8 +29,6 @@ $sql_vaga = "SELECT fk_usuario, fk_vaga, nome_vaga FROM vagas_usuarios
 INNER JOIN vagas ON vagas_usuarios.fk_vaga = vagas.id WHERE fk_usuario = '$id'";
 $result_vaga = mysqli_query($con, $sql_vaga);
 
-var_dump($info_perfil['id']);
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,10 +45,10 @@ var_dump($info_perfil['id']);
 	<link href="perfil/styles/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
-		#vaga_escolhida:hover {
-			margin-left: 2px;
-		}
-	</style>
+	#vaga_escolhida:hover {
+		margin-left: 2px;
+	}
+</style>
 </head>
 <body id="top">
 	<header>
@@ -82,12 +80,14 @@ var_dump($info_perfil['id']);
 							<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
 							<div class="container">
 								<div class="content-center">
-									<?php if($info_perfil['id'] == "1") { ?>
-										<img src="uploads/avatar.png">
-									<?php } else { ?>
-										<img src="uploads/<?= $resultado_nome_foto2['nome_foto'] ?>">
-									<?php } ?>
-									<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
+									<div class="cc-profile-image">
+										<?php if($info_perfil['nome_foto'] == NULL) { ?>
+										<img src="uploads/avatar.png" class="img-profile rounded-circle">
+										<?php } else { ?>
+										<img src="uploads/<?= $info_perfil['nome_foto'] ?>" class="img-profile rounded-circle">
+										<?php } ?></a></div>
+										<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -148,29 +148,29 @@ var_dump($info_perfil['id']);
 				<div class="container cc-experience">
 					<div class="h4 text-center mb-4 title">Experiências Profissionais</div>
 					<?php if ($num_profissao > 0) { ?>
-						<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-experience-header">
-											<p><?php echo utf8_encode($info_profissao['data_profissao']); ?></p>
-											<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
-										</div>
-									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['profissao'])); ?></div>
-											<p><?php echo utf8_decode(utf8_encode($info_profissao['sobre_profissao'])); ?></p>
-										</div>
-									</div>
-
+					<?php while($info_profissao = $result_profissao->fetch_assoc()) { ?>
+					<div class="card">
+						<div class="row">
+							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body cc-experience-header">
+									<p><?php echo utf8_encode($info_profissao['data_profissao']); ?></p>
+									<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['cargo'])); ?></div>
 								</div>
 							</div>
-						<?php } ?>
-					<?php } else {  ?>
-						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
-							Não foi encontrado nenhum registro de profissão!
+							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body">
+									<div class="h5"><?php echo utf8_decode(utf8_encode($info_profissao['profissao'])); ?></div>
+									<p><?php echo utf8_decode(utf8_encode($info_profissao['sobre_profissao'])); ?></p>
+								</div>
+							</div>
+
 						</div>
+					</div>
+					<?php } ?>
+					<?php } else {  ?>
+					<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
+						Não foi encontrado nenhum registro de profissão!
+					</div>
 					<?php } ?>
 				</div>
 			</div>
@@ -181,29 +181,29 @@ var_dump($info_perfil['id']);
 				<div class="container cc-education">
 					<div class="h4 text-center mb-4 title">Escolaridade</div>
 					<?php if ($num_escolaridade > 0) { ?>
-						<?php while($info_escolaridade = $result_escolaridade->fetch_assoc()) { ?>
-							<div class="card">
-								<div class="row">
-									<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body cc-education-header">
-											<p><?php echo utf8_encode($info_escolaridade['data_escolaridade']); ?></p>
-											<div class="h5"><?php echo utf8_encode($info_escolaridade['ensino_superior']); ?></div>
-										</div>
-									</div>
-									<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-										<div class="card-body">
-											<div class="h5"><?php echo utf8_encode($info_escolaridade['nome_faculdade']); ?></div>
-											<p><?php echo utf8_encode($info_escolaridade['curso']); ?></p>
-										</div>
-									</div>
+					<?php while($info_escolaridade = $result_escolaridade->fetch_assoc()) { ?>
+					<div class="card">
+						<div class="row">
+							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body cc-education-header">
+									<p><?php echo utf8_encode($info_escolaridade['data_escolaridade']); ?></p>
+									<div class="h5"><?php echo utf8_encode($info_escolaridade['ensino_superior']); ?></div>
 								</div>
 							</div>
-						<?php }  ?>
+							<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body">
+									<div class="h5"><?php echo utf8_encode($info_escolaridade['nome_faculdade']); ?></div>
+									<p><?php echo utf8_encode($info_escolaridade['curso']); ?></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php }  ?>
 
 					<?php } else { ?>
-						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
-							Não foi encontrado nenhum registro de escolaridade!
-						</div>
+					<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
+						Não foi encontrado nenhum registro de escolaridade!
+					</div>
 					<?php } ?>
 				</div>
 			</div>
@@ -214,29 +214,29 @@ var_dump($info_perfil['id']);
 				<div class="container cc-education">
 					<div class="h4 text-center mb-4 title">Vagas Candidatadas</div>
 					<?php if ($num_candidatado > 0) { ?>
-						<div class="card">
-							<div class="row">
-								<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-									<div class="card-body cc-education-header">
-										<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
-										<h5 style="vertical-align: middle">O candidato está interessado na vaga</h5>
-										<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
-									</div>
+					<div class="card">
+						<div class="row">
+							<div class="col-md-3 bg-dark" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body cc-education-header">
+									<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
+									<h5 style="vertical-align: middle">O candidato está interessado na vaga</h5>
+									<hr class="mr-3 w-80 bg-secondary d-flex" style="vertical-align: middle">
 								</div>
-								<div class="col-md-9 mt-4 mb-4" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-									<div class="card-body">
-										<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
-											<a id="vaga_escolhida" style="text-decoration: none; color: black;" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"style="text-decoration: none; color: black;"><?php echo utf8_encode($info_vaga['nome_vaga']); ?><br></a>	
-										<?php } ?>
-									</div>
+							</div>
+							<div class="col-md-9 mt-4 mb-4" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+								<div class="card-body">
+									<?php while($info_vaga = $result_vaga->fetch_assoc()) { ?>
+									<a id="vaga_escolhida" style="text-decoration: none; color: black;" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($info_vaga['fk_vaga']); ?>"style="text-decoration: none; color: black;"><?php echo utf8_encode($info_vaga['nome_vaga']); ?><br></a>	
+									<?php } ?>
 								</div>
 							</div>
 						</div>
-						<hr>	
+					</div>
+					<hr>	
 					<?php } else { ?>
-						<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
-							Não foi encontrado nenhum registro de candidatura!
-						</div>
+					<div class="alert alert-danger" style="opacity: 0.95;" role="alert">
+						Não foi encontrado nenhum registro de candidatura!
+					</div>
 					<?php } ?>
 				</div>
 			</div>
