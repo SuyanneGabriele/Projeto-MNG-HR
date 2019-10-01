@@ -92,7 +92,7 @@ $id_usuario = $info_perfil['id'];
 		<!-- Nav Item - Registrar -->
 		<li class="nav-item">
 			<a class="nav-link" href="registro.php">
-				<i class="fas fa fa-lock fa-2x text-white"></i>
+				<i class="fas fa fa-user-plus fa-2x text-white"></i>
 				<span>Registrar</span>
 			</a>
 		</li>
@@ -102,7 +102,7 @@ $id_usuario = $info_perfil['id'];
 	<?php if ($info_perfil['nivel'] == 0) { ?>
 		<li class="nav-item">
 			<a class="nav-link" href="recuperar.php">
-				<i class="fas fa fa-key fa-2x text-white"></i>
+				<i class="fas fa fa-lock fa-2x text-white"></i>
 				<span>Recuperar senha</span>
 			</a>
 		</li>
