@@ -160,7 +160,7 @@ $nivel = $info_nivel['nivel'];
 																</table>
 															</a>
 														</div>
-													<?php } $_SESSION['npesquisar'] = true; ?>
+													<?php } ?>
 												<?php } ?>
 												<!-- ------- FIM PESQUISAR ------- -->
 
