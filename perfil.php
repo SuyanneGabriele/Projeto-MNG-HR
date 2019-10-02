@@ -9,6 +9,12 @@ if (!isset($_SESSION)){
 
 $email = $_SESSION['email'];
 
+$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+$id_usuario = $info_perfil['id'];
+
+
 $sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
@@ -56,7 +62,7 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 
 </style>
 </head>
-<body id="top">
+<body >
 	<header>
 		<div class="profile-page sidebar-collapse">
 			<nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-dark" color-on-scroll="400">
@@ -251,7 +257,12 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 							Não foi encontrado nenhum registro de escolaridade!
 						</div>
 						<?php } ?>
-
+						<div class="text-center">
+							<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario ?>">
+								<i class="fas fa fa-black-tie fa-2x text-white"></i>
+								<span class="btn" style="background-color: black;">Editar</span>
+							</a>	
+						</div>
 					</div>
 				</div>
 			</div>
