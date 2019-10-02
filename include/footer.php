@@ -1,6 +1,6 @@
 
 <!-- Footer -->
-<footer style="box-shadow: 0px 1px 12px 1px rgb(0,0,0,.2);" class="page-footer font-small special-color-dark pt-4 mt-5">
+<footer style="box-shadow: 0px 1px 12px 1px rgb(0,0,0,.3);" class="page-footer font-small special-color-dark pt-4 mt-5">
 
   <!-- Footer Elements -->
   <div class="container">
@@ -8,7 +8,7 @@
     <!-- Social buttons -->
     <ul class="list-unstyled list-inline text-center">
       <li class="list-inline-item">
-        <a href="https://facebook.com/login?lang=pt" class="btn-floating btn-fb mx-1">
+        <a href="https://facebook.com/login?lang=pt" class="btn-floating btn-fb mx-1" style="color: blue;">
           <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
         </a>
       </li>
@@ -39,7 +39,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019
+  <div class="footer-copyright text-center py-3" style="margin-top: -20px">© 2019
     Management Human Resources
   </div>
   <!-- Copyright -->

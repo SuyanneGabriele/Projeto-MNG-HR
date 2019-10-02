@@ -9,6 +9,12 @@ if (!isset($_SESSION)){
 
 $email = $_SESSION['email'];
 
+$sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
+$result_perfil = mysqli_query($con, $sql_perfil);
+$info_perfil = $result_perfil->fetch_assoc();
+$id_usuario = $info_perfil['id'];
+
+
 $sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
@@ -42,6 +48,8 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 	<link href="perfil/css/bootstrap.min.css" rel="stylesheet">
 	<link href="perfil/styles/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="perfil/styles/main.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<style type="text/css">
 
 	#borda {		
@@ -54,7 +62,7 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 
 </style>
 </head>
-<body id="top">
+<body >
 	<header>
 		<div class="profile-page sidebar-collapse">
 			<nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-dark" color-on-scroll="400">
@@ -65,7 +73,6 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 					<div class="collapse navbar-collapse justify-content-end" id="navigation">
 						<ul class="navbar-nav">
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
-							<li class="nav-item"><a class="nav-link smooth-scroll" href="#infos">Informações</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#scholarity">Escolaridade</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="index.php">Voltar</a></li>
@@ -250,7 +257,12 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 							Não foi encontrado nenhum registro de escolaridade!
 						</div>
 						<?php } ?>
-
+						<div class="text-center">
+							<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario ?>">
+								<i class="fas fa fa-black-tie fa-2x text-white"></i>
+								<span class="btn" style="background-color: black;">Editar</span>
+							</a>	
+						</div>
 					</div>
 				</div>
 			</div>
@@ -258,14 +270,9 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 
 
 		<!-- Footer -->
-		<footer class="page-footer font-small blue">
-
-			<!-- Copyright -->
-			<div class="footer-copyright text-center py-3">© Feito por Management Human Resources
-			</div>
-			<!-- Copyright -->
-
-		</footer>
+		<?php
+		require_once('include/footer.php');
+		?>
 		<!-- Footer -->
 
 
@@ -276,5 +283,6 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 		<script src="perfil/js/now-ui-kit.js?v=1.1.0"></script>
 		<script src="perfil/js/aos.js"></script>
 		<script src="perfil/scripts/main.js"></script>
+
 	</body>
 	</html>
