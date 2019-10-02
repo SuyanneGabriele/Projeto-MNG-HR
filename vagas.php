@@ -137,29 +137,43 @@ $nivel = $info_nivel['nivel'];
 
 													<!-- -------- INICIO PESQUISAR -------- -->
 													<input class="form-control form-control-sm ml-3 mr-3 w-75 col-11" type="text" id="barra_pesquisa" name="pesquisar" placeholder="Pesquisar" aria-label="Search">
-													<button type="submit"><i class="fas fa fa-search"></i></button>
+													<button type="submit" for="pesquisar"><i class="fas fa fa-search"></i></button>
 												</form> 
 												<?php
 												if ($pesquisar = $_POST['pesquisar']) {
-													$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%pesquisar%'";
-													$result3 = mysqli_query($con, $sql3);
-													$rows_vagas = mysqli_fetch_assoc($result3);
-													$nome = $rows_vagas['nome_vaga'];	
-													$sql_pesquisar = "SELECT * FROM vagas WHERE nome_vaga = '$nome'";
-													$result_pesquisar = mysqli_query($con, $sql_pesquisar);
-													while ($rows_vagas2 = mysqli_fetch_array($result_pesquisar)){ ?>
-														<div class="topnav">
-															<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" style="text-decoration: none;">
-																<table class="w-100">
-																	<tbody>
-																		<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas2['nome_vaga']); ?></td></tr>
-																		<td style="font-size: 15px; color: rgba(0 , 0, 0, .5);"><?php echo utf8_encode($rows_vagas2['cidade']); ?></td>
-																		<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
-																		<tr><hr></tr>
-																	</tbody>
-																</table>
-															</a>
-														</div>
+
+													$busca_divida = explode(' ', $pesquisar);
+													$quant = count($busca_divida);
+													$id_array = array("");
+
+													for ($i = 0; $i < $quant; $i++) {
+														$busca = $busca_divida[$i];
+
+														$sql3 = "SELECT * FROM vagas WHERE nome_vaga LIKE '%$busca%'";
+														$result3 = mysqli_query($con, $sql3);
+														$quant_campos = mysqli_num_rows($sql);
+
+														while ($rows_vagas2 = mysqli_fetch_assoc($result3)){ 
+															$id = $rows_vagas2['id'];
+
+															if (!array_search($id, $id_array)) {
+																?>
+
+
+																<div class="topnav">
+																	<a href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" style="text-decoration: none;">
+																		<table class="w-100">
+																			<tbody>
+																				<tr style="color: black;"><td><?php echo utf8_encode($rows_vagas2['nome_vaga']); ?></td></tr>
+																				<td style="font-size: 15px; color: rgba(0 , 0, 0, .5);"><?php echo utf8_encode($rows_vagas2['cidade']); ?></td>
+																				<td><button type="button" name="infoVaga" href="informacoes_vaga.php?infoVaga=<?php echo utf8_encode($rows_vagas2['id']); ?>" class="btn btn-info" style="float: right;">Ver detalhes</button></td>
+																				<tr><hr></tr>
+																			</tbody>
+																		</table>
+																	</a>
+																</div>
+															<?php } ?>
+														<?php } ?>
 													<?php } ?>
 												<?php } ?>
 												<!-- ------- FIM PESQUISAR ------- -->

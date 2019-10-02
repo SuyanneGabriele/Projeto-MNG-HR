@@ -68,6 +68,8 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#infos">Informações</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experiência</a></li>
 							<li class="nav-item"><a class="nav-link smooth-scroll" href="#scholarity">Escolaridade</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="index.php">Voltar</a></li>
+							<li class="nav-item"><a class="nav-link smooth-scroll" href="include/logoff.php">Sair</a></li>
 						</ul>
 					</div>
 				</div>

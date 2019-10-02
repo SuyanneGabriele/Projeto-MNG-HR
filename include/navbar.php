@@ -161,6 +161,15 @@ ul {
 	<!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block" style="border-color: rgba(0, 0, 0, 0.2)";>
 
+	<?php if (isset($_SESSION['email'])) { ?>
+		<li class="nav-item" id="aa">
+			<a class="nav-link" href="include/logoff.php">
+				<i class="fa fa-sign-out text-white"></i>
+				<span>Sair</span>
+			</a>
+		</li>
+	<?php } ?>
+
 </ul>
 <!-- End of Sidebar -->
 

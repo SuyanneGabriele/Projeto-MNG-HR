@@ -33,6 +33,8 @@ function limita_caracteres($texto, $limite, $quebra = true) {
   <meta charset="utf-8">
 
   <title>Início</title>
+<link rel="shortcut icon" href="media/images/favicon.png" type="image/x-png"/>
+</head>
 
   <?php
   require_once('include/links.php');
