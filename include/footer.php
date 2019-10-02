@@ -39,7 +39,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019
+  <div class="footer-copyright text-center py-3" style="margin-top: -20px">© 2019
     Management Human Resources
   </div>
   <!-- Copyright -->
