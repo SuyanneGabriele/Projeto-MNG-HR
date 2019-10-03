@@ -237,10 +237,8 @@ if(!isset($resultado2)){
 }
 mysqli_query($con, $sql4);
 
-if($sql == TRUE){
-	echo "Usuário OK";      
+if($sql == TRUE){      
 }else{
-	echo "Erro, Informações Básicas necessárias".$sql."<br>".$con->error;
 	$con->close();
 }
 }

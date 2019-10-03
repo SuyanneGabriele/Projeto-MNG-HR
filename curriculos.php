@@ -74,7 +74,7 @@
  		</nav>
  	</div>
  </header>
- <form class="user" action="" method="post" enctype="multipart/form-data">
+ <form class="user" action="perfil.php" method="post" enctype="multipart/form-data">
  	<div class="page-content">
  		<div>
  			<div class="profile-page">

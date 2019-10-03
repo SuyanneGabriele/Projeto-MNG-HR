@@ -31,7 +31,7 @@ $num_escolaridade = mysqli_num_rows($result_escolaridade);
 
 $sql_escolaridade2 = "SELECT * FROM escolaridade2 WHERE fk_usuario = '$id'";
 $result_escolaridade2 = mysqli_query($con, $sql_escolaridade2);
-$num_escolaridade2 = mysqli_num_rows($result_escolaridade2);  
+$num_escolaridade2 = mysqli_num_rows($result_escolaridade2); 
 
 ?>
 <!DOCTYPE html>
@@ -150,7 +150,6 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 						</div>
 					</div>
 				</div>
-
 				<!-- -----------------  EXPERIÊNCIA PROFISSIONAL -------------------- -->
 
 				<div class="section" id="experience">
