@@ -92,7 +92,7 @@
  										</div>
  										<center>
  											<div class="profile-img">
- 												<label style="cursor: pointer;" for="arquivos"><img src="uploads/camera.jpg" width="100%"></label>
+ 												<label style="cursor: pointer;" for="arquivos"><img src="uploads/camera.png" width="100"></label>
  												<input type="file" class="input_foto" name="arquivos[]" id="arquivos" multiple="" >
  											</div>
  										</center>
