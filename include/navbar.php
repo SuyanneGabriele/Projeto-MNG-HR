@@ -148,18 +148,18 @@ ul {
 			</a>
 		</li>
 
+				<li class="nav-item">
+			<a class="nav-link" href="alterar_perfil.php?id=<?php echo $id_usuario; ?>">
+				<i class="fas fa fa-black-tie fa-2x text-white"></i>
+				<span>Editar Perfil</span>
+			</a>
+		</li>
+
 		<!-- Nav Item -  Perfil -->
 		<li class="nav-item" id="aa">
 			<a class="nav-link" href="perfil.php">
 				<i class="fas fa fa-male fa-2x text-white"></i>
 				<span>Meu Perfil</span>
-			</a>
-		</li>
-
-				<li class="nav-item">
-			<a class="nav-link" href="alterar_perfil.php?id=<?php echo $id_usuario; ?>">
-				<i class="fas fa fa-black-tie fa-2x text-white"></i>
-				<span>Editar Perfil</span>
 			</a>
 		</li>
 	</span>

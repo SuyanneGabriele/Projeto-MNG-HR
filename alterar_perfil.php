@@ -92,7 +92,7 @@
  										</div>
  										<center>
  											<div class="profile-img">
- 												<label style="cursor: pointer;" for="arquivos"><img src="uploads/camera.png" width="100%"></label>
+ 												<label style="cursor: pointer;" for="arquivos"><img src="uploads/<?=$resultadoPerfil1['nome_foto']?>" width="100%"></label>
  												<input type="file" class="input_foto" name="arquivos[]" id="arquivos" multiple="" >
  											</div>
  										</center>
@@ -288,7 +288,7 @@
 
  						<div class="col-md-9" >
  							<div class="card-body" id="tbg1">
- 								<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" value="<?=$resultadoPerfil2['nome_medio']?>" name="nome_medio" id="nome_medio" class="col-sm-11" placeholder="Nome da escola" row="2"></div>
+ 								<div class="h5" id="tbg1"><input type="text" value="<?=$resultadoPerfil2['nome_medio']?>" name="nome_medio" id="nome_medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
  								<textarea name="ensino_medio" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"><?=$resultadoPerfil2['ensino_medio']?></textarea>
  							</div>
  						</div>

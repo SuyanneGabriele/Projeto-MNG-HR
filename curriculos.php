@@ -288,7 +288,7 @@
 
  						<div class="col-md-9" >
  							<div class="card-body" id="tbg1">
- 								<div class="h5" id="tbg1"><button type="button" class="btn remover_card" style="background-color: white !important; font-size:15px; color: black; float: right;">X</button><input type="text" name="nome_medio" id="nome_medio" class="col-sm-11" placeholder="Nome da escola" row="2"></div>
+ 								<div class="h5" id="tbg1"><input type="text" name="nome_medio" id="nome_medio" class="col-sm-12" placeholder="Nome da escola" row="2"></div>
  								<textarea name="ensino_medio" id="ensino_medio" class="md-textarea form-control" rows="4" placeholder="Ex: Ensino médio completo"></textarea>
  							</div>
  						</div>
