@@ -257,7 +257,7 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 						</div>
 						<?php } ?>
 						<div class="text-center">
-							<a class="nav-link" href="curriculos.php?id=<?php echo $id_usuario ?>">
+							<a class="nav-link" href="alterar_perfil.php?id=<?php echo $id_usuario ?>">
 								<i class="fas fa fa-black-tie fa-2x text-white"></i>
 								<span class="btn" style="background-color: black;">Editar</span>
 							</a>	
