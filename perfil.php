@@ -7,31 +7,36 @@ if (!isset($_SESSION)){
 	session_start();
 };
 
+error_reporting(0);
+
 $email = $_SESSION['email'];
 
 $sql_perfil = "SELECT * FROM usuario WHERE email = '$email'";
 $result_perfil = mysqli_query($con, $sql_perfil);
 $info_perfil = $result_perfil->fetch_assoc();
 $id_usuario = $info_perfil['id'];
+$idU = $id_usuario;
 
+if (isset($idU)) {
+	$sql1 = "SELECT * FROM cadastro_perfil WHERE fk_perfil = $idU";
 
-$sql_perfil = "SELECT * FROM `cadastro_perfil` where email = '$email'";
-$result_perfil = mysqli_query($con, $sql_perfil);
-$info_perfil = $result_perfil->fetch_assoc();
+	$queryPerfil1 = mysqli_query($con, $sql1);
+	$resultadoPerfil1 = mysqli_fetch_array($queryPerfil1);
+}
 
-$id = $info_perfil['fk_perfil'];
+   
 
-$sql_profissao = "SELECT * FROM exp_profissional WHERE fk_usuario = '$id'";
-$result_profissao = mysqli_query($con, $sql_profissao);
-$num_profissao = mysqli_num_rows($result_profissao);    
-
-$sql_escolaridade = "SELECT * FROM escolaridade WHERE fk_usuario = '$id'";
+$sql_escolaridade = "SELECT * FROM escolaridade WHERE fk_usuario = '$idU'";
 $result_escolaridade = mysqli_query($con, $sql_escolaridade);
 $num_escolaridade = mysqli_num_rows($result_escolaridade);  
 
-$sql_escolaridade2 = "SELECT * FROM escolaridade2 WHERE fk_usuario = '$id'";
+$sql_escolaridade2 = "SELECT * FROM escolaridade2 WHERE fk_usuario = '$idU'";
 $result_escolaridade2 = mysqli_query($con, $sql_escolaridade2);
 $num_escolaridade2 = mysqli_num_rows($result_escolaridade2); 
+
+$sql_profissao = "SELECT * FROM exp_profissional WHERE fk_usuario = '$idU'";
+$result_profissao = mysqli_query($con, $sql_profissao);
+$num_profissao = mysqli_num_rows($result_profissao); 
 
 ?>
 <!DOCTYPE html>
@@ -92,12 +97,12 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 						<div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
 						<div class="container">
 							<div class="content-center">
-								<div class="cc-profile-image"><?php if($info_perfil['nome_foto'] == NULL) { ?>
+								<div class="cc-profile-image"><?php if($resultadoPerfil1['nome_foto'] == NULL) { ?>
 									<img src="uploads/avatar.png" class="img-profile rounded-circle">
 									<?php } else { ?>
-									<img src="uploads/<?= $info_perfil['nome_foto'] ?>" class="img-profile rounded-circle">
+									<img src="uploads/<?= $resultadoPerfil1['nome_foto'] ?>" class="img-profile rounded-circle">
 									<?php } ?></a></div>
-									<div class="h2 title"><?php echo utf8_encode($info_perfil['nome']); ?></div>
+									<div class="h2 title"><?php echo utf8_encode($resultadoPerfil1['nome']); ?></div>
 								</div>
 							</div>
 						</div>
@@ -110,7 +115,7 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 								<div class="col-lg-6 col-md-12">
 									<div class="card-body">
 										<div id="borda" class="h4 mt-0 title">Sobre</div>
-										<?php echo utf8_decode(utf8_encode($info_perfil['sobre'])); ?>
+										<?php echo utf8_decode(utf8_encode($resultadoPerfil1['sobre'])); ?>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-12" id="infos">
@@ -118,31 +123,31 @@ $num_escolaridade2 = mysqli_num_rows($result_escolaridade2);
 										<div class="h4 mt-0 title">Informações Básicas</div>
 										<div class="row">
 											<div class="col-sm-4"><strong class="text-uppercase">Idade:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['idade']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_encode($resultadoPerfil1['idade']); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['email']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_encode($resultadoPerfil1['email']); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Telefone:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['telefone']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_encode($resultadoPerfil1['telefone']); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Endereço:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['endereco'])); ?></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($resultadoPerfil1['endereco'])); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Cidade:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['cidade']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_encode($resultadoPerfil1['cidade']); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Estado:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_encode($info_perfil['estado']); ?></div>
+											<div class="col-sm-8"><?php echo utf8_encode($resultadoPerfil1['estado']); ?></div>
 										</div>
 										<div class="row mt-3">
 											<div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
-											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($info_perfil['idiomas'])); ?></div>
+											<div class="col-sm-8"><?php echo utf8_decode(utf8_encode($resultadoPerfil1['idiomas'])); ?></div>
 										</div>
 									</div>
 								</div>
