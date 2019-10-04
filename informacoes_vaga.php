@@ -102,7 +102,7 @@ if (isset($_POST['editarVaga'])) {
       <!-- Inicio -->
 
       <div class="container">
-        <h2>Oportunidades
+        
           <div class="card">
             <div class="card-body">
               <h4>Informações da vaga</h4>
@@ -134,8 +134,7 @@ if (isset($_POST['editarVaga'])) {
 
               <!-- ------- FIM AVISOS ------- -->
               <h1><span style="color: black;"><strong><?php echo utf8_encode($vagas['nome_vaga']); ?></span></strong></h1>
-              <span style="font-size: 20px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vagas['cidade']); ?></span><br>
-              <a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br>
+              <span style="font-size: 20px; color: rgba(0,0,0,.5);"><?php echo utf8_encode($vagas['cidade']); ?></span><br><br><a href="vagas.php" style="font-size: 15px; color: rgba(0,0,0,.5); hover:hover {text-decoration: underline;}"><i class="fas fa fa-arrow-left mr-2"></i>Voltar para a lista de vagas</a><br><br>
               <strong style="font-size: 18px;">Sobre a oportunidade</strong>
               
               <?php do{ ?>
